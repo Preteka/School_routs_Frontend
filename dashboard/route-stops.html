@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Route & Stops — SchoolRoute Parent Dashboard</title>
+  <meta name="description" content="View your child's assigned route, pickup stop and school journey details on the SchoolRoute Parent Dashboard.">
+  <meta name="keywords" content="bus route, school bus stop, pickup time, drop-off time, driver contact, parent dashboard">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="SchoolRoute Route & Stops — Parent Dashboard">
+  <meta property="og:description" content="View your child's assigned route, pickup stop and school journey details.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/schoolroute-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/route-stops.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Keyboard Accessibility Skip Link -->
+  <a href="#main-route-stops-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- ====================================================
+       DASHBOARD WRAPPER
+  ==================================================== -->
+  <div class="dashboard-layout" id="dashboard-layout">
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ==================================================
+         1. LEFT SIDEBAR (MASTER DASHBOARD REUSE)
+    ================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard Navigation">
+      
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-wrapper">
+        <a href="dashboard.html" class="sidebar-brand" aria-label="SchoolRoute Dashboard Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="brand-logo-img logo-light" width="158" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="brand-logo-img logo-dark" width="158" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <button type="button" class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close sidebar menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav" aria-label="Parent Menu">
+        <ul class="sidebar-menu-list">
+          
+          <li class="sidebar-menu-item">
+            <a href="dashboard.html" class="sidebar-link" data-nav="dashboard">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+              </span>
+              <span class="sidebar-link-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="live-tracking.html" class="sidebar-link" data-nav="live-tracking">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </span>
+              <span class="sidebar-link-text">Live Tracking</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="my-children.html" class="sidebar-link" data-nav="my-children">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </span>
+              <span class="sidebar-link-text">My Children</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="route-stops.html" class="sidebar-link active" data-nav="route-stops" aria-current="page">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Route &amp; Stops</span>
+              <span class="active-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="notifications.html" class="sidebar-link" data-nav="notifications">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Notifications</span>
+              <span class="sidebar-badge" id="sidebar-notif-badge">0</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="payments.html" class="sidebar-link" data-nav="payments">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Payments</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="reports.html" class="sidebar-link" data-nav="reports">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Reports</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="support.html" class="sidebar-link" data-nav="support">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Support</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="settings.html" class="sidebar-link" data-nav="settings">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </span>
+              <span class="sidebar-link-text">Settings</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Sidebar Support Card -->
+      <div class="sidebar-footer">
+        <div class="sidebar-support-card">
+          <div class="support-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+          </div>
+          <div class="support-card-content">
+            <h4 class="support-card-title">Need Help?</h4>
+            <p class="support-card-sub">We're here for you</p>
+          </div>
+          <button type="button" class="btn-support-action" id="btn-support-action">
+            <span>Contact Support</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ==================================================
+         2. MAIN DASHBOARD CONTENT AREA
+    ================================================== -->
+    <div class="dashboard-main-area">
+
+      <!-- ================================================
+           TOP HEADER
+      ================================================ -->
+      <header class="dashboard-header" id="dashboard-header">
+        <div class="header-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="dashboard-sidebar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+
+          <!-- Greeting -->
+          <div class="header-greeting-block">
+            <h1 class="header-greeting-title">
+              Good Morning, <span id="header-parent-name">Parent</span>! 
+              <span class="greeting-wave-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2C11.67 2 11 2.67 11 3.5V11H10.5C9.67 11 9 10.33 9 9.5V5.5C9 4.67 8.33 4 7.5 4S6 4.67 6 5.5V13.25C5.4 12.72 4.62 12.44 3.79 12.63C2.8 12.85 2.06 13.75 2.01 14.77C1.94 16.27 2.89 17.58 4.22 18.79C6.44 20.81 9.42 22 12.5 22C17.75 22 22 17.75 22 12.5C22 7.25 17.75 2 12.5 2ZM12.5 20C9.97 20 7.49 19.01 5.61 17.29C4.54 16.32 3.99 15.34 4.01 14.86C4.01 14.82 4.04 14.73 4.22 14.69C4.47 14.63 4.77 14.78 5.17 15.19L6.5 16.52V5.5C6.5 4.95 6.95 4.5 7.5 4.5S8.5 4.95 8.5 5.5V11.5H9.5V9.5C9.5 8.95 9.95 8.5 10.5 8.5S11.5 8.95 11.5 9.5V12.5H12.5V3.5C12.5 2.95 12.95 2.5 13.5 2.5S14.5 2.95 14.5 3.5V12.5H15.5V6.5C15.5 5.95 15.95 5.5 16.5 5.5S17.5 5.95 17.5 6.5V12.5H18.5V9.5C18.5 8.95 18.95 8.5 19.5 8.5S20.5 8.95 20.5 9.5V12.5C20.5 16.92 16.92 20 12.5 20Z"/></svg>
+              </span>
+            </h1>
+            <p class="header-greeting-sub">Route details, stops, and transport contact info.</p>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-right">
+
+          <!-- Notifications Trigger -->
+          <div class="header-action-wrap notifications-wrap">
+            <button type="button" class="header-icon-btn" id="btn-notifications-toggle" aria-label="Notifications" aria-expanded="false" aria-haspopup="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-badge-count" id="header-notif-count">0</span>
+            </button>
+
+            <!-- Notifications Dropdown Popover -->
+            <div class="notifications-popover" id="notifications-popover" role="dialog" aria-label="Recent Alerts">
+              <div class="popover-header">
+                <h3 class="popover-title">Recent Alerts</h3>
+                <span class="popover-badge" id="popover-badge-count">0 New</span>
+              </div>
+              <ul class="popover-list" id="popover-notif-list">
+              </ul>
+              <div class="popover-footer">
+                <a href="notifications.html" class="popover-view-all">View All Notifications →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme Switcher -->
+          <button type="button" class="header-icon-btn" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle Light / Dark Mode">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button type="button" class="header-icon-btn" id="direction-toggle" aria-label="Switch between LTR and RTL orientation" title="Toggle LTR / RTL Direction">
+            <svg class="dir-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line><polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line></svg>
+          </button>
+
+          <!-- User Profile Dropdown -->
+          <div class="user-profile-wrapper">
+            <button type="button" class="user-profile-button" id="user-profile-btn" aria-label="Parent Profile Menu" aria-expanded="false" aria-haspopup="true">
+              <div id="user-avatar-slot">
+                <span class="user-avatar-initials" id="user-avatar-initials">PT</span>
+              </div>
+              <div class="user-meta">
+                <span class="user-name" id="user-display-name">Parent Name</span>
+                <span class="user-role" id="user-display-role">Parent</span>
+              </div>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+
+            <!-- Profile Dropdown Menu -->
+            <div class="profile-dropdown-menu" id="profile-dropdown-menu" role="menu" aria-label="User Account Options">
+              <div class="profile-dropdown-header">
+                <p class="dropdown-full-name" id="dropdown-full-name">Parent Name</p>
+                <p class="dropdown-email" id="dropdown-email">parent@example.com</p>
+              </div>
+              <ul class="dropdown-menu-list">
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-profile-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>My Profile</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-settings-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <span>Account Settings</span>
+                  </button>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                  <button type="button" class="dropdown-menu-item item-logout" role="menuitem" id="btn-logout-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Log Out</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- ================================================
+           MAIN ROUTE & STOPS CONTENT
+      ================================================ -->
+      <main class="dashboard-content" id="main-route-stops-content">
+
+        <!-- Page Header & Child Selector Bar -->
+        <div class="route-stops-header-bar">
+          <div class="route-page-title-group">
+            <h2 class="route-page-title">Route &amp; Stops</h2>
+            <p class="route-page-subtitle">View your child's assigned route, pickup stop and school journey details.</p>
+          </div>
+
+          <!-- Dynamic Child Selector -->
+          <div class="child-selector-wrap" id="child-selector-wrap" style="display: none;">
+            <label for="child-select" class="child-selector-label">Showing Route For:</label>
+            <select id="child-select" class="child-selector-select" aria-label="Select Child to View Route"></select>
+          </div>
+        </div>
+
+        <!-- Dynamic Content Container -->
+        <div id="route-stops-dynamic-container">
+
+          <!-- 1. EMPTY STATE (Default for new users without child/route) -->
+          <div class="route-empty-state-card" id="route-empty-state" style="display: none;">
+            <div class="empty-state-icon-circle">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+            </div>
+            <h3 class="empty-state-title">No route assigned yet.</h3>
+            <p class="empty-state-desc">You haven't added child details or the school transport desk has not assigned a bus route yet. Add your child's profile to get automated route mapping.</p>
+            <a href="my-children.html" class="btn-add-child-link">
+              <span>Add Child Details</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- 2. ACTIVE ROUTE VIEW (Populated when route exists) -->
+          <div id="route-active-view" style="display: none;">
+
+            <!-- 4 Top Metric Cards -->
+            <div class="route-metrics-grid">
+              
+              <!-- Card 1: Route & Bus -->
+              <div class="route-metric-card">
+                <div class="route-metric-icon icon-route-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><circle cx="7" cy="19" r="2"></circle><circle cx="17" cy="19" r="2"></circle><path d="M3 11h18"></path></svg>
+                </div>
+                <div class="route-metric-info">
+                  <span class="metric-label">Assigned Route</span>
+                  <span class="metric-value" id="val-route-bus">Route --</span>
+                  <span class="metric-sub" id="val-bus-id">Bus --</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Pickup Stop & Time -->
+              <div class="route-metric-card">
+                <div class="route-metric-icon icon-pickup-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="route-metric-info">
+                  <span class="metric-label">Pickup Stop</span>
+                  <span class="metric-value" id="val-pickup-stop">--</span>
+                  <span class="metric-sub" id="val-pickup-time">Pickup: --</span>
+                </div>
+              </div>
+
+              <!-- Card 3: School Destination -->
+              <div class="route-metric-card">
+                <div class="route-metric-icon icon-school-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                </div>
+                <div class="route-metric-info">
+                  <span class="metric-label">School</span>
+                  <span class="metric-value" id="val-school-name">--</span>
+                  <span class="metric-sub" id="val-school-reach">Arrival: 8:00 AM</span>
+                </div>
+              </div>
+
+              <!-- Card 4: Drop-off Stop & Time -->
+              <div class="route-metric-card">
+                <div class="route-metric-icon icon-drop-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="route-metric-info">
+                  <span class="metric-label">Drop-off Stop</span>
+                  <span class="metric-value" id="val-drop-stop">--</span>
+                  <span class="metric-sub" id="val-drop-time">Drop-off: 4:00 PM</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Dual Panel Grid: Stops Timeline & Driver Details -->
+            <div class="route-details-grid">
+
+              <!-- Left Panel: Stops Timeline -->
+              <div class="route-panel-card">
+                <div class="panel-header-row">
+                  <div class="panel-title-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+                    <h3 class="panel-title">Route Stops &amp; Schedule</h3>
+                  </div>
+
+                  <!-- Morning / Afternoon Shift Toggle -->
+                  <div class="route-type-toggle-group">
+                    <button type="button" class="route-toggle-btn active" id="btn-toggle-morning" data-shift="morning">Morning Pickup</button>
+                    <button type="button" class="route-toggle-btn" id="btn-toggle-afternoon" data-shift="afternoon">Evening Return</button>
+                  </div>
+                </div>
+
+                <!-- Stops Timeline List -->
+                <ul class="stops-timeline-list" id="stops-timeline-list">
+                  <!-- Rendered dynamically by route-stops.js -->
+                </ul>
+              </div>
+
+              <!-- Right Panel: Driver & Bus Specs -->
+              <div class="route-panel-card">
+                <div class="panel-header-row">
+                  <div class="panel-title-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3 class="panel-title">Driver &amp; Bus Specifications</h3>
+                  </div>
+                </div>
+
+                <!-- Driver Card -->
+                <div class="driver-profile-card">
+                  <div class="driver-avatar-wrap" id="driver-avatar-slot">
+                    <span id="driver-initials">DR</span>
+                  </div>
+                  <div class="driver-info-block">
+                    <div class="driver-name-row">
+                      <span class="driver-name" id="driver-name-text">Assigned Driver</span>
+                      <span class="driver-rating-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="#F8C52C"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <span id="driver-rating-val">4.9</span>
+                      </span>
+                    </div>
+                    <span class="driver-sub-text" id="driver-experience-text">Experience: 8+ Years • Verified</span>
+                  </div>
+                  <a href="tel:+919876543210" class="driver-call-btn" id="driver-phone-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>Call Driver</span>
+                  </a>
+                </div>
+
+                <!-- Bus Specifications Grid -->
+                <div class="bus-specs-grid">
+                  <div class="bus-spec-item">
+                    <span class="spec-title">Bus Registration</span>
+                    <span class="spec-val" id="spec-bus-reg">KA-01-AB-1824</span>
+                  </div>
+                  <div class="bus-spec-item">
+                    <span class="spec-title">Bus Capacity</span>
+                    <span class="spec-val" id="spec-bus-capacity">36 Seats (GPS Enabled)</span>
+                  </div>
+                  <div class="bus-spec-item">
+                    <span class="spec-title">Bus Attendant</span>
+                    <span class="spec-val" id="spec-bus-helper">Mrs. Rekha S.</span>
+                  </div>
+                  <div class="bus-spec-item">
+                    <span class="spec-title">Speed Governor</span>
+                    <span class="spec-val" id="spec-speed-governor">Active (Max 40 km/h)</span>
+                  </div>
+                </div>
+
+                <!-- Quick Live Tracking Deep Link -->
+                <div style="margin-top: 0.5rem;">
+                  <a href="live-tracking.html" class="btn-add-child-link" style="width: 100%; justify-content: center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                    <span>Open Real-Time Live Map</span>
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Visual Route Schematic Card -->
+            <div class="route-schematic-card">
+              <div class="panel-header-row" style="border: none; padding-bottom: 0.5rem;">
+                <div class="panel-title-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                  <h3 class="panel-title">Route Vector Schematic</h3>
+                </div>
+              </div>
+              <div class="schematic-svg-wrap">
+                <svg class="schematic-svg" viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Background Path -->
+                  <path d="M 40 60 L 720 60" stroke="var(--card-border)" stroke-width="8" stroke-linecap="round"/>
+                  <!-- Active Route Segment -->
+                  <path d="M 40 60 L 380 60" stroke="var(--primary-green)" stroke-width="8" stroke-linecap="round"/>
+                  
+                  <!-- Origin Stop Pin -->
+                  <circle cx="60" cy="60" r="12" fill="var(--card-bg)" stroke="var(--primary-green)" stroke-width="4"/>
+                  <text x="60" y="95" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" fill="var(--dark-text)">Bus Depot</text>
+                  
+                  <!-- Intermediate Stop -->
+                  <circle cx="200" cy="60" r="9" fill="var(--card-bg)" stroke="var(--primary-green)" stroke-width="3"/>
+                  <text x="200" y="95" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" fill="var(--muted-text)">Main Gate</text>
+
+                  <!-- User Designated Pickup Stop -->
+                  <circle cx="380" cy="60" r="14" fill="var(--accent-yellow)" stroke="#B48206" stroke-width="4"/>
+                  <circle cx="380" cy="60" r="5" fill="#3D2B00"/>
+                  <text x="380" y="32" text-anchor="middle" font-family="'Sora', sans-serif" font-size="11" font-weight="700" fill="var(--primary-green)">★ Your Child's Stop</text>
+                  <text x="380" y="95" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" fill="var(--dark-text)" id="schematic-stop-name">Gandhi Nagar</text>
+
+                  <!-- Ahead Stop -->
+                  <circle cx="540" cy="60" r="9" fill="var(--card-bg)" stroke="var(--muted-text)" stroke-width="3"/>
+                  <text x="540" y="95" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" fill="var(--muted-text)">Green Park</text>
+
+                  <!-- School Terminus -->
+                  <circle cx="700" cy="60" r="13" fill="var(--info)" stroke="var(--white)" stroke-width="3"/>
+                  <text x="700" y="95" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" fill="var(--info)">School</text>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/route-stops.js" defer></script>
+</body>
+</html>

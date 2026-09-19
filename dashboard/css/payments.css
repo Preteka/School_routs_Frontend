@@ -1,0 +1,531 @@
+/* ==========================================================================
+   SCHOOLROUTE — PAYMENTS PAGE STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, theme-ready, RTL-ready CSS for Payments
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER & SUMMARY BAR
+   -------------------------------------------------------------------------- */
+.payments-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.payments-page-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.payments-page-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.payments-page-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. CURRENT SUBSCRIPTION HERO CARD
+   -------------------------------------------------------------------------- */
+.subscription-hero-card {
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--soft-background) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 1.75rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.subscription-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green) 0%, var(--accent-yellow) 100%);
+}
+
+.sub-details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sub-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sub-plan-badge {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-text);
+}
+
+.sub-status-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.status-active {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.status-pending {
+  background: var(--warning-bg);
+  color: #B48206;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.sub-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.sub-metric-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sub-metric-label {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sub-metric-val {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.sub-metric-sub {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+}
+
+.sub-pricing-col {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.pricing-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  color: var(--body-text);
+}
+
+.pricing-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 1px solid var(--divider-color);
+  padding-top: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.pricing-total-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.pricing-total-amount {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-green);
+}
+
+.sub-action-btn-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-sub-primary {
+  flex: 1;
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: var(--transition-fast);
+}
+
+.btn-sub-primary:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+.btn-sub-outline {
+  background: transparent;
+  color: var(--dark-text);
+  border: 1px solid var(--card-border);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: var(--transition-fast);
+}
+
+.btn-sub-outline:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  background: var(--soft-background);
+}
+
+/* --------------------------------------------------------------------------
+   3. PAYMENT HISTORY TABLE SECTION
+   -------------------------------------------------------------------------- */
+.payment-history-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 2rem;
+}
+
+.history-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.history-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.history-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.table-responsive-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--divider-color);
+  border-radius: var(--radius-md);
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+[dir="rtl"] .payments-table {
+  text-align: right;
+}
+
+.payments-table th {
+  background: var(--soft-background);
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--divider-color);
+  white-space: nowrap;
+}
+
+.payments-table td {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--divider-color);
+  color: var(--dark-text);
+  vertical-align: middle;
+}
+
+.payments-table tr:last-child td {
+  border-bottom: none;
+}
+
+.payments-table tr:hover td {
+  background: rgba(7, 91, 70, 0.02);
+}
+
+.invoice-id-badge {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  background: var(--light-green);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+}
+
+.btn-invoice-action {
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  color: var(--dark-text);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition-fast);
+}
+
+.btn-invoice-action:hover {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   4. INVOICE MODAL
+   -------------------------------------------------------------------------- */
+.invoice-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 27, 22, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.invoice-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.invoice-modal-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: var(--shadow-popover);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.invoice-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--divider-color);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.invoice-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  margin: 0 0 0.2rem 0;
+}
+
+.invoice-brand-tagline {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+.invoice-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.invoice-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.invoice-info-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted-text);
+  text-transform: uppercase;
+}
+
+.invoice-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.invoice-items-table th,
+.invoice-items-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--divider-color);
+  font-size: 0.85rem;
+}
+
+.invoice-items-table th {
+  background: var(--soft-background);
+  font-weight: 700;
+  color: var(--muted-text);
+}
+
+.invoice-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--divider-color);
+  padding-top: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. CLEAN EMPTY STATE (ZERO FAKE DATA)
+   -------------------------------------------------------------------------- */
+.payments-empty-state-card {
+  background: var(--card-bg);
+  border: 1px dashed var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.payments-empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--soft-background);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--card-border);
+}
+
+.payments-empty-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.payments-empty-desc {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  max-width: 440px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .subscription-hero-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .sub-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .payments-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sub-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .sub-action-btn-row {
+    flex-direction: column;
+  }
+  .invoice-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

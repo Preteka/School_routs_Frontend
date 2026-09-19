@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Parent Dashboard — SchoolRoute Live Bus Tracking &amp; Student Safety</title>
+  <meta name="description" content="SchoolRoute Parent Portal — Real-time live school bus GPS tracking, estimated arrival times, route stops, student status, and driver information.">
+  <meta name="keywords" content="school bus tracking, parent dashboard, student transportation, safe school route, real-time bus GPS">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="SchoolRoute Parent Dashboard — Safe Kids • Stronger Tomorrows">
+  <meta property="og:description" content="Real-time school bus tracking, instant stop alerts, and verified driver details.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/schoolroute-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/schoolroute-logo.png">
+
+  <!-- Google Fonts: Sora (Headings), DM Sans (Body/UI), Caveat (Handwritten Accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/dashboard.css">
+  <!-- Auth Guard: Parent Only -->
+  <script>
+    (function() {
+      try {
+        var s = localStorage.getItem('schoolroute_current_user');
+        if (!s) { window.location.replace('../login.html'); return; }
+        var u = JSON.parse(s);
+        if (!u || !u.name || u.role === 'admin') { window.location.replace('../login.html'); return; }
+      } catch(e) {
+        window.location.replace('../login.html');
+      }
+    })();
+  </script>
+</head>
+<body class="dashboard-body">
+
+  <!-- Keyboard Accessibility Skip Link -->
+  <a href="#main-dashboard-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- ====================================================
+       DASHBOARD WRAPPER
+  ==================================================== -->
+  <div class="dashboard-layout" id="dashboard-layout">
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ==================================================
+         1. LEFT SIDEBAR
+    ================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard Navigation">
+      
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-wrapper">
+        <a href="dashboard.html" class="sidebar-brand" aria-label="SchoolRoute Dashboard Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="brand-logo-img logo-light" width="158" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="brand-logo-img logo-dark" width="158" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <button type="button" class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close sidebar menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav" aria-label="Parent Menu">
+        <ul class="sidebar-menu-list">
+          
+          <li class="sidebar-menu-item">
+            <a href="dashboard.html" class="sidebar-link active" data-nav="dashboard" aria-current="page">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+              </span>
+              <span class="sidebar-link-text">Dashboard</span>
+              <span class="active-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="live-tracking.html" class="sidebar-link" data-nav="live-tracking">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </span>
+              <span class="sidebar-link-text">Live Tracking</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="my-children.html" class="sidebar-link" data-nav="my-children">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </span>
+              <span class="sidebar-link-text">My Children</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="route-stops.html" class="sidebar-link" data-nav="route-stops">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Route &amp; Stops</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="notifications.html" class="sidebar-link" data-nav="notifications">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Notifications</span>
+              <span class="sidebar-badge" id="sidebar-notif-badge">0</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="payments.html" class="sidebar-link" data-nav="payments">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Payments</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="reports.html" class="sidebar-link" data-nav="reports">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Reports</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="support.html" class="sidebar-link" data-nav="support">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Support</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="settings.html" class="sidebar-link" data-nav="settings">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </span>
+              <span class="sidebar-link-text">Settings</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Sidebar Support Card -->
+      <div class="sidebar-footer">
+        <div class="sidebar-support-card">
+          <div class="support-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+          </div>
+          <div class="support-card-content">
+            <h4 class="support-card-title">Need Help?</h4>
+            <p class="support-card-sub">We're here for you</p>
+          </div>
+          <button type="button" class="btn-support-action" id="btn-support-action">
+            <span>Contact Support</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ==================================================
+         2. MAIN DASHBOARD CONTAINER
+    ================================================== -->
+    <div class="dashboard-main-area">
+
+      <!-- ================================================
+           TOP HEADER
+      ================================================ -->
+      <header class="dashboard-header" id="dashboard-header">
+        <div class="header-left">
+          <!-- Mobile Hamburger Menu Button -->
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="dashboard-sidebar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+
+          <!-- Greeting -->
+          <div class="header-greeting-block">
+            <h1 class="header-greeting-title">
+              Good Morning, <span id="header-parent-name">Parent</span>! 
+              <span class="greeting-wave-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2C11.67 2 11 2.67 11 3.5V11H10.5C9.67 11 9 10.33 9 9.5V5.5C9 4.67 8.33 4 7.5 4S6 4.67 6 5.5V13.25C5.4 12.72 4.62 12.44 3.79 12.63C2.8 12.85 2.06 13.75 2.01 14.77C1.94 16.27 2.89 17.58 4.22 18.79C6.44 20.81 9.42 22 12.5 22C17.75 22 22 17.75 22 12.5C22 7.25 17.75 2 12.5 2ZM12.5 20C9.97 20 7.49 19.01 5.61 17.29C4.54 16.32 3.99 15.34 4.01 14.86C4.01 14.82 4.04 14.73 4.22 14.69C4.47 14.63 4.77 14.78 5.17 15.19L6.5 16.52V5.5C6.5 4.95 6.95 4.5 7.5 4.5S8.5 4.95 8.5 5.5V11.5H9.5V9.5C9.5 8.95 9.95 8.5 10.5 8.5S11.5 8.95 11.5 9.5V12.5H12.5V3.5C12.5 2.95 12.95 2.5 13.5 2.5S14.5 2.95 14.5 3.5V12.5H15.5V6.5C15.5 5.95 15.95 5.5 16.5 5.5S17.5 5.95 17.5 6.5V12.5H18.5V9.5C18.5 8.95 18.95 8.5 19.5 8.5S20.5 8.95 20.5 9.5V12.5C20.5 16.92 16.92 20 12.5 20Z"/></svg>
+              </span>
+            </h1>
+            <p class="header-greeting-sub">Here's what's happening with your child's journey today.</p>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-right">
+
+          <!-- Notifications Trigger -->
+          <div class="header-action-wrap notifications-wrap">
+            <button type="button" class="header-icon-btn" id="btn-notifications-toggle" aria-label="Notifications" aria-expanded="false" aria-haspopup="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-badge-count" id="header-notif-count">0</span>
+            </button>
+
+            <!-- Notifications Dropdown Popover -->
+            <div class="notifications-popover" id="notifications-popover" role="dialog" aria-label="Recent Alerts">
+              <div class="popover-header">
+                <h3 class="popover-title">Recent Alerts</h3>
+                <span class="popover-badge" id="popover-badge-count">0 New</span>
+              </div>
+              <ul class="popover-list" id="popover-notif-list">
+              </ul>
+              <div class="popover-footer">
+                <a href="#notifications" class="popover-view-all" id="btn-popover-view-all">View All Notifications →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme Switcher -->
+          <button type="button" class="header-icon-btn" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle Light / Dark Mode">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button type="button" class="header-icon-btn" id="direction-toggle" aria-label="Switch between LTR and RTL orientation" title="Toggle LTR / RTL Direction">
+            <svg class="dir-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line><polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line></svg>
+          </button>
+
+          <!-- User Profile Dropdown -->
+          <div class="user-profile-wrapper">
+            <button type="button" class="user-profile-button" id="user-profile-btn" aria-label="Parent Profile Menu" aria-expanded="false" aria-haspopup="true">
+              <div id="user-avatar-slot">
+                <span class="user-avatar-initials" id="user-avatar-initials">PT</span>
+              </div>
+              <div class="user-meta">
+                <span class="user-name" id="user-display-name">Parent Name</span>
+                <span class="user-role" id="user-display-role">Parent</span>
+              </div>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+
+            <!-- Profile Dropdown Menu -->
+            <div class="profile-dropdown-menu" id="profile-dropdown-menu" role="menu" aria-label="User Account Options">
+              <div class="profile-dropdown-header">
+                <p class="dropdown-full-name" id="dropdown-full-name">Parent Name</p>
+                <p class="dropdown-email" id="dropdown-email">parent@example.com</p>
+              </div>
+              <ul class="dropdown-menu-list">
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-profile-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>My Profile</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-settings-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <span>Account Settings</span>
+                  </button>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                  <button type="button" class="dropdown-menu-item item-logout" role="menuitem" id="btn-logout-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Log Out</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- ================================================
+           MAIN DASHBOARD SCROLLABLE CONTENT
+      ================================================ -->
+      <main class="dashboard-content" id="main-dashboard-content">
+
+        <!-- ==============================================
+             7. DASHBOARD HERO BANNER
+        ============================================== -->
+        <section class="dashboard-hero-banner" aria-label="Welcome Overview">
+          <div class="hero-card-inner">
+            
+            <div class="hero-content-col">
+              <!-- Safe Tracked Connected Badge -->
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span class="hero-badge-text">SAFE &bull; TRACKED &bull; CONNECTED</span>
+              </div>
+
+              <!-- Main Heading with Highlight -->
+              <h2 class="hero-headline">
+                Your Child’s Safety<br>
+                Is Our <span class="text-highlight-yellow">Priority</span>
+              </h2>
+
+              <!-- Supporting Text -->
+              <p class="hero-subtext">
+                Real-time tracking, instant alerts, and complete visibility for a worry-free journey.
+              </p>
+            </div>
+
+            <!-- Right Hero Visual -->
+            <div class="hero-visual-col">
+              <div class="hero-image-frame">
+                <img src="assets/images/hero-bus.jpg" alt="SchoolRoute Safe Transportation Bus" class="hero-bus-photo" width="460" height="280" loading="eager" onerror="this.onerror=null; this.src='../assets/images/hero-school-bus.jpg';">
+                
+                <!-- Handwritten Decorative Phrase Badge -->
+                <div class="hero-decorative-badge" aria-hidden="true">
+                  <svg class="badge-sparkle-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span class="decorative-phrase-text">Safe Kids<br>Stronger Tomorrows</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==============================================
+             10. TOP 4 STAT CARDS
+        ============================================== -->
+        <section class="stat-cards-grid" aria-label="Key Journey Metrics">
+          
+          <!-- Card 1: Active Bus -->
+          <div class="stat-card" id="stat-card-bus">
+            <div class="stat-card-icon-wrap icon-theme-green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M3 10h18"></path><path d="M8 4v2"></path><path d="M16 4v2"></path></svg>
+            </div>
+            <div class="stat-card-body">
+              <span class="stat-card-label">Active Bus</span>
+              <h3 class="stat-card-value" id="stat-bus-number">Bus 24</h3>
+              <p class="stat-card-sub" id="stat-bus-route">Greenwood Route</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Current Location -->
+          <div class="stat-card" id="stat-card-location">
+            <div class="stat-card-icon-wrap icon-theme-emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="stat-card-body">
+              <span class="stat-card-label">Current Location</span>
+              <h3 class="stat-card-value" id="stat-current-location">Maple Street</h3>
+              <p class="stat-card-sub" id="stat-location-time">2 mins ago</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Estimated Arrival (Yellow Accent) -->
+          <div class="stat-card" id="stat-card-eta">
+            <div class="stat-card-icon-wrap icon-theme-yellow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="stat-card-body">
+              <span class="stat-card-label">Estimated Arrival</span>
+              <div class="stat-value-group">
+                <h3 class="stat-card-value" id="stat-eta-time">8:25 AM</h3>
+                <span class="stat-pill-status pill-on-time" id="stat-eta-status">On Time</span>
+              </div>
+              <p class="stat-card-sub">At your child's stop</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Today's Status -->
+          <div class="stat-card" id="stat-card-status">
+            <div class="stat-card-icon-wrap icon-theme-teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+            </div>
+            <div class="stat-card-body">
+              <span class="stat-card-label">Today's Status</span>
+              <h3 class="stat-card-value" id="stat-today-status">Safe &amp; On Route</h3>
+              <p class="stat-card-sub" id="stat-status-detail">No issues</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ==============================================
+             12. MAIN DASHBOARD CONTENT GRID (TOP TIER)
+        ============================================== -->
+        <section class="main-content-grid" aria-label="Live Tracking &amp; Route Timeline">
+          
+          <!-- 13. LIVE TRACKING CARD (PRIMARY) -->
+          <div class="dashboard-panel live-tracking-panel" id="live-tracking">
+            
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Live Tracking</h3>
+                <p class="panel-subtitle">Real-time location of your child's bus</p>
+              </div>
+              <div class="panel-header-badges">
+                <span class="live-pulse-badge">
+                  <span class="pulse-ring"></span>
+                  <span class="pulse-dot"></span>
+                  <span class="pulse-text">Live Tracking Active</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Interactive Vector Map Surface -->
+            <div class="map-container" id="map-container" aria-label="Interactive School Bus Route Map">
+              
+              <!-- Realistic SVG Map Canvas -->
+              <div class="map-canvas-layer" id="map-canvas">
+                <svg class="map-vector-svg" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <!-- Background Grid Pattern -->
+                    <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" class="map-grid-line" stroke-width="1"/>
+                    </pattern>
+                    <!-- Park Texture -->
+                    <pattern id="parkPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <circle cx="5" cy="5" r="1.5" class="map-tree-dot"/>
+                      <circle cx="15" cy="15" r="1.5" class="map-tree-dot"/>
+                    </pattern>
+                    <!-- Animated Route Dash -->
+                    <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#32A852"/>
+                      <stop offset="60%" stop-color="#075B46"/>
+                      <stop offset="100%" stop-color="#F8C52C"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Map Background Blocks -->
+                  <rect width="800" height="420" class="map-bg-fill"/>
+                  <rect width="800" height="420" fill="url(#mapGrid)"/>
+
+                  <!-- City Parks / Green Spaces -->
+                  <rect x="50" y="40" width="160" height="90" rx="12" class="map-park-fill"/>
+                  <rect x="50" y="40" width="160" height="90" rx="12" fill="url(#parkPattern)"/>
+                  <text x="130" y="90" class="map-label-park" text-anchor="middle">Central Green Park</text>
+
+                  <rect x="540" y="240" width="210" height="120" rx="16" class="map-park-fill"/>
+                  <rect x="540" y="240" width="210" height="120" rx="16" fill="url(#parkPattern)"/>
+                  <text x="645" y="305" class="map-label-park" text-anchor="middle">Riverside Forest Reserve</text>
+
+                  <!-- Secondary Road Network -->
+                  <path d="M 0,90 L 800,90" fill="none" class="map-road-secondary" stroke-width="12"/>
+                  <path d="M 0,220 L 800,220" fill="none" class="map-road-secondary" stroke-width="12"/>
+                  <path d="M 0,330 L 800,330" fill="none" class="map-road-secondary" stroke-width="12"/>
+                  <path d="M 230,0 L 230,420" fill="none" class="map-road-secondary" stroke-width="12"/>
+                  <path d="M 480,0 L 480,420" fill="none" class="map-road-secondary" stroke-width="12"/>
+                  <path d="M 680,0 L 680,420" fill="none" class="map-road-secondary" stroke-width="12"/>
+
+                  <!-- Primary Highway & Bus Route Corridor -->
+                  <path id="busRoutePath" d="M 90,330 L 230,330 Q 260,330 260,300 L 260,220 Q 260,190 290,190 L 480,190 Q 510,190 510,160 L 510,90 L 680,90 Q 710,90 710,120 L 710,260" fill="none" class="map-road-main" stroke-width="22"/>
+                  <path d="M 90,330 L 230,330 Q 260,330 260,300 L 260,220 Q 260,190 290,190 L 480,190 Q 510,190 510,160 L 510,90 L 680,90 Q 710,90 710,120 L 710,260" fill="none" class="map-route-highlight" stroke="url(#routeGradient)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Road Names -->
+                  <text x="140" y="322" class="map-street-name">Greenwood Blvd</text>
+                  <text x="360" y="182" class="map-street-name">Maple Street</text>
+                  <text x="580" y="82" class="map-street-name">Oak Avenue</text>
+                  <text x="720" y="210" class="map-street-name" transform="rotate(90 720 210)">Riverside Way</text>
+
+                  <!-- Stop 1: Greenwood School (Completed) -->
+                  <g class="map-stop-node completed" transform="translate(90, 330)">
+                    <circle r="12" class="node-outer-bg"/>
+                    <circle r="6" class="node-inner-dot"/>
+                  </g>
+
+                  <!-- Stop 2: Maple Street (Current Bus Point) -->
+                  <g class="map-stop-node current-stop" transform="translate(420, 190)">
+                    <circle r="14" class="node-outer-pulse"/>
+                    <circle r="8" class="node-outer-bg current"/>
+                    <circle r="4" class="node-inner-dot current"/>
+                  </g>
+
+                  <!-- Stop 3: Oak Avenue (Child's Stop) -->
+                  <g class="map-stop-node child-stop" transform="translate(620, 90)">
+                    <circle r="16" class="node-child-ring"/>
+                    <circle r="9" class="node-outer-bg child"/>
+                    <circle r="4" class="node-inner-dot child"/>
+                  </g>
+
+                  <!-- Stop 4: Riverside School (Final Stop) -->
+                  <g class="map-stop-node final-stop" transform="translate(710, 260)">
+                    <circle r="12" class="node-outer-bg"/>
+                    <circle r="6" class="node-inner-dot final"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Live Bus Floating Marker with Tooltip -->
+              <div class="map-live-marker" id="live-bus-marker" style="top: 42%; left: 52%;">
+                <div class="marker-pulse-glow"></div>
+                <div class="marker-bus-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M3 10h18"></path><path d="M8 4v2"></path><path d="M16 4v2"></path></svg>
+                </div>
+                <!-- Callout Tooltip -->
+                <div class="marker-callout-card">
+                  <div class="callout-header">
+                    <span class="callout-bus-id">Bus 24</span>
+                    <span class="callout-status-tag">On Route</span>
+                  </div>
+                  <p class="callout-next-info">Next Stop: <strong>Maple Street</strong></p>
+                  <span class="callout-eta-pill">2 mins away</span>
+                </div>
+              </div>
+
+              <!-- Child's Stop Callout Marker -->
+              <div class="map-child-marker" style="top: 18%; left: 74%;">
+                <div class="child-marker-pin">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="child-marker-tag">
+                  <span class="tag-title">Oak Avenue</span>
+                  <span class="tag-sub">Aaradhya's Stop &bull; 8:25 AM (ETA)</span>
+                </div>
+              </div>
+
+              <!-- 14. MAP CONTROLS -->
+              <div class="map-controls-group" aria-label="Map Navigation Controls">
+                <button type="button" class="map-ctrl-btn" id="btn-map-zoom-in" aria-label="Zoom In">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+                <button type="button" class="map-ctrl-btn" id="btn-map-zoom-out" aria-label="Zoom Out">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+                <button type="button" class="map-ctrl-btn" id="btn-map-recenter" aria-label="Recenter Map to Bus Location" title="Recenter Map">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- 15. MAP FOOTER -->
+            <div class="map-panel-footer">
+              <div class="map-footer-status">
+                <span class="status-indicator-live"></span>
+                <span class="status-live-text">Live</span>
+                <span class="status-divider">&bull;</span>
+                <span class="status-timestamp" id="map-last-updated">Last updated: 2 mins ago</span>
+              </div>
+              <div class="map-footer-actions">
+                <button type="button" class="btn-text-link" id="btn-view-full-map">
+                  <span>View Full Map</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 16. TODAY'S STOPS PANEL -->
+          <div class="dashboard-panel stops-panel" id="route-stops">
+            
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Today's Stops</h3>
+                <p class="panel-subtitle">Morning Route Progress</p>
+              </div>
+              <button type="button" class="btn-text-link" id="btn-view-route">
+                <span>View Route</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="timeline-container" id="stops-timeline-container">
+              <ol class="stops-timeline-list" id="stops-timeline-list">
+              </ol>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ==============================================
+             SECONDARY DASHBOARD GRID (BOTTOM TIER)
+        ============================================== -->
+        <section class="secondary-content-grid" aria-label="Driver, Children, Notifications and Referral">
+          
+          <!-- 20. DRIVER INFORMATION CARD -->
+          <div class="dashboard-panel driver-panel" id="driver-info">
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Driver Information</h3>
+                <p class="panel-subtitle">Assigned Route Chaperone</p>
+              </div>
+              <div id="driver-header-badge">
+                <span class="verified-pill">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Verified</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="driver-profile-card" id="driver-card-body">
+            </div>
+          </div>
+
+          <!-- 18. RECENT NOTIFICATIONS CARD -->
+          <div class="dashboard-panel notifications-panel" id="notifications">
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Recent Notifications</h3>
+                <p class="panel-subtitle">Live Journey Log</p>
+              </div>
+              <button type="button" class="btn-text-link" id="btn-view-all-notifications">
+                <span>View All</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+
+            <div id="notifications-container">
+              <ul class="notifications-list" id="notifications-list">
+              </ul>
+            </div>
+          </div>
+
+          <!-- 17. MY CHILDREN CARD -->
+          <div class="dashboard-panel children-panel" id="my-children">
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">My Children</h3>
+                <p class="panel-subtitle">Registered Students</p>
+              </div>
+              <div class="panel-header-actions">
+                <button type="button" class="btn-text-link" id="btn-manage-children">
+                  <span>Manage</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Student Card with Carousel Controls -->
+            <div class="child-card-carousel" id="children-card-container">
+            </div>
+          </div>
+
+          <!-- 21. REFERRAL CARD -->
+          <div class="dashboard-panel referral-panel" id="referral-card">
+            <div class="referral-card-inner">
+              <div class="referral-icon-badge">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+              </div>
+              <div class="referral-content">
+                <h3 class="referral-title">Refer a Friend</h3>
+                <p class="referral-subtext">Help other parents stay worry-free and enjoy safe school journeys.</p>
+              </div>
+              <button type="button" class="btn-referral-cta" id="btn-earn-rewards">
+                <span>Earn Rewards</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Toast / Demo Notification Container -->
+  <div class="dashboard-toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Core Dashboard JavaScript -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+/* ==========================================================================
+   SCHOOLROUTE — REPORTS PAGE STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, theme-ready, RTL-ready CSS for Reports
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER & FILTER BAR
+   -------------------------------------------------------------------------- */
+.reports-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.reports-page-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.reports-page-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.reports-page-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+.reports-control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.reports-select {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 1rem 0.45rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  cursor: pointer;
+  outline: none;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-fast);
+}
+
+.reports-select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(7, 91, 70, 0.12);
+}
+
+.btn-export-report {
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 2px 8px rgba(7, 91, 70, 0.25);
+  transition: var(--transition-fast);
+}
+
+.btn-export-report:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   2. 4 DASHBOARD-STYLE STAT CARDS
+   -------------------------------------------------------------------------- */
+.reports-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-normal);
+}
+
+.report-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary-green);
+}
+
+.report-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-stat-total {
+  background: rgba(7, 91, 70, 0.1);
+  color: var(--primary-green);
+}
+
+.icon-stat-ontime {
+  background: rgba(40, 167, 69, 0.12);
+  color: var(--success);
+}
+
+.icon-stat-delayed {
+  background: rgba(245, 158, 11, 0.15);
+  color: #B48206;
+}
+
+[data-theme="dark"] .icon-stat-delayed {
+  color: #F8C52C;
+}
+
+.icon-stat-absent {
+  background: rgba(230, 57, 70, 0.12);
+  color: var(--danger);
+}
+
+.report-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.report-stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.report-stat-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.25;
+}
+
+.report-stat-sub {
+  font-size: 0.78rem;
+  color: var(--body-text);
+}
+
+/* --------------------------------------------------------------------------
+   3. VISUAL SVG CHART SECTION (ZERO EXTERNAL LIBRARIES)
+   -------------------------------------------------------------------------- */
+.reports-charts-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.chart-panel-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chart-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: 0.85rem;
+}
+
+.chart-panel-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.svg-chart-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.svg-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.donut-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.donut-center-text {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary-green);
+}
+
+.donut-center-sub {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. JOURNEY HISTORY LOG TABLE
+   -------------------------------------------------------------------------- */
+.journey-history-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 2rem;
+}
+
+.journey-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--divider-color);
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+}
+
+.journey-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+[dir="rtl"] .journey-log-table {
+  text-align: right;
+}
+
+.journey-log-table th {
+  background: var(--soft-background);
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--divider-color);
+  white-space: nowrap;
+}
+
+.journey-log-table td {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--divider-color);
+  color: var(--dark-text);
+  vertical-align: middle;
+}
+
+.journey-log-table tr:last-child td {
+  border-bottom: none;
+}
+
+.journey-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+}
+
+.pill-completed {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.pill-delayed {
+  background: var(--warning-bg);
+  color: #B48206;
+}
+
+[data-theme="dark"] .pill-delayed {
+  color: #F8C52C;
+}
+
+.pill-absent {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* --------------------------------------------------------------------------
+   5. CLEAN EMPTY STATE (ZERO FAKE DATA)
+   -------------------------------------------------------------------------- */
+.reports-empty-state-card {
+  background: var(--card-bg);
+  border: 1px dashed var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.reports-empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--soft-background);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--card-border);
+}
+
+.reports-empty-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.reports-empty-desc {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  max-width: 460px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .reports-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reports-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .reports-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .reports-control-group {
+    width: 100%;
+  }
+  .reports-select, .btn-export-report {
+    flex: 1;
+  }
+  .reports-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Account Settings &amp; Preferences — SchoolRoute Parent Dashboard</title>
+  <meta name="description" content="Manage your parent account, alert notifications, theme appearance, language layout, and security credentials on SchoolRoute.">
+  <meta name="keywords" content="parent settings, notification alerts, dark mode, password reset, account profile">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="SchoolRoute Settings — Parent Dashboard">
+  <meta property="og:description" content="Manage your account and dashboard preferences.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/schoolroute-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Keyboard Accessibility Skip Link -->
+  <a href="#main-settings-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- ====================================================
+       DASHBOARD WRAPPER
+  ==================================================== -->
+  <div class="dashboard-layout" id="dashboard-layout">
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ==================================================
+         1. LEFT SIDEBAR (MASTER DASHBOARD REUSE)
+    ================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard Navigation">
+      
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-wrapper">
+        <a href="dashboard.html" class="sidebar-brand" aria-label="SchoolRoute Dashboard Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="brand-logo-img logo-light" width="158" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="brand-logo-img logo-dark" width="158" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <button type="button" class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close sidebar menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav" aria-label="Parent Menu">
+        <ul class="sidebar-menu-list">
+          
+          <li class="sidebar-menu-item">
+            <a href="dashboard.html" class="sidebar-link" data-nav="dashboard">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+              </span>
+              <span class="sidebar-link-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="live-tracking.html" class="sidebar-link" data-nav="live-tracking">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </span>
+              <span class="sidebar-link-text">Live Tracking</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="my-children.html" class="sidebar-link" data-nav="my-children">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </span>
+              <span class="sidebar-link-text">My Children</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="route-stops.html" class="sidebar-link" data-nav="route-stops">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Route &amp; Stops</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="notifications.html" class="sidebar-link" data-nav="notifications">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Notifications</span>
+              <span class="sidebar-badge" id="sidebar-notif-badge">0</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="payments.html" class="sidebar-link" data-nav="payments">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Payments</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="reports.html" class="sidebar-link" data-nav="reports">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Reports</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="support.html" class="sidebar-link" data-nav="support">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Support</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu-item">
+            <a href="settings.html" class="sidebar-link active" data-nav="settings" aria-current="page">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </span>
+              <span class="sidebar-link-text">Settings</span>
+              <span class="active-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Sidebar Support Card -->
+      <div class="sidebar-footer">
+        <div class="sidebar-support-card">
+          <div class="support-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+          </div>
+          <div class="support-card-content">
+            <h4 class="support-card-title">Need Help?</h4>
+            <p class="support-card-sub">We're here for you</p>
+          </div>
+          <a href="support.html" class="btn-support-action" id="btn-support-action" style="text-decoration: none;">
+            <span>Contact Support</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ==================================================
+         2. MAIN DASHBOARD CONTENT AREA
+    ================================================== -->
+    <div class="dashboard-main-area">
+
+      <!-- ================================================
+           TOP HEADER
+      ================================================ -->
+      <header class="dashboard-header" id="dashboard-header">
+        <div class="header-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="dashboard-sidebar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+
+          <!-- Greeting -->
+          <div class="header-greeting-block">
+            <h1 class="header-greeting-title">
+              Good Morning, <span id="header-parent-name">Parent</span>! 
+              <span class="greeting-wave-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2C11.67 2 11 2.67 11 3.5V11H10.5C9.67 11 9 10.33 9 9.5V5.5C9 4.67 8.33 4 7.5 4S6 4.67 6 5.5V13.25C5.4 12.72 4.62 12.44 3.79 12.63C2.8 12.85 2.06 13.75 2.01 14.77C1.94 16.27 2.89 17.58 4.22 18.79C6.44 20.81 9.42 22 12.5 22C17.75 22 22 17.75 22 12.5C22 7.25 17.75 2 12.5 2ZM12.5 20C9.97 20 7.49 19.01 5.61 17.29C4.54 16.32 3.99 15.34 4.01 14.86C4.01 14.82 4.04 14.73 4.22 14.69C4.47 14.63 4.77 14.78 5.17 15.19L6.5 16.52V5.5C6.5 4.95 6.95 4.5 7.5 4.5S8.5 4.95 8.5 5.5V11.5H9.5V9.5C9.5 8.95 9.95 8.5 10.5 8.5S11.5 8.95 11.5 9.5V12.5H12.5V3.5C12.5 2.95 12.95 2.5 13.5 2.5S14.5 2.95 14.5 3.5V12.5H15.5V6.5C15.5 5.95 15.95 5.5 16.5 5.5S17.5 5.95 17.5 6.5V12.5H18.5V9.5C18.5 8.95 18.95 8.5 19.5 8.5S20.5 8.95 20.5 9.5V12.5C20.5 16.92 16.92 20 12.5 20Z"/></svg>
+              </span>
+            </h1>
+            <p class="header-greeting-sub">Manage your account and dashboard preferences.</p>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-right">
+
+          <!-- Notifications Trigger -->
+          <div class="header-action-wrap notifications-wrap">
+            <button type="button" class="header-icon-btn" id="btn-notifications-toggle" aria-label="Notifications" aria-expanded="false" aria-haspopup="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-badge-count" id="header-notif-count">0</span>
+            </button>
+
+            <!-- Notifications Dropdown Popover -->
+            <div class="notifications-popover" id="notifications-popover" role="dialog" aria-label="Recent Alerts">
+              <div class="popover-header">
+                <h3 class="popover-title">Recent Alerts</h3>
+                <span class="popover-badge" id="popover-badge-count">0 New</span>
+              </div>
+              <ul class="popover-list" id="popover-notif-list">
+              </ul>
+              <div class="popover-footer">
+                <a href="notifications.html" class="popover-view-all">View All Notifications →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme Switcher -->
+          <button type="button" class="header-icon-btn" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle Light / Dark Mode">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button type="button" class="header-icon-btn" id="direction-toggle" aria-label="Switch between LTR and RTL orientation" title="Toggle LTR / RTL Direction">
+            <svg class="dir-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line><polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line></svg>
+          </button>
+
+          <!-- User Profile Dropdown -->
+          <div class="user-profile-wrapper">
+            <button type="button" class="user-profile-button" id="user-profile-btn" aria-label="Parent Profile Menu" aria-expanded="false" aria-haspopup="true">
+              <div id="user-avatar-slot">
+                <span class="user-avatar-initials" id="user-avatar-initials">PT</span>
+              </div>
+              <div class="user-meta">
+                <span class="user-name" id="user-display-name">Parent Name</span>
+                <span class="user-role" id="user-display-role">Parent</span>
+              </div>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+
+            <!-- Profile Dropdown Menu -->
+            <div class="profile-dropdown-menu" id="profile-dropdown-menu" role="menu" aria-label="User Account Options">
+              <div class="profile-dropdown-header">
+                <p class="dropdown-full-name" id="dropdown-full-name">Parent Name</p>
+                <p class="dropdown-email" id="dropdown-email">parent@example.com</p>
+              </div>
+              <ul class="dropdown-menu-list">
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-profile-action" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>My Profile</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-settings-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <span>Account Settings</span>
+                  </button>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                  <button type="button" class="dropdown-menu-item item-logout" role="menuitem" id="btn-logout-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Log Out</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- ================================================
+           MAIN SETTINGS CONTENT
+      ================================================ -->
+      <main class="dashboard-content" id="main-settings-content">
+
+        <!-- Page Header -->
+        <div class="settings-header-bar">
+          <div class="settings-page-title-group">
+            <h2 class="settings-page-title">Settings &amp; Preferences</h2>
+            <p class="settings-page-subtitle">Manage your account credentials and dashboard preferences.</p>
+          </div>
+        </div>
+
+        <div class="settings-content-stack">
+
+          <!-- 1. ACCOUNT PROFILE SETTINGS -->
+          <section class="settings-card" id="section-account">
+            <div class="settings-card-header">
+              <div class="settings-card-title-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <div>
+                  <h3 class="settings-card-title">Account Profile</h3>
+                  <p class="settings-card-subtitle">Personal information and contact credentials</p>
+                </div>
+              </div>
+              <button type="button" class="btn-settings-edit" id="btn-open-edit-profile">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                <span>Edit Profile</span>
+              </button>
+            </div>
+
+            <div class="profile-overview-row">
+              <div class="profile-avatar-info">
+                <div class="settings-avatar-circle" id="settings-avatar-circle">PT</div>
+                <div>
+                  <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin: 0 0 0.2rem 0; color: var(--dark-text);" id="sett-display-name">Parent Name</h4>
+                  <span style="font-size: 0.8rem; color: var(--muted-text);">Registered Guardian • SchoolRoute Family</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-fields-grid">
+              <div class="profile-field-item">
+                <span class="profile-field-label">Full Name</span>
+                <span class="profile-field-val" id="sett-field-name">Parent Name</span>
+              </div>
+              <div class="profile-field-item">
+                <span class="profile-field-label">Email Address</span>
+                <span class="profile-field-val" id="sett-field-email">parent@example.com</span>
+              </div>
+              <div class="profile-field-item">
+                <span class="profile-field-label">Phone Number</span>
+                <span class="profile-field-val" id="sett-field-phone">Not added yet</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. NOTIFICATION SETTINGS -->
+          <section class="settings-card" id="section-notifications">
+            <div class="settings-card-header">
+              <div class="settings-card-title-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <div>
+                  <h3 class="settings-card-title">Notification Alerts</h3>
+                  <p class="settings-card-subtitle">Choose which push and SMS notifications you receive</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="toggle-settings-list">
+              
+              <!-- Toggle 1: Bus Arrival Alerts -->
+              <div class="toggle-setting-row">
+                <div class="toggle-setting-meta">
+                  <h4 class="toggle-setting-title">Bus Arrival Alerts</h4>
+                  <p class="toggle-setting-desc">Get notified when the bus is 5–10 minutes away from your pickup/drop-off stop.</p>
+                </div>
+                <label class="switch-control" aria-label="Toggle Bus Arrival Alerts">
+                  <input type="checkbox" id="pref-arrival" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 2: Journey Updates -->
+              <div class="toggle-setting-row">
+                <div class="toggle-setting-meta">
+                  <h4 class="toggle-setting-title">Journey Updates</h4>
+                  <p class="toggle-setting-desc">Receive real-time notifications when your child boards and alights at school.</p>
+                </div>
+                <label class="switch-control" aria-label="Toggle Journey Updates">
+                  <input type="checkbox" id="pref-journey" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 3: Safety Alerts -->
+              <div class="toggle-setting-row">
+                <div class="toggle-setting-meta">
+                  <h4 class="toggle-setting-title">Safety Alerts</h4>
+                  <p class="toggle-setting-desc">Urgent notifications regarding route detours, severe weather, or speed warnings.</p>
+                </div>
+                <label class="switch-control" aria-label="Toggle Safety Alerts">
+                  <input type="checkbox" id="pref-safety" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 4: Payment Notifications -->
+              <div class="toggle-setting-row">
+                <div class="toggle-setting-meta">
+                  <h4 class="toggle-setting-title">Payment &amp; Billing Notifications</h4>
+                  <p class="toggle-setting-desc">Renewal reminders, tax invoice receipts, and subscription status changes.</p>
+                </div>
+                <label class="switch-control" aria-label="Toggle Payment Notifications">
+                  <input type="checkbox" id="pref-payment" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 5: General Notifications -->
+              <div class="toggle-setting-row">
+                <div class="toggle-setting-meta">
+                  <h4 class="toggle-setting-title">General Transport News</h4>
+                  <p class="toggle-setting-desc">School calendar transport schedules, holiday notices, and service updates.</p>
+                </div>
+                <label class="switch-control" aria-label="Toggle General Notifications">
+                  <input type="checkbox" id="pref-general">
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 3. APPEARANCE & THEME -->
+          <section class="settings-card" id="section-appearance">
+            <div class="settings-card-header">
+              <div class="settings-card-title-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <div>
+                  <h3 class="settings-card-title">Appearance</h3>
+                  <p class="settings-card-subtitle">Choose your preferred dashboard visual theme</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="option-cards-grid">
+              <div class="option-select-card" id="theme-card-light" data-theme-val="light">
+                <div class="option-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </div>
+                <div>
+                  <h4 class="option-card-title">Light Mode</h4>
+                  <p class="option-card-sub">Crisp, clean high-contrast light surfaces</p>
+                </div>
+              </div>
+
+              <div class="option-select-card" id="theme-card-dark" data-theme-val="dark">
+                <div class="option-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="option-card-title">Dark Mode</h4>
+                  <p class="option-card-sub">Sleek, low-glare deep forest tones</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. LANGUAGE & LAYOUT DIRECTION -->
+          <section class="settings-card" id="section-layout">
+            <div class="settings-card-header">
+              <div class="settings-card-title-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2"><polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line><polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line></svg>
+                <div>
+                  <h3 class="settings-card-title">Layout Orientation</h3>
+                  <p class="settings-card-subtitle">Mirror dashboard direction without altering language</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="option-cards-grid">
+              <div class="option-select-card" id="dir-card-ltr" data-dir-val="ltr">
+                <div class="option-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+                <div>
+                  <h4 class="option-card-title">Left-to-Right (LTR)</h4>
+                  <p class="option-card-sub">Default Western &amp; standard alignment</p>
+                </div>
+              </div>
+
+              <div class="option-select-card" id="dir-card-rtl" data-dir-val="rtl">
+                <div class="option-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </div>
+                <div>
+                  <h4 class="option-card-title">Right-to-Left (RTL)</h4>
+                  <p class="option-card-sub">Mirrored layout alignment</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. SECURITY & PASSWORD RESET -->
+          <section class="settings-card" id="section-security">
+            <div class="settings-card-header">
+              <div class="settings-card-title-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <div>
+                  <h3 class="settings-card-title">Security &amp; Password</h3>
+                  <p class="settings-card-subtitle">Update your account login password</p>
+                </div>
+              </div>
+            </div>
+
+            <form id="form-change-password" class="password-change-form" novalidate>
+              <div class="form-group-field">
+                <label for="pwd-current" class="form-field-label">CURRENT PASSWORD</label>
+                <div class="password-input-wrapper">
+                  <input type="password" id="pwd-current" class="form-field-input password-field-input" placeholder="••••••••" required autocomplete="current-password">
+                  <button type="button" class="btn-toggle-password" data-target="pwd-current" aria-label="Show password" tabindex="0">
+                    <svg class="eye-icon eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <svg class="eye-icon eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                  </button>
+                </div>
+                <span class="field-validation-msg" id="msg-pwd-current" role="alert"></span>
+              </div>
+
+              <div class="form-group-field">
+                <label for="pwd-new" class="form-field-label">NEW PASSWORD</label>
+                <div class="password-input-wrapper">
+                  <input type="password" id="pwd-new" class="form-field-input password-field-input" placeholder="••••••••" required autocomplete="new-password">
+                  <button type="button" class="btn-toggle-password" data-target="pwd-new" aria-label="Show password" tabindex="0">
+                    <svg class="eye-icon eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <svg class="eye-icon eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                  </button>
+                </div>
+                <span class="field-validation-msg" id="msg-pwd-new" role="alert"></span>
+              </div>
+
+              <div class="form-group-field">
+                <label for="pwd-confirm" class="form-field-label">CONFIRM NEW PASSWORD</label>
+                <div class="password-input-wrapper">
+                  <input type="password" id="pwd-confirm" class="form-field-input password-field-input" placeholder="••••••••" required autocomplete="new-password">
+                  <button type="button" class="btn-toggle-password" data-target="pwd-confirm" aria-label="Show password" tabindex="0">
+                    <svg class="eye-icon eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <svg class="eye-icon eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                  </button>
+                </div>
+                <span class="field-validation-msg" id="msg-pwd-confirm" role="alert"></span>
+              </div>
+
+              <div class="form-submit-wrap">
+                <button type="submit" class="btn-update-pwd" id="btn-submit-password">Update Password</button>
+                <div class="password-success-msg" id="pwd-success-msg" role="status" aria-live="polite">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Password updated successfully.</span>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!-- 6. ACCOUNT ACTIONS & DANGER ZONE -->
+          <section class="settings-card danger-zone-card" id="section-danger">
+            <div class="settings-card-header" style="border-bottom-color: rgba(230, 57, 70, 0.2);">
+              <div class="settings-card-title-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <div>
+                  <h3 class="settings-card-title" style="color: var(--danger);">Account Actions</h3>
+                  <p class="settings-card-subtitle">Session management and account cancellation</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="danger-action-row">
+              <div>
+                <strong style="font-size: 0.92rem; color: var(--dark-text);">Log Out of Dashboard</strong>
+                <p style="font-size: 0.8rem; color: var(--muted-text); margin: 0.15rem 0 0 0;">End your active parent session on this browser.</p>
+              </div>
+              <button type="button" class="btn-danger-action" id="btn-danger-logout">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Log Out</span>
+              </button>
+            </div>
+
+            <div class="danger-action-row" style="border-top: 1px dashed rgba(230, 57, 70, 0.25); padding-top: 1rem;">
+              <div>
+                <strong style="font-size: 0.92rem; color: var(--danger);">Delete Account</strong>
+                <p style="font-size: 0.8rem; color: var(--muted-text); margin: 0.15rem 0 0 0;">Permanently remove your parent profile and student bus registrations.</p>
+              </div>
+              <button type="button" class="btn-danger-action" id="btn-danger-delete">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span>Delete Account</span>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- ====================================================
+       EDIT PROFILE MODAL DIALOG
+  ==================================================== -->
+  <div class="settings-modal-overlay" id="edit-profile-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="settings-modal-card">
+      <div class="modal-header-row">
+        <h3 class="modal-title">Edit Parent Profile</h3>
+        <button type="button" class="sidebar-close-btn" id="btn-close-edit-profile" aria-label="Close edit profile modal" style="position: static;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="form-edit-profile" novalidate>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="form-group-field">
+            <label for="edit-name" class="form-field-label">Full Name</label>
+            <input type="text" id="edit-name" class="form-field-input" required>
+          </div>
+          <div class="form-group-field">
+            <label for="edit-email" class="form-field-label">Email Address</label>
+            <input type="email" id="edit-email" class="form-field-input" required>
+          </div>
+          <div class="form-group-field">
+            <label for="edit-phone" class="form-field-label">Phone Number</label>
+            <input type="tel" id="edit-phone" class="form-field-input" placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="modal-footer-actions">
+          <button type="button" class="btn-sub-outline" id="btn-cancel-edit-profile">Cancel</button>
+          <button type="submit" class="btn-sub-primary" id="btn-save-profile">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================
+       DELETE ACCOUNT CONFIRMATION MODAL
+  ==================================================== -->
+  <div class="settings-modal-overlay" id="delete-confirm-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="settings-modal-card" style="border-color: var(--danger);">
+      <div class="modal-header-row">
+        <h3 class="modal-title" style="color: var(--danger);">Confirm Account Deletion</h3>
+        <button type="button" class="sidebar-close-btn" id="btn-close-delete-modal" aria-label="Close delete modal" style="position: static;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--body-text); line-height: 1.5; margin: 0 0 1rem 0;">
+        Are you sure you want to delete your SchoolRoute parent account? All registered student profiles, live tracking links, and subscription records will be permanently removed.
+      </p>
+
+      <div class="modal-footer-actions">
+        <button type="button" class="btn-sub-outline" id="btn-cancel-delete">Cancel</button>
+        <button type="button" class="btn-danger-action" id="btn-confirm-delete" style="background: var(--danger); color: var(--white);">
+          Yes, Delete Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/settings.js" defer></script>
+</body>
+</html>

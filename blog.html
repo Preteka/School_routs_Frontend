@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Insights for Safer, Smarter School Travel | SchoolRoute</title>
+  <meta name="description" content="Explore practical tips, transportation insights, student safety ideas, and the latest updates from the SchoolRoute team.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+
+  <!-- Google Fonts: Sora, DM Sans, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Page Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body class="blog-page">
+
+  <!-- ==================================================
+       NAVBAR (UNIFIED MASTER DESIGN)
+  ================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SchoolRoute Home">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home 1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="control-btn" aria-label="Switch to dark theme" title="Toggle Light / Dark Mode">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="direction-toggle" class="control-btn" aria-label="Switch to RTL / Right-side Layout" title="Switch to RTL / Right-side Layout">
+          <svg class="dir-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line>
+            <polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line>
+          </svg>
+        </button>
+
+        <a href="login.html" class="btn btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn btn-primary-nav">Sign Up</a>
+
+        <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="logo-img logo-light" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="logo-img logo-dark" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link">Home 1</a></li>
+        <li><a href="home2.html" class="drawer-nav-link">Home 2 (Product)</a></li>
+        <li><a href="about.html" class="drawer-nav-link">About Us</a></li>
+        <li><a href="services.html" class="drawer-nav-link">Services</a></li>
+        <li><a href="safety.html" class="drawer-nav-link">Safety</a></li>
+        <li><a href="pricing.html" class="drawer-nav-link">Pricing</a></li>
+        <li><a href="blog.html" class="drawer-nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="drawer-nav-link">Contact</a></li>
+      </ul>
+      <div class="drawer-actions">
+        <a href="login.html" class="btn btn-outline full-width">Login</a>
+        <a href="signup.html" class="btn btn-primary full-width">Sign Up</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ==================================================
+       MAIN CONTENT
+  ================================================== -->
+  <main id="main-content">
+
+    <!-- ==================================================
+         SECTION 1: BLOG PAGE HEADER / HERO
+    ================================================== -->
+    <section class="blog-hero-section section-spacing" id="blog-hero">
+      <div class="container blog-hero-container">
+        <!-- Left Content Column -->
+        <div class="blog-hero-content fade-in-up">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            SCHOOLROUTE JOURNAL
+          </div>
+          <h1 class="blog-hero-title">Insights for Safer, Smarter School Travel</h1>
+          <p class="blog-hero-desc">
+            Explore practical tips, transportation insights, safety ideas, and the latest updates from SchoolRoute.
+          </p>
+
+          <!-- Key Stats / Indicators Row -->
+          <div class="blog-hero-stats">
+            <div class="bstat-item">
+              <span class="bstat-num">9+</span>
+              <span class="bstat-label">In-Depth Guides</span>
+            </div>
+            <div class="bstat-divider"></div>
+            <div class="bstat-item">
+              <span class="bstat-num">7</span>
+              <span class="bstat-label">Core Categories</span>
+            </div>
+            <div class="bstat-divider"></div>
+            <div class="bstat-item">
+              <span class="bstat-num">100%</span>
+              <span class="bstat-label">Safety Focused</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual Column -->
+        <div class="blog-hero-visual fade-in-up" style="--anim-delay: 150ms;">
+          <div class="blog-hero-image-wrapper">
+            <img src="assets/images/blog/blog-hero.jpg" alt="Modern yellow school bus parked safely at a green school campus with connected route tracking" class="blog-hero-img" width="580" height="380" loading="eager">
+            <div class="blog-hero-overlay"></div>
+
+            <!-- Floating Trust Badge -->
+            <div class="blog-hero-badge">
+              <div class="blog-badge-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="blog-badge-text">
+                <span class="blog-badge-title">Safety &amp; Tech Insights</span>
+                <span class="blog-badge-sub">Updated Weekly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 2: SEARCH & FILTER AREA
+    ================================================== -->
+    <section class="blog-search-filter-section" id="explore">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            DISCOVER ARTICLES
+          </div>
+          <h2 class="section-title">Explore Our Latest Insights</h2>
+          <p class="section-subtitle">
+            Search articles by topic, keyword, or filter by category to find practical guidance for school travel.
+          </p>
+        </div>
+
+        <!-- Search Bar & Counter Row -->
+        <div class="blog-controls-wrapper fade-in-up">
+          <div class="blog-search-box">
+            <label for="blog-search-input" class="visually-hidden">Search articles, topics, or keywords</label>
+            <div class="search-input-wrapper">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="blog-search-input" class="blog-search-input" placeholder="Search articles, topics, or keywords..." autocomplete="off">
+              <button type="button" id="blog-search-clear" class="search-clear-btn" aria-label="Clear search query" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Result Counter -->
+          <div class="blog-count-badge" id="blog-count-badge" aria-live="polite">
+            <span class="count-num" id="blog-count-num">9</span>
+            <span class="count-text" id="blog-count-text">Articles</span>
+          </div>
+        </div>
+
+        <!-- Category Filter Buttons Scroll Container -->
+        <div class="blog-categories-wrapper fade-in-up" role="region" aria-label="Category Filters">
+          <div class="blog-categories-list" id="blog-categories-list" role="tablist">
+            <button type="button" class="category-btn active" data-category="All" role="tab" aria-selected="true">All</button>
+            <button type="button" class="category-btn" data-category="Safety" role="tab" aria-selected="false">Safety</button>
+            <button type="button" class="category-btn" data-category="School Transportation" role="tab" aria-selected="false">School Transportation</button>
+            <button type="button" class="category-btn" data-category="Parents" role="tab" aria-selected="false">Parents</button>
+            <button type="button" class="category-btn" data-category="Technology" role="tab" aria-selected="false">Technology</button>
+            <button type="button" class="category-btn" data-category="Route Management" role="tab" aria-selected="false">Route Management</button>
+            <button type="button" class="category-btn" data-category="Student Monitoring" role="tab" aria-selected="false">Student Monitoring</button>
+            <button type="button" class="category-btn" data-category="School Updates" role="tab" aria-selected="false">School Updates</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 3: BLOG LIST GRID & EMPTY STATE
+    ================================================== -->
+    <section class="blog-grid-section section-spacing" id="articles">
+      <div class="container">
+        <!-- Blog Cards Grid (Dynamically rendered via js/blog.js) -->
+        <div class="blog-grid" id="blog-grid" aria-live="polite">
+          <!-- Rendered by JavaScript -->
+        </div>
+
+        <!-- Empty Search / Filter State -->
+        <div class="blog-empty-state" id="blog-empty-state" style="display: none;">
+          <div class="empty-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3 class="empty-title">No Articles Found</h3>
+          <p class="empty-desc">
+            Try another search term or choose a different category to discover related insights.
+          </p>
+          <button type="button" class="btn btn-primary" id="clear-filters-btn">
+            <span>Clear Filters</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 4: NEWSLETTER / STAY CONNECTED CTA
+    ================================================== -->
+    <section class="blog-newsletter-section section-spacing" id="newsletter">
+      <div class="container">
+        <div class="cta-banner text-center fade-in-up">
+          <div class="badge badge-pill badge-hero">
+            <span class="badge-dot"></span>
+            STAY INFORMED
+          </div>
+          <h2 class="cta-title">Stay Connected With SchoolRoute</h2>
+          <p class="cta-subtitle">
+            Get useful school transportation insights, safety tips, and product updates delivered straight to your inbox.
+          </p>
+
+          <!-- Newsletter Form -->
+          <form class="blog-newsletter-form" id="blog-newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <label for="newsletter-email" class="visually-hidden">Email address</label>
+              <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address" required autocomplete="email">
+              <button type="submit" class="btn btn-primary btn-hero newsletter-btn" id="newsletter-submit-btn">
+                <span>Subscribe</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+            <!-- Success Message Toast -->
+            <div class="newsletter-success-msg" id="newsletter-success-msg" role="status" aria-live="polite" style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>You’re subscribed to SchoolRoute updates.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       FOOTER (UNIFIED REUSABLE MASTER COMPONENT)
+  ================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="SchoolRoute Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <p class="footer-tagline">Safe Kids &bull; Stronger Tomorrows</p>
+        <p class="footer-description">SchoolRoute delivers real-time bus tracking, automated notifications, route management and complete safety for schools and parents.</p>
+        <div class="footer-social-links" aria-label="Social media links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html" class="footer-link">Home 1</a></li>
+          <li><a href="home2.html" class="footer-link">Home 2</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="safety.html" class="footer-link">Safety</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Services -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="service-detail.html?id=tracking" class="footer-link">Live GPS Tracking</a></li>
+          <li><a href="service-detail.html?id=routes" class="footer-link">Route Management</a></li>
+          <li><a href="service-detail.html?id=student-monitoring" class="footer-link">Student Monitoring</a></li>
+          <li><a href="service-detail.html?id=notifications" class="footer-link">Arrival Notifications</a></li>
+          <li><a href="service-detail.html?id=safety" class="footer-link">Driver Verification</a></li>
+          <li><a href="service-detail.html?id=payments" class="footer-link">Online Payments</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Us -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="footer-contact-text">123 School Tech Park, Knowledge Corridor, Chennai, India</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+919876543210" class="footer-link-text">+91 98765 43210</a>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:support@schoolroute.in" class="footer-link-text">support@schoolroute.in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">&copy; 2026 SchoolRoute. All Rights Reserved. Safe Kids &bull; Stronger Tomorrows.</p>
+        <div class="footer-bottom-links">
+          <a href="contact.html" class="footer-legal-link">Privacy Policy</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="contact.html" class="footer-legal-link">Terms &amp; Conditions</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="pricing.html" class="footer-legal-link">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

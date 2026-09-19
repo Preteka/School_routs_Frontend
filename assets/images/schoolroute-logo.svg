@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" width="760" height="220" fill="none">
+  <!-- Sun & Birds Behind Bus -->
+  <circle cx="530" cy="90" r="62" fill="#FDE49E" />
+  <path d="M 602 44 Q 608 38 614 43 Q 620 38 626 44 Q 618 41 614 46 Q 610 41 602 44 Z" fill="#17352D" opacity="0.8"/>
+  <path d="M 630 58 Q 634 53 639 57 Q 644 53 649 58 Q 643 55 639 60 Q 635 55 630 58 Z" fill="#17352D" opacity="0.8"/>
+
+  <!-- Leaf Accent on 'S' -->
+  <g transform="translate(62, 114) rotate(-35)">
+    <path d="M0,0 C15,-30 45,-30 55,-5 C45,20 15,20 0,0 Z" fill="#48B358"/>
+    <path d="M5,-2 Q25,-12 45,-5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- "School" Text -->
+  <text x="96" y="125" font-family="'Sora', 'Arial Black', sans-serif" font-size="82" font-weight="900" fill="#0C452D" letter-spacing="-2px">School</text>
+
+  <!-- "Route" Text -->
+  <text x="356" y="125" font-family="'Sora', 'Arial Black', sans-serif" font-size="82" font-weight="900" fill="#2DA856" letter-spacing="-2px">Route</text>
+
+  <!-- Green Ground Curve / Hill -->
+  <path d="M 70 178 Q 300 135 700 155 L 700 168 Q 300 150 70 178 Z" fill="#0E4D30" />
+  <path d="M 70 178 Q 320 130 700 162" stroke="#2DA856" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Bus on the hill -->
+  <g transform="translate(545, 28)">
+    <path d="M12,45 C12,28 25,20 45,20 L135,20 C145,20 152,28 155,42 L160,82 C162,94 156,104 145,105 L15,105 C8,105 2,98 2,88 L2,55 C2,48 6,45 12,45 Z" fill="#F8C52C" stroke="#D19E0E" stroke-width="2.5"/>
+    <path d="M42,20 L138,20 C145,20 150,24 152,30 L38,30 C40,24 41,20 42,20 Z" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M102,32 L144,32 C148,32 150,35 152,42 L154,68 C154,72 150,74 145,74 L102,74 Z" fill="#1C3830"/>
+    <path d="M106,36 L140,36 C143,36 145,38 146,42 L148,64 C148,66 146,68 143,68 L106,68 Z" fill="#4B8272" opacity="0.75"/>
+    <rect x="12" y="36" width="16" height="28" rx="3" fill="#1C3830"/>
+    <rect x="34" y="36" width="16" height="28" rx="3" fill="#1C3830"/>
+    <rect x="56" y="36" width="16" height="28" rx="3" fill="#1C3830"/>
+    <rect x="78" y="36" width="16" height="28" rx="3" fill="#1C3830"/>
+    <line x1="2" y1="84" x2="158" y2="84" stroke="#17352D" stroke-width="3.5"/>
+    <line x1="2" y1="89" x2="158" y2="89" stroke="#17352D" stroke-width="2"/>
+    <circle cx="120" cy="90" r="6.5" fill="#FFFFFF" stroke="#E3B31D" stroke-width="2"/>
+    <circle cx="150" cy="90" r="6.5" fill="#FFFFFF" stroke="#E3B31D" stroke-width="2"/>
+    <rect x="128" y="93" width="15" height="10" rx="2" fill="#17352D"/>
+    <line x1="130" y1="96" x2="141" y2="96" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="130" y1="99" x2="141" y2="99" stroke="#FFFFFF" stroke-width="1.5"/>
+    <path d="M112,104 L162,104 C166,104 167,108 165,112 L110,112 C108,108 109,104 112,104 Z" fill="#17352D"/>
+    <g transform="translate(24, 94)">
+      <circle cx="12" cy="12" r="14" fill="#17352D"/>
+      <circle cx="12" cy="12" r="7" fill="#889892"/>
+      <circle cx="12" cy="12" r="3" fill="#17352D"/>
+    </g>
+    <g transform="translate(112, 102)">
+      <circle cx="12" cy="12" r="14" fill="#17352D"/>
+      <circle cx="12" cy="12" r="7" fill="#889892"/>
+      <circle cx="12" cy="12" r="3" fill="#17352D"/>
+    </g>
+    <rect x="156" y="50" width="5" height="15" rx="2" fill="#17352D"/>
+    <circle cx="108" cy="25" r="3.5" fill="#EB4D3D"/>
+    <circle cx="148" cy="25" r="3.5" fill="#EB4D3D"/>
+  </g>
+
+  <!-- Tagline Text -->
+  <text x="158" y="196" font-family="'DM Sans', 'Arial', sans-serif" font-size="16" font-weight="700" fill="#17352D" letter-spacing="8px">SAFE KIDS  •  STRONGER TOMORROWS</text>
+</svg>

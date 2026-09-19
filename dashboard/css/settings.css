@@ -1,0 +1,603 @@
+/* ==========================================================================
+   SCHOOLROUTE — SETTINGS & PREFERENCES STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, theme-ready, RTL-ready CSS for Settings
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER
+   -------------------------------------------------------------------------- */
+.settings-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.settings-page-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.settings-page-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.settings-page-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. SETTINGS LAYOUT CONTAINER
+   -------------------------------------------------------------------------- */
+.settings-content-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 960px;
+}
+
+.settings-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.settings-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.settings-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.settings-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.settings-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. ACCOUNT PROFILE SECTION
+   -------------------------------------------------------------------------- */
+.profile-overview-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.profile-avatar-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.settings-avatar-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.profile-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+}
+
+.profile-field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.profile-field-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-text);
+}
+
+.profile-field-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-settings-edit {
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(7, 91, 70, 0.25);
+}
+
+.btn-settings-edit:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   4. NOTIFICATION TOGGLE SWITCHES
+   -------------------------------------------------------------------------- */
+.toggle-settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.toggle-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  gap: 1rem;
+}
+
+.toggle-setting-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.toggle-setting-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.toggle-setting-desc {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* Custom CSS Switch */
+.switch-control {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.switch-control input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #CBD5E1;
+  transition: var(--transition-fast);
+  border-radius: var(--radius-pill);
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--white);
+  transition: var(--transition-fast);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.switch-control input:checked + .switch-slider {
+  background-color: var(--primary-green);
+}
+
+.switch-control input:checked + .switch-slider:before {
+  transform: translateX(20px);
+}
+
+/* --------------------------------------------------------------------------
+   5. APPEARANCE & ORIENTATION SELECTION CARDS
+   -------------------------------------------------------------------------- */
+.option-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.option-select-card {
+  background: var(--soft-background);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.option-select-card:hover {
+  border-color: var(--muted-text);
+}
+
+.option-select-card.active {
+  border-color: var(--primary-green);
+  background: rgba(7, 91, 70, 0.06);
+}
+
+.option-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.option-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 0.15rem 0;
+}
+
+.option-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. SECURITY & PASSWORD FORM
+   -------------------------------------------------------------------------- */
+.password-change-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  max-width: 440px;
+  width: 100%;
+}
+
+.form-group-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.form-field-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.form-field-input {
+  width: 100%;
+  height: 44px;
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--dark-text);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.form-field-input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(7, 91, 70, 0.12);
+}
+
+.form-field-input.has-error {
+  border-color: var(--danger);
+  background-color: rgba(230, 57, 70, 0.04);
+}
+
+.form-field-input.has-error:focus {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.password-field-input {
+  padding-inline-end: 2.75rem;
+}
+
+.btn-toggle-password {
+  position: absolute;
+  inset-inline-end: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--muted-text);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  z-index: 2;
+}
+
+.btn-toggle-password:hover {
+  color: var(--primary-green);
+  background-color: rgba(7, 91, 70, 0.08);
+}
+
+[data-theme="dark"] .btn-toggle-password:hover {
+  color: var(--accent-yellow);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.field-validation-msg {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--danger);
+  min-height: 1.1em;
+  display: none;
+  margin-top: 0.1rem;
+}
+
+.field-validation-msg.visible {
+  display: block;
+}
+
+.form-submit-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.btn-update-pwd {
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  height: 42px;
+  padding: 0 1.6rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(7, 91, 70, 0.25);
+  width: fit-content;
+}
+
+.btn-update-pwd:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(7, 91, 70, 0.35);
+}
+
+.btn-update-pwd:active {
+  transform: translateY(0);
+}
+
+.password-success-msg {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--success);
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  background-color: var(--success-bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(50, 168, 82, 0.25);
+}
+
+.password-success-msg.visible {
+  display: inline-flex;
+}
+
+/* --------------------------------------------------------------------------
+   7. DANGER ZONE / ACCOUNT ACTIONS
+   -------------------------------------------------------------------------- */
+.danger-zone-card {
+  border: 1px solid rgba(230, 57, 70, 0.35);
+  background: rgba(230, 57, 70, 0.02);
+}
+
+.danger-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.btn-danger-action {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--transition-fast);
+}
+
+.btn-danger-action:hover {
+  background: var(--danger);
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   8. MODALS (EDIT PROFILE & DELETE CONFIRMATION)
+   -------------------------------------------------------------------------- */
+.settings-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 27, 22, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.settings-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.settings-modal-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  max-width: 480px;
+  width: 100%;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-popover);
+  position: relative;
+}
+
+.modal-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: 0.85rem;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.modal-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--divider-color);
+  padding-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .profile-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .option-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .password-change-form {
+    max-width: 100%;
+  }
+  .danger-action-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-danger-action {
+    width: 100%;
+    justify-content: center;
+  }
+}

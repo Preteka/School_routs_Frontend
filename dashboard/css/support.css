@@ -1,0 +1,449 @@
+/* ==========================================================================
+   SCHOOLROUTE — SUPPORT & HELP CENTER STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, theme-ready, RTL-ready CSS for Support
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER
+   -------------------------------------------------------------------------- */
+.support-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.support-page-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.support-page-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.support-page-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. HELP CENTER TOPICS GRID (6 CARDS)
+   -------------------------------------------------------------------------- */
+.help-topics-section {
+  margin-bottom: 2rem;
+}
+
+.section-heading-sm {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.help-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+.help-topic-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.help-topic-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-green);
+  box-shadow: var(--shadow-sm);
+}
+
+.help-topic-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(7, 91, 70, 0.08);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.help-topic-card:hover .help-topic-icon {
+  background: var(--primary-green);
+  color: var(--white);
+}
+
+.help-topic-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.help-topic-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.help-topic-desc {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   3. DUAL-PANEL: DIRECT CONTACT INFO & CONTACT TICKET FORM
+   -------------------------------------------------------------------------- */
+.support-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.support-panel-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Direct Contact Info Cards */
+.contact-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-channel-item {
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.channel-info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.channel-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--primary-green);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.channel-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-text);
+}
+
+.channel-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.btn-channel-action {
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.btn-channel-action:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+.support-hours-banner {
+  background: var(--cream-bg);
+  border: 1px solid rgba(248, 197, 44, 0.4);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hours-icon {
+  color: #B48206;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .hours-icon {
+  color: #F8C52C;
+}
+
+.hours-text {
+  font-size: 0.82rem;
+  color: var(--body-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Contact Support Form */
+.support-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.form-field-input,
+.form-field-select,
+.form-field-textarea {
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--dark-text);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-field-input:focus,
+.form-field-select:focus,
+.form-field-textarea:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(7, 91, 70, 0.12);
+}
+
+.form-field-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.btn-submit-support {
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 3px 10px rgba(7, 91, 70, 0.25);
+  transition: var(--transition-fast);
+  margin-top: 0.5rem;
+}
+
+.btn-submit-support:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+.form-success-banner {
+  background: var(--success-bg);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--success);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 2rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq-item {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.faq-item.active {
+  border-color: var(--primary-green);
+  background: var(--soft-background);
+}
+
+.faq-question-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+[dir="rtl"] .faq-question-btn {
+  text-align: right;
+}
+
+.faq-chevron-icon {
+  transition: transform 0.2s ease;
+  color: var(--muted-text);
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-chevron-icon {
+  transform: rotate(180deg);
+  color: var(--primary-green);
+}
+
+.faq-answer-pane {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
+  padding: 0 1.25rem;
+}
+
+.faq-item.active .faq-answer-pane {
+  max-height: 200px;
+  padding-bottom: 1.1rem;
+}
+
+.faq-answer-text {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .help-topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .support-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .help-topics-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row-2col {
+    grid-template-columns: 1fr;
+  }
+  .contact-channel-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-channel-action {
+    width: 100%;
+    justify-content: center;
+  }
+}

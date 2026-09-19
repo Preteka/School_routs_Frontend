@@ -1,0 +1,756 @@
+/* ==========================================================================
+   SCHOOLROUTE — PARENT DASHBOARD LIVE TRACKING STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, dark-mode ready, RTL-ready CSS for Live Tracking
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER & STATUS BADGE
+   -------------------------------------------------------------------------- */
+.page-title-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.page-title-block {
+  flex: 1;
+  min-width: 280px;
+}
+
+.page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.page-main-heading {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.badge-live-tracking {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(7, 91, 70, 0.15);
+}
+
+[data-theme="dark"] .badge-live-tracking {
+  background-color: rgba(27, 131, 103, 0.18);
+  color: #38A367;
+  border-color: rgba(56, 163, 103, 0.25);
+}
+
+.badge-live-tracking .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #28A745;
+  box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(40, 167, 69, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+.page-subtext {
+  font-size: 0.925rem;
+  color: var(--body-text);
+  margin: 0;
+  max-width: 680px;
+}
+
+/* --------------------------------------------------------------------------
+   2. CHILD SELECTOR COMPONENT
+   -------------------------------------------------------------------------- */
+.child-selector-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.child-selector-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.selector-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .selector-icon-wrap {
+  background-color: rgba(27, 131, 103, 0.2);
+  color: #38A367;
+}
+
+.selector-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.selector-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-text);
+}
+
+.selector-current-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.child-select-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.child-select-dropdown-wrap {
+  position: relative;
+  min-width: 220px;
+}
+
+.child-select-dropdown {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--soft-background);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 2.2rem 0.6rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.child-select-dropdown:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(7, 91, 70, 0.12);
+}
+
+.dropdown-arrow-icon {
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--muted-text);
+}
+
+/* --------------------------------------------------------------------------
+   3. TRACKING STATISTICS CARDS (GRID BELOW MAP / TOP METRICS)
+   -------------------------------------------------------------------------- */
+.tracking-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.tracking-stat-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tracking-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--card-hover-border);
+}
+
+.stat-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon-wrapper.eta-theme {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.stat-icon-wrapper.speed-theme {
+  background-color: #E0F2FE;
+  color: #0284C7;
+}
+
+.stat-icon-wrapper.distance-theme {
+  background-color: #E8F7EC;
+  color: #075B46;
+}
+
+.stat-icon-wrapper.status-theme {
+  background-color: #F3E8FF;
+  color: #7E22CE;
+}
+
+[data-theme="dark"] .stat-icon-wrapper.eta-theme {
+  background-color: rgba(217, 119, 6, 0.2);
+  color: #FBBF24;
+}
+[data-theme="dark"] .stat-icon-wrapper.speed-theme {
+  background-color: rgba(2, 132, 199, 0.2);
+  color: #38BDF8;
+}
+[data-theme="dark"] .stat-icon-wrapper.distance-theme {
+  background-color: rgba(7, 91, 70, 0.25);
+  color: #38A367;
+}
+[data-theme="dark"] .stat-icon-wrapper.status-theme {
+  background-color: rgba(126, 34, 206, 0.2);
+  color: #C084FC;
+}
+
+.stat-meta-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.stat-card-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-text);
+  margin-bottom: 0.15rem;
+}
+
+.stat-primary-value {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-status-badge-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.badge-state-on-route {
+  background-color: #E8F7EC;
+  color: #15803D;
+}
+.badge-state-arriving {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+.badge-state-at-stop {
+  background-color: #E0F2FE;
+  color: #0369A1;
+}
+.badge-state-completed {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+.badge-state-not-started {
+  background-color: #F1F5F9;
+  color: #64748B;
+}
+
+[data-theme="dark"] .badge-state-on-route {
+  background-color: rgba(21, 128, 61, 0.2);
+  color: #4ADE80;
+}
+[data-theme="dark"] .badge-state-arriving {
+  background-color: rgba(180, 83, 9, 0.2);
+  color: #FBBF24;
+}
+[data-theme="dark"] .badge-state-at-stop {
+  background-color: rgba(3, 105, 161, 0.2);
+  color: #38BDF8;
+}
+[data-theme="dark"] .badge-state-completed {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+}
+[data-theme="dark"] .badge-state-not-started {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   4. TWO-COLUMN LAYOUT FOR LIVE TRACKING & TODAY'S ROUTE
+   -------------------------------------------------------------------------- */
+.tracking-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.tracking-primary-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tracking-secondary-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. MAP FLOATING CARDS & TOOLTIPS
+   -------------------------------------------------------------------------- */
+.map-floating-info-card {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.1rem;
+  box-shadow: var(--shadow-popover);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 280px;
+  backdrop-filter: blur(8px);
+}
+
+.floating-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: var(--accent-yellow);
+  color: #17352D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.floating-info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-info-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-text);
+}
+
+.floating-info-title {
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.2;
+}
+
+.floating-info-eta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-top: 0.1rem;
+}
+
+[data-theme="dark"] .floating-info-eta {
+  color: #38A367;
+}
+
+/* --------------------------------------------------------------------------
+   6. EMPTY STATE STYLING FOR LIVE TRACKING
+   -------------------------------------------------------------------------- */
+.empty-state-card-full {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.empty-state-illustration {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: inset 0 0 0 1px rgba(7, 91, 70, 0.12);
+}
+
+[data-theme="dark"] .empty-state-illustration {
+  background-color: rgba(27, 131, 103, 0.2);
+  color: #38A367;
+}
+
+.empty-state-heading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-description {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  max-width: 480px;
+  margin-bottom: 1.75rem;
+  line-height: 1.55;
+}
+
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--accent-yellow);
+  color: #17352D;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-badge);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary-cta:hover {
+  background-color: var(--dark-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(248, 197, 44, 0.4);
+}
+
+.btn-primary-cta:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   7. MODAL STYLING FOR ADD CHILD / SETUP ROUTE (INTERACTIVE PLAYGROUND)
+   -------------------------------------------------------------------------- */
+.setup-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 28, 23, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.setup-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.setup-modal-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  width: 100%;
+  max-width: 520px;
+  padding: 2rem;
+  box-shadow: var(--shadow-popover);
+  transform: scale(0.95);
+  transition: transform var(--transition-normal);
+  position: relative;
+}
+
+.setup-modal-backdrop.active .setup-modal-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--soft-background);
+  color: var(--muted-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--card-border);
+  color: var(--dark-text);
+}
+
+.modal-header-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 0.35rem;
+}
+
+.modal-header-sub {
+  font-size: 0.875rem;
+  color: var(--body-text);
+  margin-bottom: 1.5rem;
+}
+
+.modal-form-group {
+  margin-bottom: 1.15rem;
+}
+
+.modal-form-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 0.4rem;
+}
+
+.modal-form-input, .modal-form-select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  background-color: var(--soft-background);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--dark-text);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.modal-form-input:focus, .modal-form-select:focus {
+  border-color: var(--primary-green);
+}
+
+.modal-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.btn-secondary-cancel {
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--body-text);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   8. RTL SUPPORT FOR LIVE TRACKING
+   -------------------------------------------------------------------------- */
+[dir="rtl"] .page-title-section {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .child-selector-card {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .child-select-dropdown {
+  padding: 0.6rem 1rem 0.6rem 2.2rem;
+}
+
+[dir="rtl"] .dropdown-arrow-icon {
+  right: auto;
+  left: 0.85rem;
+}
+
+[dir="rtl"] .map-floating-info-card {
+  left: auto;
+  right: 18px;
+}
+
+[dir="rtl"] .modal-close-btn {
+  right: auto;
+  left: 1.25rem;
+}
+
+[dir="rtl"] .tracking-main-grid {
+  grid-template-columns: 360px 1fr;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE BREAKPOINTS FOR LIVE TRACKING
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .tracking-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tracking-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  [dir="rtl"] .tracking-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-main-heading {
+    font-size: 1.35rem;
+  }
+
+  .child-selector-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .child-select-controls {
+    width: 100%;
+  }
+
+  .child-select-dropdown-wrap {
+    width: 100%;
+  }
+
+  .tracking-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .tracking-stat-card {
+    padding: 0.95rem 1rem;
+  }
+
+  .stat-primary-value {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tracking-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-floating-info-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    margin: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. REDUCED MOTION PREFERENCE
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .badge-live-tracking .live-dot,
+  .node-outer-pulse,
+  .marker-pulse-glow {
+    animation: none !important;
+  }
+  
+  .tracking-stat-card,
+  .btn-primary-cta,
+  .setup-modal-card {
+    transition: none !important;
+  }
+}

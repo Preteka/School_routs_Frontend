@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Admin Dashboard — SchoolRoute School Transportation Management</title>
+  <meta name="description" content="SchoolRoute Admin Dashboard — Monitor fleet, drivers, routes, student safety, and live operations from one connected command center.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="SchoolRoute Admin Dashboard — Safe Kids • Brighter Tomorrows">
+  <meta property="og:description" content="Centralized School Bus Fleet & Transportation Operations Dashboard.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Sora (Headings) & DM Sans (Body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Admin Dashboard Stylesheet -->
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+  <!-- Auth Guard: Admin Only -->
+  <script>
+    (function() {
+      try {
+        var s = localStorage.getItem('schoolroute_current_user');
+        if (!s) { window.location.replace('../login.html'); return; }
+        var u = JSON.parse(s);
+        if (!u || u.role !== 'admin') { window.location.replace('../login.html'); return; }
+      } catch(e) {
+        window.location.replace('../login.html');
+      }
+    })();
+  </script>
+</head>
+<body class="admin-dashboard-body">
+
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="admin-layout-wrapper">
+
+    <!-- ==================================================
+         1. LEFT SIDEBAR NAVIGATION
+    ================================================== -->
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin Navigation Sidebar">
+      
+      <!-- Brand Logo Header -->
+      <div class="sidebar-brand-header">
+        <a href="admin-dashboard.html" class="sidebar-logo-link" aria-label="SchoolRoute Admin Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="160" height="44" onerror="this.onerror=null; this.src='../assets/images/schoolroute-logo.svg';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="160" height="44" onerror="this.onerror=null; this.src='../assets/images/schoolroute-logo-dark.svg';">
+        </a>
+        <button type="button" class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Menu Links -->
+      <nav class="sidebar-nav-container" aria-label="Admin Navigation">
+        <ul class="sidebar-menu-list">
+          
+          <!-- 1. Dashboard (ACTIVE) -->
+          <li class="sidebar-menu-item">
+            <a href="admin-dashboard.html" class="sidebar-link active" data-nav="dashboard" aria-current="page">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              </span>
+              <span class="sidebar-link-text">Dashboard</span>
+              <span class="active-indicator" aria-hidden="true"></span>
+            </a>
+          </li>
+
+          <!-- 2. Buses & Drivers -->
+          <li class="sidebar-menu-item">
+            <a href="buses-drivers.html" class="sidebar-link" data-nav="buses-drivers">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M3 10h18"></path><path d="M8 4v2"></path><path d="M16 4v2"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Buses &amp; Drivers</span>
+            </a>
+          </li>
+
+          <!-- 3. Routes & Stops -->
+          <li class="sidebar-menu-item">
+            <a href="routes-stops.html" class="sidebar-link" data-nav="routes-stops">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <span class="sidebar-link-text">Routes &amp; Stops</span>
+            </a>
+          </li>
+
+          <!-- 4. Students -->
+          <li class="sidebar-menu-item">
+            <a href="#students" class="sidebar-link" data-nav="students">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Students</span>
+            </a>
+          </li>
+
+          <!-- 5. Live Tracking -->
+          <li class="sidebar-menu-item">
+            <a href="#live-tracking" class="sidebar-link" data-nav="live-tracking">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </span>
+              <span class="sidebar-link-text">Live Tracking</span>
+            </a>
+          </li>
+
+          <!-- 6. Notifications -->
+          <li class="sidebar-menu-item">
+            <a href="#notifications" class="sidebar-link" data-nav="notifications">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Notifications</span>
+              <span class="sidebar-badge-pill" id="sidebar-notif-count">4</span>
+            </a>
+          </li>
+
+          <!-- 7. Payments -->
+          <li class="sidebar-menu-item">
+            <a href="#payments" class="sidebar-link" data-nav="payments">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Payments</span>
+            </a>
+          </li>
+
+          <!-- 8. Reports -->
+          <li class="sidebar-menu-item">
+            <a href="#reports" class="sidebar-link" data-nav="reports">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </span>
+              <span class="sidebar-link-text">Reports</span>
+            </a>
+          </li>
+
+          <!-- 9. Support -->
+          <li class="sidebar-menu-item">
+            <a href="#support" class="sidebar-link" data-nav="support">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </span>
+              <span class="sidebar-link-text">Support</span>
+            </a>
+          </li>
+
+          <!-- 10. Settings -->
+          <li class="sidebar-menu-item">
+            <a href="#settings" class="sidebar-link" data-nav="settings">
+              <span class="sidebar-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </span>
+              <span class="sidebar-link-text">Settings</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Sidebar Support Card -->
+      <div class="sidebar-footer">
+        <div class="sidebar-support-card">
+          <div class="support-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+          </div>
+          <div class="support-card-content">
+            <h4 class="support-card-title">Need Help?</h4>
+            <p class="support-card-sub">SchoolRoute Admin Support</p>
+          </div>
+          <button type="button" class="btn-support-action" id="btn-admin-support" aria-label="Contact SchoolRoute Admin Support">
+            <span>Contact Support</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ==================================================
+         2. MAIN DASHBOARD CONTENT AREA
+    ================================================== -->
+    <div class="admin-main-area">
+
+      <!-- ================================================
+           TOP HEADER
+      ================================================ -->
+      <header class="admin-header" id="admin-header">
+        <div class="header-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="admin-sidebar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+
+          <!-- Greeting Block -->
+          <div class="header-greeting-block">
+            <h1 class="header-greeting-title">
+              Good Morning, Admin 👋
+            </h1>
+            <p class="header-greeting-sub">Here's today's school transportation overview.</p>
+          </div>
+        </div>
+
+        <!-- Header Actions (Right) -->
+        <div class="header-right">
+
+          <!-- Notifications Trigger -->
+          <div class="header-action-wrap notifications-wrap">
+            <button type="button" class="header-icon-btn" id="btn-notifications-toggle" aria-label="Notifications" aria-expanded="false" aria-haspopup="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-dot-badge" id="header-notif-badge">4</span>
+            </button>
+
+            <!-- Notifications Dropdown Popover -->
+            <div class="notifications-dropdown-menu" id="notifications-dropdown-menu" role="menu" aria-label="Recent Admin Notifications">
+              <div class="dropdown-popover-header">
+                <div class="popover-header-title">
+                  <span class="title-text">System Alerts</span>
+                  <span class="count-pill">4 New</span>
+                </div>
+                <button type="button" class="btn-clear-all" id="btn-clear-notifications">Mark all read</button>
+              </div>
+              <ul class="notification-items-list" id="notification-items-list">
+                <li class="notif-item unread">
+                  <div class="notif-icon-wrap icon-theme-warning">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                  </div>
+                  <div class="notif-content">
+                    <p class="notif-title">Bus #18 is delayed</p>
+                    <p class="notif-desc">Running 12 mins behind on Industrial Area route.</p>
+                    <span class="notif-time">5 mins ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon-wrap icon-theme-danger">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  </div>
+                  <div class="notif-content">
+                    <p class="notif-title">Route deviation detected</p>
+                    <p class="notif-desc">Bus #07 deviated from assigned Lake View path.</p>
+                    <span class="notif-time">14 mins ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon-wrap icon-theme-info">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                  </div>
+                  <div class="notif-content">
+                    <p class="notif-title">Student not boarded</p>
+                    <p class="notif-desc">Arjun S. not picked up at Maple Street stop.</p>
+                    <span class="notif-time">22 mins ago</span>
+                  </div>
+                </li>
+                <li class="notif-item unread">
+                  <div class="notif-icon-wrap icon-theme-success">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  </div>
+                  <div class="notif-content">
+                    <p class="notif-title">Driver check-in completed</p>
+                    <p class="notif-desc">Ramesh K. checked in for Route 12.</p>
+                    <span class="notif-time">30 mins ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Dark / Light Theme Toggle -->
+          <button type="button" class="header-icon-btn theme-toggle-btn" id="btn-theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <!-- Layout Direction Toggle (LTR/RTL) -->
+          <button type="button" class="header-icon-btn dir-toggle-btn" id="btn-dir-toggle" aria-label="Toggle text direction LTR/RTL" title="Toggle LTR/RTL direction">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line><polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line></svg>
+          </button>
+
+          <!-- Admin Profile Dropdown Button -->
+          <div class="header-action-wrap user-profile-wrap">
+            <button type="button" class="user-profile-btn" id="btn-profile-toggle" aria-label="Administrator profile options" aria-expanded="false" aria-haspopup="true">
+              <div class="user-avatar-circle" id="user-avatar-initials">AD</div>
+              <div class="user-meta">
+                <span class="user-display-name" id="user-display-name">SchoolRoute Admin</span>
+                <span class="user-role-badge">Administrator</span>
+              </div>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+
+            <!-- Profile Dropdown Menu -->
+            <div class="profile-dropdown-menu" id="profile-dropdown-menu" role="menu" aria-label="Administrator Options">
+              <div class="profile-dropdown-header">
+                <p class="dropdown-full-name">SchoolRoute Admin</p>
+                <p class="dropdown-email">admin@schoolroute.in</p>
+              </div>
+              <ul class="dropdown-menu-list">
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-action-profile">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Admin Profile</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-action-settings">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <span>System Settings</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-menu-item" role="menuitem" id="btn-action-logs">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span>Audit Logs</span>
+                  </button>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                  <button type="button" class="dropdown-menu-item item-logout" role="menuitem" id="btn-logout-action">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Log Out</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- ================================================
+           MAIN DASHBOARD SCROLLABLE CONTENT
+      ================================================ -->
+      <main class="admin-content" id="main-admin-content">
+
+        <!-- ==============================================
+             3. MAIN HERO BANNER
+        ============================================== -->
+        <section class="admin-hero-banner" aria-label="Operations Overview Banner">
+          <div class="hero-card-inner">
+            
+            <div class="hero-content-col">
+              <!-- Transport Operations Badge -->
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span class="hero-badge-text">TRANSPORT OPERATIONS</span>
+              </div>
+
+              <!-- Main Heading with Highlight -->
+              <h2 class="hero-headline">
+                School Transport<br>
+                <span class="text-highlight-yellow">at a Glance</span>
+              </h2>
+
+              <!-- Supporting Description -->
+              <p class="hero-subtext">
+                Monitor buses, routes, students and daily transportation activity from one connected dashboard.
+              </p>
+            </div>
+
+            <!-- Right Hero Visual with Bus Photo & Badges -->
+            <div class="hero-visual-col">
+              <div class="hero-image-frame">
+                <img src="assets/images/admin-hero-bus.jpg" alt="Modern SchoolRoute Fleet Bus at Campus" class="hero-bus-photo" width="480" height="280" loading="eager" onerror="this.onerror=null; this.src='../assets/images/hero-school-bus.jpg';">
+                
+                <!-- Decorative Phrase Badge (Safe Kids • Brighter Tomorrows) -->
+                <div class="hero-decorative-badge" aria-hidden="true">
+                  <svg class="badge-sparkle-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span class="decorative-phrase-text">Safe Kids<br>Brighter Tomorrows</span>
+                </div>
+
+                <!-- Small Safety Status Card (Reliable Transport • Safer Schools) -->
+                <div class="hero-status-floating-badge" aria-hidden="true">
+                  <div class="badge-icon-circle">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                  </div>
+                  <div class="badge-text-block">
+                    <strong class="badge-title">Reliable Transport</strong>
+                    <span class="badge-sub">Safer Schools</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==============================================
+             4. 5 STAT CARDS
+        ============================================== -->
+        <section class="stat-cards-grid" aria-label="Core Transportation Metrics">
+          
+          <!-- Card 1: Total Buses -->
+          <div class="stat-card" id="stat-card-buses">
+            <div class="stat-card-icon-wrap icon-theme-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M3 10h18"></path><path d="M8 4v2"></path><path d="M16 4v2"></path></svg>
+            </div>
+            <div class="stat-card-body">
+              <h3 class="stat-card-value" id="val-total-buses">24</h3>
+              <span class="stat-card-label">Total Buses</span>
+              <p class="stat-card-sub" id="sub-total-buses">20 Active &bull; 4 Inactive</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Drivers -->
+          <div class="stat-card" id="stat-card-drivers">
+            <div class="stat-card-icon-wrap icon-theme-blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg>
+            </div>
+            <div class="stat-card-body">
+              <h3 class="stat-card-value" id="val-total-drivers">28</h3>
+              <span class="stat-card-label">Drivers</span>
+              <p class="stat-card-sub" id="sub-total-drivers">26 Active &bull; 2 On Leave</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Routes -->
+          <div class="stat-card" id="stat-card-routes">
+            <div class="stat-card-icon-wrap icon-theme-purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="stat-card-body">
+              <h3 class="stat-card-value" id="val-total-routes">18</h3>
+              <span class="stat-card-label">Routes</span>
+              <p class="stat-card-sub" id="sub-total-routes">16 Active &bull; 2 Inactive</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Students -->
+          <div class="stat-card" id="stat-card-students">
+            <div class="stat-card-icon-wrap icon-theme-orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="stat-card-body">
+              <h3 class="stat-card-value" id="val-total-students">842</h3>
+              <span class="stat-card-label">Students</span>
+              <p class="stat-card-sub" id="sub-total-students">768 Active &bull; 74 Inactive</p>
+            </div>
+          </div>
+
+          <!-- Card 5: On-Time Rate -->
+          <div class="stat-card" id="stat-card-ontime">
+            <div class="stat-card-icon-wrap icon-theme-emerald">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="stat-card-body">
+              <h3 class="stat-card-value text-accent-green" id="val-ontime-rate">99%</h3>
+              <span class="stat-card-label">On-Time Rate</span>
+              <p class="stat-card-sub" id="sub-ontime-rate">Today's Performance</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ==============================================
+             5. MIDDLE TIER: LIVE TRACKING & TODAY'S ACTIVITY
+        ============================================== -->
+        <section class="middle-tier-grid" aria-label="Operations Overview Grid">
+          
+          <!-- LEFT: LIVE TRACKING CARD -->
+          <div class="admin-panel live-tracking-panel" id="live-tracking-card">
+            
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Live Tracking</h3>
+                <p class="panel-subtitle">Real-time location of all school buses</p>
+              </div>
+              <div class="panel-header-actions">
+                <button type="button" class="btn-panel-action" id="btn-view-all-buses">
+                  <span>View All Buses</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Styled Vector Map Container -->
+            <div class="map-container" id="admin-map-container" aria-label="Interactive Fleet Route Map">
+              
+              <!-- Map Canvas SVG -->
+              <div class="map-canvas-layer" id="admin-map-canvas">
+                <svg class="map-vector-svg" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <!-- Background Grid Pattern -->
+                    <pattern id="adminMapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" class="map-grid-line" stroke-width="1"/>
+                    </pattern>
+                    <!-- Park Texture Pattern -->
+                    <pattern id="adminParkPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <circle cx="5" cy="5" r="1.5" class="map-tree-dot"/>
+                      <circle cx="15" cy="15" r="1.5" class="map-tree-dot"/>
+                    </pattern>
+                    <!-- Dynamic Fleet Route Gradient -->
+                    <linearGradient id="fleetRouteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#32A852"/>
+                      <stop offset="50%" stop-color="#075B46"/>
+                      <stop offset="100%" stop-color="#F8C52C"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Map Background Base -->
+                  <rect width="800" height="360" class="map-bg-fill"/>
+                  <rect width="800" height="360" fill="url(#adminMapGrid)"/>
+
+                  <!-- City Parks / Campus Green Zones -->
+                  <rect x="40" y="30" width="160" height="85" rx="12" class="map-park-fill"/>
+                  <rect x="40" y="30" width="160" height="85" rx="12" fill="url(#adminParkPattern)"/>
+                  <text x="120" y="76" class="map-label-park" text-anchor="middle">Central Green Park</text>
+
+                  <rect x="540" y="210" width="220" height="110" rx="16" class="map-park-fill"/>
+                  <rect x="540" y="210" width="220" height="110" rx="16" fill="url(#adminParkPattern)"/>
+                  <text x="650" y="270" class="map-label-park" text-anchor="middle">Sunrise Academy Campus</text>
+
+                  <!-- Secondary Road Network Grid -->
+                  <path d="M 0,80 L 800,80" fill="none" class="map-road-secondary" stroke-width="10"/>
+                  <path d="M 0,180 L 800,180" fill="none" class="map-road-secondary" stroke-width="10"/>
+                  <path d="M 0,290 L 800,290" fill="none" class="map-road-secondary" stroke-width="10"/>
+                  <path d="M 200,0 L 200,360" fill="none" class="map-road-secondary" stroke-width="10"/>
+                  <path d="M 440,0 L 440,360" fill="none" class="map-road-secondary" stroke-width="10"/>
+                  <path d="M 660,0 L 660,360" fill="none" class="map-road-secondary" stroke-width="10"/>
+
+                  <!-- Active Bus Routes Corridors -->
+                  <!-- Route 1: Maple Street to Sunrise -->
+                  <path d="M 80,290 L 200,290 Q 230,290 230,260 L 230,180 Q 230,150 260,150 L 440,150 Q 470,150 470,120 L 470,80 L 660,80 Q 690,80 690,120 L 690,220" fill="none" class="map-road-main" stroke-width="18"/>
+                  <path d="M 80,290 L 200,290 Q 230,290 230,260 L 230,180 Q 230,150 260,150 L 440,150 Q 470,150 470,120 L 470,80 L 660,80 Q 690,80 690,120 L 690,220" fill="none" class="map-route-highlight" stroke="url(#fleetRouteGradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Route 2: Lake View to City Corridor -->
+                  <path d="M 120,80 Q 200,80 200,180 L 440,180 Q 520,180 520,290 L 660,290" fill="none" class="map-road-main" stroke-width="14" stroke-opacity="0.6"/>
+                  <path d="M 120,80 Q 200,80 200,180 L 440,180 Q 520,180 520,290 L 660,290" fill="none" stroke="#0284C7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+
+                  <!-- Road Names -->
+                  <text x="130" y="282" class="map-street-name">Maple Street</text>
+                  <text x="330" y="142" class="map-street-name">Greenwood Blvd</text>
+                  <text x="560" y="72" class="map-street-name">Sunrise Nagar</text>
+                  <text x="670" y="160" class="map-street-name" transform="rotate(90 670 160)">Lake View Way</text>
+                  <text x="320" y="172" class="map-street-name">Industrial Corridor</text>
+
+                  <!-- Stop Nodes -->
+                  <g class="map-stop-node completed" transform="translate(80, 290)">
+                    <circle r="10" class="node-outer-bg"/>
+                    <circle r="5" class="node-inner-dot"/>
+                  </g>
+                  <g class="map-stop-node current-stop" transform="translate(230, 210)">
+                    <circle r="12" class="node-outer-pulse"/>
+                    <circle r="7" class="node-outer-bg current"/>
+                    <circle r="4" class="node-inner-dot current"/>
+                  </g>
+                  <g class="map-stop-node school-stop" transform="translate(690, 220)">
+                    <circle r="14" class="node-outer-pulse"/>
+                    <circle r="8" class="node-outer-bg final"/>
+                    <circle r="4" class="node-inner-dot final"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Live Bus Floating Markers with Dynamic Positions -->
+              <!-- Bus #01 Marker -->
+              <div class="map-bus-pin marker-on-route" style="top: 58%; left: 29%;" title="Bus #01: Maple Street">
+                <span class="pin-pulse"></span>
+                <div class="pin-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle></svg>
+                  <span class="pin-label">#01</span>
+                </div>
+              </div>
+
+              <!-- Bus #12 Marker -->
+              <div class="map-bus-pin marker-on-route" style="top: 24%; left: 62%;" title="Bus #12: Green Park">
+                <span class="pin-pulse"></span>
+                <div class="pin-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle></svg>
+                  <span class="pin-label">#12</span>
+                </div>
+              </div>
+
+              <!-- Bus #07 Marker (At Stop) -->
+              <div class="map-bus-pin marker-at-stop" style="top: 48%; left: 86%;" title="Bus #07: Lake View">
+                <span class="pin-pulse"></span>
+                <div class="pin-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle></svg>
+                  <span class="pin-label">#07</span>
+                </div>
+              </div>
+
+              <!-- Bus #15 Marker -->
+              <div class="map-bus-pin marker-on-route" style="top: 40%; left: 45%;" title="Bus #15: Sunrise Nagar">
+                <span class="pin-pulse"></span>
+                <div class="pin-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle></svg>
+                  <span class="pin-label">#15</span>
+                </div>
+              </div>
+
+              <!-- Bus #18 Marker (Delayed) -->
+              <div class="map-bus-pin marker-delayed" style="top: 78%; left: 42%;" title="Bus #18: Industrial Area (Delayed)">
+                <span class="pin-pulse"></span>
+                <div class="pin-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle></svg>
+                  <span class="pin-label">#18</span>
+                </div>
+              </div>
+
+              <!-- Map Controls -->
+              <div class="map-controls-group" aria-label="Map Zoom Navigation">
+                <button type="button" class="map-ctrl-btn" id="btn-map-zoom-in" aria-label="Zoom In">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+                <button type="button" class="map-ctrl-btn" id="btn-map-zoom-out" aria-label="Zoom Out">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Real-time Active Buses Status Feed List -->
+            <div class="live-buses-feed-table">
+              <div class="feed-table-header">
+                <span>Bus</span>
+                <span>Status</span>
+                <span>Current Location</span>
+                <span style="text-align: end;">Last Ping</span>
+              </div>
+              <div class="feed-table-body" id="live-buses-list">
+                
+                <!-- Bus 1: Bus #01 -->
+                <div class="feed-row-item">
+                  <div class="feed-col-bus">
+                    <span class="bus-badge-tag">Bus #01</span>
+                  </div>
+                  <div class="feed-col-status">
+                    <span class="status-pill pill-on-route">On Route</span>
+                  </div>
+                  <div class="feed-col-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Maple Street</span>
+                  </div>
+                  <div class="feed-col-time">7:42 AM</div>
+                </div>
+
+                <!-- Bus 2: Bus #12 -->
+                <div class="feed-row-item">
+                  <div class="feed-col-bus">
+                    <span class="bus-badge-tag">Bus #12</span>
+                  </div>
+                  <div class="feed-col-status">
+                    <span class="status-pill pill-on-route">On Route</span>
+                  </div>
+                  <div class="feed-col-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Green Park</span>
+                  </div>
+                  <div class="feed-col-time">7:38 AM</div>
+                </div>
+
+                <!-- Bus 3: Bus #07 -->
+                <div class="feed-row-item">
+                  <div class="feed-col-bus">
+                    <span class="bus-badge-tag">Bus #07</span>
+                  </div>
+                  <div class="feed-col-status">
+                    <span class="status-pill pill-at-stop">At Stop</span>
+                  </div>
+                  <div class="feed-col-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Lake View</span>
+                  </div>
+                  <div class="feed-col-time">7:35 AM</div>
+                </div>
+
+                <!-- Bus 4: Bus #15 -->
+                <div class="feed-row-item">
+                  <div class="feed-col-bus">
+                    <span class="bus-badge-tag">Bus #15</span>
+                  </div>
+                  <div class="feed-col-status">
+                    <span class="status-pill pill-on-route">On Route</span>
+                  </div>
+                  <div class="feed-col-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Sunrise Nagar</span>
+                  </div>
+                  <div class="feed-col-time">7:41 AM</div>
+                </div>
+
+                <!-- Bus 5: Bus #18 -->
+                <div class="feed-row-item">
+                  <div class="feed-col-bus">
+                    <span class="bus-badge-tag">Bus #18</span>
+                  </div>
+                  <div class="feed-col-status">
+                    <span class="status-pill pill-delayed">Delayed</span>
+                  </div>
+                  <div class="feed-col-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Industrial Area</span>
+                  </div>
+                  <div class="feed-col-time">7:28 AM</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: TODAY'S ACTIVITY CARD -->
+          <div class="admin-panel today-activity-panel" id="today-activity-card">
+            
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Today's Activity</h3>
+              </div>
+              <div class="panel-header-actions">
+                <div class="date-selector-pill" id="date-selector-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>Sep 15, 2026</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity Metrics Progress List -->
+            <div class="activity-metrics-list">
+              
+              <!-- Metric 1: Buses on Route -->
+              <div class="activity-metric-item">
+                <div class="metric-info-row">
+                  <span class="metric-label">Buses on Route</span>
+                  <span class="metric-ratio"><strong>20</strong> / 24</span>
+                </div>
+                <div class="metric-progress-track">
+                  <div class="metric-progress-fill fill-green" style="width: 83.3%;"></div>
+                </div>
+              </div>
+
+              <!-- Metric 2: Students Picked Up -->
+              <div class="activity-metric-item">
+                <div class="metric-info-row">
+                  <span class="metric-label">Students Picked Up</span>
+                  <span class="metric-ratio"><strong>648</strong> / 842</span>
+                </div>
+                <div class="metric-progress-track">
+                  <div class="metric-progress-fill fill-emerald" style="width: 76.9%;"></div>
+                </div>
+              </div>
+
+              <!-- Metric 3: Students at School -->
+              <div class="activity-metric-item">
+                <div class="metric-info-row">
+                  <span class="metric-label">Students at School</span>
+                  <span class="metric-ratio"><strong>636</strong> / 842</span>
+                </div>
+                <div class="metric-progress-track">
+                  <div class="metric-progress-fill fill-teal" style="width: 75.5%;"></div>
+                </div>
+              </div>
+
+              <!-- Metric 4: Students Dropped Off -->
+              <div class="activity-metric-item">
+                <div class="metric-info-row">
+                  <span class="metric-label">Students Dropped Off</span>
+                  <span class="metric-ratio"><strong>0</strong> / 842</span>
+                </div>
+                <div class="metric-progress-track">
+                  <div class="metric-progress-fill fill-muted" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <!-- Additional Highlights Rows -->
+              <div class="activity-summary-chips-grid">
+                <div class="activity-chip-box chip-warning">
+                  <div class="chip-icon-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  </div>
+                  <div class="chip-text">
+                    <span class="chip-val">2</span>
+                    <span class="chip-label">Pending Issues</span>
+                  </div>
+                </div>
+
+                <div class="activity-chip-box chip-success">
+                  <div class="chip-icon-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                  </div>
+                  <div class="chip-text">
+                    <span class="chip-val">5</span>
+                    <span class="chip-label">New Registrations</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ==============================================
+             6. BOTTOM SECTION (3 CARDS GRID)
+        ============================================== -->
+        <section class="bottom-three-grid" aria-label="Operations Actions and Logs">
+          
+          <!-- CARD 1: RECENT ALERTS -->
+          <div class="admin-panel alerts-panel" id="recent-alerts-card">
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Recent Alerts</h3>
+              </div>
+              <div class="panel-header-actions">
+                <button type="button" class="btn-text-link" id="btn-view-all-alerts">
+                  <span>View All</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <ul class="alerts-feed-list">
+              
+              <!-- Alert 1 -->
+              <li class="alert-feed-item">
+                <div class="alert-icon-box icon-theme-warning">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </div>
+                <div class="alert-text-body">
+                  <strong class="alert-headline">Bus #18 is delayed</strong>
+                  <p class="alert-description">Running 12 minutes behind schedule</p>
+                </div>
+              </li>
+
+              <!-- Alert 2 -->
+              <li class="alert-feed-item">
+                <div class="alert-icon-box icon-theme-blue">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg>
+                </div>
+                <div class="alert-text-body">
+                  <strong class="alert-headline">Student not boarded</strong>
+                  <p class="alert-description">Arjun S. not picked up at Maple Street</p>
+                </div>
+              </li>
+
+              <!-- Alert 3 -->
+              <li class="alert-feed-item">
+                <div class="alert-icon-box icon-theme-danger">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                </div>
+                <div class="alert-text-body">
+                  <strong class="alert-headline">Route deviation detected</strong>
+                  <p class="alert-description">Bus #07 deviated from assigned route</p>
+                </div>
+              </li>
+
+              <!-- Alert 4 -->
+              <li class="alert-feed-item">
+                <div class="alert-icon-box icon-theme-green">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="alert-text-body">
+                  <strong class="alert-headline">Driver check-in completed</strong>
+                  <p class="alert-description">Ramesh K. checked in for Route 12</p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- CARD 2: UPCOMING TRIPS -->
+          <div class="admin-panel trips-panel" id="upcoming-trips-card">
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Upcoming Trips</h3>
+              </div>
+              <div class="panel-header-actions">
+                <button type="button" class="btn-text-link" id="btn-view-all-trips">
+                  <span>View All</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <ul class="trips-feed-list">
+              
+              <!-- Trip 1 -->
+              <li class="trip-feed-item">
+                <div class="trip-meta-left">
+                  <strong class="trip-route-name">Route 12 - Morning</strong>
+                  <p class="trip-route-path">Green Park to Sunrise School</p>
+                  <span class="trip-time-tag">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    7:30 AM
+                  </span>
+                </div>
+                <div class="trip-status-right">
+                  <span class="status-pill pill-in-progress">In Progress</span>
+                </div>
+              </li>
+
+              <!-- Trip 2 -->
+              <li class="trip-feed-item">
+                <div class="trip-meta-left">
+                  <strong class="trip-route-name">Route 05 - Morning</strong>
+                  <p class="trip-route-path">Lake View to City School</p>
+                  <span class="trip-time-tag">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    7:45 AM
+                  </span>
+                </div>
+                <div class="trip-status-right">
+                  <span class="status-pill pill-in-progress">In Progress</span>
+                </div>
+              </li>
+
+              <!-- Trip 3 -->
+              <li class="trip-feed-item">
+                <div class="trip-meta-left">
+                  <strong class="trip-route-name">Route 08 - Afternoon</strong>
+                  <p class="trip-route-path">Maple Street to Greenwood School</p>
+                  <span class="trip-time-tag">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    3:00 PM
+                  </span>
+                </div>
+                <div class="trip-status-right">
+                  <span class="status-pill pill-scheduled">Scheduled</span>
+                </div>
+              </li>
+
+              <!-- Trip 4 -->
+              <li class="trip-feed-item">
+                <div class="trip-meta-left">
+                  <strong class="trip-route-name">Route 15 - Afternoon</strong>
+                  <p class="trip-route-path">Industrial Area to City School</p>
+                  <span class="trip-time-tag">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    3:20 PM
+                  </span>
+                </div>
+                <div class="trip-status-right">
+                  <span class="status-pill pill-scheduled">Scheduled</span>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- CARD 3: QUICK ACTIONS -->
+          <div class="admin-panel quick-actions-panel" id="quick-actions-card">
+            <div class="panel-header">
+              <div class="panel-header-titles">
+                <h3 class="panel-title">Quick Actions</h3>
+                <p class="panel-subtitle">Frequent administrative operations</p>
+              </div>
+            </div>
+
+            <div class="quick-actions-2x2-grid">
+              
+              <!-- Action 1: Add New Bus -->
+              <button type="button" class="quick-action-btn" id="btn-qa-add-bus">
+                <div class="qa-icon-wrapper icon-theme-green">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"></rect><circle cx="7" cy="16" r="2"></circle><circle cx="17" cy="16" r="2"></circle><path d="M3 10h18"></path><path d="M8 4v2"></path><path d="M16 4v2"></path></svg>
+                  <span class="qa-plus-dot">+</span>
+                </div>
+                <span class="qa-btn-title">Add New Bus</span>
+              </button>
+
+              <!-- Action 2: Add New Driver -->
+              <button type="button" class="quick-action-btn" id="btn-qa-add-driver">
+                <div class="qa-icon-wrapper icon-theme-blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  <span class="qa-plus-dot">+</span>
+                </div>
+                <span class="qa-btn-title">Add New Driver</span>
+              </button>
+
+              <!-- Action 3: Manage Routes -->
+              <button type="button" class="quick-action-btn" id="btn-qa-manage-routes">
+                <div class="qa-icon-wrapper icon-theme-purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                </div>
+                <span class="qa-btn-title">Manage Routes</span>
+              </button>
+
+              <!-- Action 4: Add Student -->
+              <button type="button" class="quick-action-btn" id="btn-qa-add-student">
+                <div class="qa-icon-wrapper icon-theme-orange">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="qa-plus-dot">+</span>
+                </div>
+                <span class="qa-btn-title">Add Student</span>
+              </button>
+
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- ==================================================
+       INTERACTIVE MODAL FOR QUICK ACTIONS (DEMO MODAL)
+  ================================================== -->
+  <div class="admin-modal-overlay" id="admin-action-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="admin-modal-card">
+      <div class="modal-header-row">
+        <h3 class="modal-title" id="modal-title">Admin Quick Action</h3>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body-content" id="modal-body-content">
+        <!-- Dynamically injected form content -->
+      </div>
+      <div class="modal-footer-actions">
+        <button type="button" class="btn btn-outline" id="btn-modal-cancel">Cancel</button>
+        <button type="button" class="btn btn-primary" id="btn-modal-submit">Save &amp; Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+
+  <!-- Admin JavaScript Bundle -->
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

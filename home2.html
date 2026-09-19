@@ -1,0 +1,1034 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>SchoolRoute — Smarter School Transport for Brighter Futures | Product Landing</title>
+  <meta name="description" content="SchoolRoute Product Landing: Real-time school bus tracking, automated parent arrival alerts, student RFID attendance logs, and intelligent route management.">
+  <meta name="keywords" content="school bus tracking software, school transport app, student safety GPS, bus route optimization, parent notifications SaaS">
+  
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="SchoolRoute — Smarter School Transport for Brighter Futures">
+  <meta property="og:description" content="Real-time tracking, instant notifications, and complete visibility — everything every child's journey needs.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/schoolroute-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/schoolroute-logo.png">
+
+  <!-- Google Fonts: Sora (Headings), DM Sans (Body), Caveat (Decorative Accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <!-- Master & Home 2 Specific Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/home2.css">
+</head>
+<body>
+
+  <!-- Top Skip Link for Keyboard Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==================================================
+       HEADER & NAVIGATION BAR (Master Design System)
+  ================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <!-- Brand Logo (Dual Logo Support for Light & Dark Themes) -->
+      <a href="index.html" class="brand-logo" aria-label="SchoolRoute Home">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home 1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link active" aria-current="page">Home 2</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions & Accessibility Controls -->
+      <div class="header-actions">
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="theme-toggle" class="control-btn" aria-label="Switch to dark theme" title="Toggle Light / Dark Mode">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- LTR / RTL Handedness Layout Switcher -->
+        <button id="direction-toggle" class="control-btn" aria-label="Switch to RTL / Right-side Layout" title="Switch to RTL / Right-side Layout">
+          <svg class="dir-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 8 16 13"></polyline>
+            <line x1="21" y1="8" x2="9" y2="8"></line>
+            <polyline points="8 21 3 16 8 11"></polyline>
+            <line x1="3" y1="16" x2="15" y2="16"></line>
+          </svg>
+        </button>
+
+        <!-- Login & Signup Buttons -->
+        <a href="login.html" class="btn btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn btn-primary-nav">Sign Up</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="logo-img logo-light" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="logo-img logo-dark" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link">Home 1</a></li>
+        <li><a href="home2.html" class="drawer-nav-link active">Home 2 (Product)</a></li>
+        <li><a href="about.html" class="drawer-nav-link">About Us</a></li>
+        <li><a href="services.html" class="drawer-nav-link">Services</a></li>
+        <li><a href="safety.html" class="drawer-nav-link">Safety</a></li>
+        <li><a href="pricing.html" class="drawer-nav-link">Pricing</a></li>
+        <li><a href="blog.html" class="drawer-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="drawer-nav-link">Contact</a></li>
+      </ul>
+      <div class="drawer-actions">
+        <a href="login.html" class="btn btn-outline full-width">Login</a>
+        <a href="signup.html" class="btn btn-primary full-width">Sign Up</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <main id="main-content">
+
+    <!-- ==================================================
+         1. PRODUCT / NICHE HERO SECTION
+    ================================================== -->
+    <section class="hero-section hero2-section" id="hero2">
+      <div class="container hero-container hero2-container">
+        <!-- Left Content Column -->
+        <div class="hero-content">
+          <div class="badge badge-pill badge-hero hero-seq-1">
+            <span class="badge-dot"></span>
+            SCHOOL TRANSPORT MADE SMART
+          </div>
+
+          <h1 class="hero-title hero-seq-2">
+            Smarter <span class="highlight-yellow">School Transport</span><br>
+            for Brighter Futures
+          </h1>
+
+          <p class="hero-description hero-seq-3">
+            Real-time tracking, instant notifications, and complete visibility — everything every child's journey needs.
+          </p>
+
+          <div class="hero-cta-group hero-seq-4">
+            <a href="contact.html" class="btn btn-primary btn-hero">
+              Get Started Today <span class="btn-arrow">→</span>
+            </a>
+            <button type="button" class="btn btn-secondary-hero" id="watch-video-btn" aria-label="Watch how SchoolRoute works video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="play-icon" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Watch Video
+            </button>
+          </div>
+
+          <!-- Hero 3-Item Feature Strip -->
+          <div class="hero2-feature-strip hero-seq-5">
+            <div class="strip-item">
+              <div class="strip-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="strip-text">
+                <h3 class="strip-title">Track in Real-Time</h3>
+                <p class="strip-desc">Know where the bus is</p>
+              </div>
+            </div>
+
+            <div class="strip-divider"></div>
+
+            <div class="strip-item">
+              <div class="strip-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <div class="strip-text">
+                <h3 class="strip-title">Stay Informed</h3>
+                <p class="strip-desc">Get instant alerts</p>
+              </div>
+            </div>
+
+            <div class="strip-divider"></div>
+
+            <div class="strip-item">
+              <div class="strip-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <div class="strip-text">
+                <h3 class="strip-title">Travel with Confidence</h3>
+                <p class="strip-desc">Safe &amp; reliable transport</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual: School Bus Photo + Interactive Smartphone GPS Live Map Overlay -->
+        <div class="hero-visual hero2-visual-wrapper hero-image-seq">
+          <!-- Decorative Handwritten Phrase (Caveat font) -->
+          <div class="hero2-handwritten-note reveal-handwriting" aria-hidden="true">
+            <span class="note-text">Safe Journeys,<br>Happier Tomorrows</span>
+            <svg class="note-sparkle" width="24" height="24" viewBox="0 0 24 24" fill="#F8C52C">
+              <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"/>
+            </svg>
+          </div>
+
+          <!-- Base Hero Image (Yellow Bus + Cheerful Students) -->
+          <div class="hero2-image-card">
+            <img src="assets/images/hero-home2.jpg" alt="Smiling student with yellow school bus on campus" class="hero2-base-img" width="560" height="420" loading="eager">
+            <div class="hero2-card-overlay"></div>
+          </div>
+
+          <!-- Smartphone Live Tracking Mockup -->
+          <div class="phone-mockup-card">
+            <div class="phone-speaker-notch"></div>
+            
+            <!-- Map Simulation Surface -->
+            <div class="phone-map-screen">
+              <!-- Map Grid SVG Background -->
+              <svg class="phone-map-grid" viewBox="0 0 240 340" fill="none" preserveAspectRatio="none">
+                <!-- Roads / Streets -->
+                <path d="M0,80 L240,80" stroke="rgba(255,255,255,0.4)" stroke-width="8"/>
+                <path d="M60,0 L60,340" stroke="rgba(255,255,255,0.3)" stroke-width="6"/>
+                <path d="M180,0 L180,340" stroke="rgba(255,255,255,0.3)" stroke-width="6"/>
+                <path d="M0,240 L240,240" stroke="rgba(255,255,255,0.3)" stroke-width="6"/>
+                
+                <!-- Animated Live GPS Route Line -->
+                <path class="phone-gps-route" d="M 60,260 L 60,160 Q 60,120 100,120 L 150,120 Q 180,120 180,80 L 180,40" stroke="#32A852" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <!-- Pickup / Drop Stops -->
+                <circle cx="60" cy="260" r="5" fill="#3B82F6"/>
+                <circle cx="180" cy="40" r="5" fill="#EF4444"/>
+              </svg>
+
+              <!-- Floating Live Arrival Notification Inside Phone -->
+              <div class="phone-floating-notif">
+                <div class="phone-notif-pin">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="phone-notif-info">
+                  <span class="phone-notif-title">Bus Arriving in <strong>3 mins</strong></span>
+                  <span class="phone-notif-sub">at Green Park Stop</span>
+                </div>
+              </div>
+
+              <!-- Live Bus Marker on Route -->
+              <div class="live-bus-marker">
+                <div class="bus-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#17352D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                    <path d="M16 2v2M8 2v2M3 10h18"></path>
+                  </svg>
+                </div>
+                <span class="bus-radar-pulse"></span>
+              </div>
+
+              <!-- Bottom Bus Status Bar Inside Phone -->
+              <div class="phone-bottom-status">
+                <div class="phone-status-avatar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="phone-status-text">
+                  <span class="phone-status-name">Your Child's Bus</span>
+                  <span class="phone-status-detail">Route no. 024</span>
+                </div>
+                <span class="status-pill on-time">
+                  <span class="status-dot-green"></span> On Time
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         2. SECTION 2 — PROBLEM → SOLUTION SPLIT
+    ================================================== -->
+    <section class="prob-sol-section section-spacing" id="problem-solution">
+      <div class="container">
+        <div class="prob-sol-grid">
+          <!-- Left: Challenge / Problem Card -->
+          <div class="prob-card challenge-box reveal-left">
+            <div class="badge badge-pill badge-challenge">THE CHALLENGE</div>
+            <h2 class="prob-sol-title">Parents Worry.<br>We Provide Answers.</h2>
+            <p class="prob-sol-desc">
+              Uncertainty about your child's school transport can be stressful. Late arrivals, lack of communication, and safety concerns are common challenges for parents.
+            </p>
+
+            <div class="prob-item-list">
+              <div class="prob-item">
+                <div class="prob-icon-wrap icon-challenge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <span class="prob-item-text">No real-time updates about the bus</span>
+              </div>
+
+              <div class="prob-item">
+                <div class="prob-icon-wrap icon-challenge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <span class="prob-item-text">Safety concerns during travel</span>
+              </div>
+
+              <div class="prob-item">
+                <div class="prob-icon-wrap icon-challenge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <line x1="9" y1="10" x2="15" y2="10"></line>
+                  </svg>
+                </div>
+                <span class="prob-item-text">Lack of clear communication</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Animated SVG Route Connector Arrow -->
+          <div class="prob-sol-connector" aria-hidden="true">
+            <svg class="connector-arrow-svg" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="28" fill="var(--card-bg)" stroke="var(--border-color)" stroke-width="1.5"/>
+              <path class="connector-line-draw" d="M18 32 L44 32" stroke="var(--primary-green)" stroke-width="3" stroke-linecap="round"/>
+              <polyline points="36 24 44 32 36 40" stroke="var(--primary-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Right: Solution Card -->
+          <div class="prob-card solution-box reveal-right">
+            <div class="badge badge-pill badge-solution">OUR SOLUTION</div>
+            <h2 class="prob-sol-title">A Smarter, Safer<br>Way to School</h2>
+            <p class="prob-sol-desc">
+              SchoolRoute brings technology, safety and transparency together to give parents complete peace of mind with verifiable data.
+            </p>
+
+            <div class="prob-item-list">
+              <div class="prob-item">
+                <div class="prob-icon-wrap icon-solution">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                  </svg>
+                </div>
+                <span class="prob-item-text">Live bus tracking on map</span>
+              </div>
+
+              <div class="prob-item">
+                <div class="prob-icon-wrap icon-solution">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    <polyline points="9 11 11 13 15 9"></polyline>
+                  </svg>
+                </div>
+                <span class="prob-item-text">Instant notifications at every stop</span>
+              </div>
+
+              <div class="prob-item">
+                <div class="prob-icon-wrap icon-solution">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                  </svg>
+                </div>
+                <span class="prob-item-text">Secure and reliable transport system</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         3. SECTION 3 — FEATURE HIGHLIGHTS
+    ================================================== -->
+    <section class="features-highlight-section section-spacing" id="features">
+      <div class="container">
+        <!-- Section Header with Decorative Handwritten Note -->
+        <div class="section-header text-center reveal-up">
+          <div class="badge badge-pill badge-accent">FEATURE HIGHLIGHTS</div>
+          <h2 class="section-title">Everything You Need in One Platform</h2>
+          <p class="section-subtitle">Powerful features designed for parents, schools and transport operators.</p>
+          
+          <!-- Decorative Handwritten Phrase with Animated Curve -->
+          <div class="feature-decor-note reveal-handwriting" aria-hidden="true">
+            <span class="note-text-caveat">Technology for Safer Schools</span>
+            <svg class="decor-underline-svg" width="140" height="14" viewBox="0 0 140 14" fill="none">
+              <path class="decor-underline-path" d="M2,8 Q35,2 70,8 T138,6" stroke="#F8C52C" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 6 Feature Cards Grid -->
+        <div class="services-grid features-grid">
+          <!-- Feature 1 -->
+          <article class="service-card reveal-up" style="--delay: 0ms;">
+            <div class="service-icon-wrap icon-green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="service-title">Live Tracking</h3>
+            <p class="service-desc">Track the assigned bus in real time with continuous GPS updates and accurate ETA.</p>
+            <a href="service-detail.html?id=tracking" class="service-link">
+              Learn More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="service-card reveal-up" style="--delay: 100ms;">
+            <div class="service-icon-wrap icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Route Details</h3>
+            <p class="service-desc">View stops, pickup zones and schedules with automated route alerts.</p>
+            <a href="service-detail.html?id=routes" class="service-link">
+              Learn More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="service-card reveal-up" style="--delay: 200ms;">
+            <div class="service-icon-wrap icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Instant Alerts</h3>
+            <p class="service-desc">Get notified when the bus approaches or arrives at your designated stop.</p>
+            <a href="service-detail.html?id=notifications" class="service-link">
+              Learn More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 4 -->
+          <article class="service-card reveal-up" style="--delay: 300ms;">
+            <div class="service-icon-wrap icon-orange">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Student Logs</h3>
+            <p class="service-desc">Boarding and alighting confirmation logged digitally with RFID/NFC verification.</p>
+            <a href="service-detail.html?id=student-monitoring" class="service-link">
+              Learn More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 5 -->
+          <article class="service-card reveal-up" style="--delay: 400ms;">
+            <div class="service-icon-wrap icon-red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M12 8v4"></path>
+                <path d="M12 16h.01"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Enhanced Safety</h3>
+            <p class="service-desc">Verified drivers, secure transport protocols, and real-time emergency dispatch.</p>
+            <a href="service-detail.html?id=safety" class="service-link">
+              Learn More <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 6 -->
+          <article class="service-card reveal-up" style="--delay: 500ms;">
+            <div class="service-icon-wrap icon-teal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Easy Payments</h3>
+            <p class="service-desc">Manage plans, make online payments, and download itemized tax receipts easily.</p>
+            <a href="service-detail.html?id=payments" class="service-link">
+              Learn More <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         4. SECTION 4 — USE CASES
+    ================================================== -->
+    <section class="usecases-section section-spacing" id="use-cases">
+      <div class="container">
+        <!-- Section Header with Right Action Link -->
+        <div class="usecase-header-row reveal-up">
+          <div>
+            <div class="badge badge-pill badge-accent">BUILT FOR EVERYONE</div>
+            <h2 class="section-title">Designed for a Safer Tomorrow</h2>
+          </div>
+          <a href="blog.html" class="header-action-link">
+            Explore All Use Cases <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <!-- 3 Use Case Cards Grid -->
+        <div class="usecase-grid">
+          <!-- Card 1: Parents -->
+          <div class="usecase-card reveal-up" style="--delay: 100ms;">
+            <div class="usecase-image-box">
+              <img src="assets/images/usecase-parent.jpg" alt="Parent using SchoolRoute app" class="usecase-img" width="380" height="220" loading="lazy">
+              <div class="usecase-floating-icon icon-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="usecase-body">
+              <h3 class="usecase-title">Parents</h3>
+              <p class="usecase-desc">Stay informed, track live, and ensure your child's safety from doorstep to school.</p>
+              <a href="contact.html" class="usecase-link">Get Started for Parents <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- Card 2: Schools -->
+          <div class="usecase-card reveal-up" style="--delay: 200ms;">
+            <div class="usecase-image-box">
+              <img src="assets/images/usecase-school.jpg" alt="School administration building and bus fleet" class="usecase-img" width="380" height="220" loading="lazy">
+              <div class="usecase-floating-icon icon-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="usecase-body">
+              <h3 class="usecase-title">Schools</h3>
+              <p class="usecase-desc">Manage transport operations efficiently and securely with centralized fleet control.</p>
+              <a href="contact.html" class="usecase-link">School Partner Portal <span class="arrow">→</span></a>
+            </div>
+          </div>
+
+          <!-- Card 3: Transport Operators -->
+          <div class="usecase-card reveal-up" style="--delay: 300ms;">
+            <div class="usecase-image-box">
+              <img src="assets/images/usecase-driver.jpg" alt="Verified professional school bus driver" class="usecase-img" width="380" height="220" loading="lazy">
+              <div class="usecase-floating-icon icon-yellow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <path d="M16 2v2M8 2v2M3 10h18"></path>
+                  <circle cx="7.5" cy="15.5" r="1.5"></circle>
+                  <circle cx="16.5" cy="15.5" r="1.5"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="usecase-body">
+              <h3 class="usecase-title">Transport Operators</h3>
+              <p class="usecase-desc">Optimize routes, track buses and ensure smooth operations with driver navigation apps.</p>
+              <a href="contact.html" class="usecase-link">Operator Solutions <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         5. SECTION 5 — PRICING TEASER
+    ================================================== -->
+    <section class="pricing-teaser-section section-spacing" id="pricing">
+      <div class="container">
+        <!-- Section Header with Detailed Plans Link -->
+        <div class="section-header text-center reveal-up">
+          <div class="badge badge-pill badge-accent">SIMPLE &amp; FLEXIBLE</div>
+          <h2 class="section-title">Choose a Plan That Fits Your Needs</h2>
+          <p class="section-subtitle">
+            Transparent pricing designed for families of every size.
+            <a href="pricing.html" class="pricing-subtitle-link">View Detailed Plans <span class="arrow">→</span></a>
+          </p>
+        </div>
+
+        <!-- 3 Pricing Cards Grid -->
+        <div class="pricing-grid">
+          <!-- Monthly Plan -->
+          <div class="pricing-card reveal-up" style="--delay: 100ms;">
+            <div class="pricing-card-header">
+              <div class="pricing-icon-circle icon-teal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <h3 class="pricing-plan-name">Monthly Plan</h3>
+              <p class="pricing-plan-desc">Great for short-term needs</p>
+            </div>
+
+            <div class="pricing-price-box">
+              <span class="currency-symbol">₹</span>
+              <span class="price-val">999</span>
+              <span class="price-period">/month</span>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Live GPS Tracking</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instant Arrival Alerts</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Standard Support</span>
+              </li>
+            </ul>
+
+            <div class="pricing-btn-wrap">
+              <a href="contact.html" class="btn btn-outline full-width">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Quarterly Plan (Highlighted / Most Popular) -->
+          <div class="pricing-card featured-pricing reveal-scale" style="--delay: 200ms;">
+            <div class="popular-badge">Most Popular</div>
+
+            <div class="pricing-card-header">
+              <div class="pricing-icon-circle icon-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3 class="pricing-plan-name">Quarterly Plan</h3>
+              <p class="pricing-plan-desc">Best value for growing families</p>
+            </div>
+
+            <div class="pricing-price-box">
+              <span class="currency-symbol">₹</span>
+              <span class="price-val">2,499</span>
+              <span class="price-period">/3 months</span>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All Monthly Features</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Extended Support</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Advanced Multi-Stop Alerts</span>
+              </li>
+            </ul>
+
+            <div class="pricing-btn-wrap">
+              <a href="pricing.html" class="btn btn-primary full-width">Choose Plan</a>
+            </div>
+          </div>
+
+          <!-- Yearly Plan -->
+          <div class="pricing-card reveal-up" style="--delay: 300ms;">
+            <div class="pricing-card-header">
+              <div class="pricing-icon-circle icon-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="pricing-plan-name">Yearly Plan</h3>
+              <p class="pricing-plan-desc">Maximum savings &amp; full perks</p>
+            </div>
+
+            <div class="pricing-price-box">
+              <span class="currency-symbol">₹</span>
+              <span class="price-val">8,999</span>
+              <span class="price-period">/year</span>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All Features Included</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>24/7 Priority Hotline</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Travel Reports &amp; Insights</span>
+              </li>
+            </ul>
+
+            <div class="pricing-btn-wrap">
+              <a href="pricing.html" class="btn btn-outline full-width">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         6. SECTION 6 — TESTIMONIALS (VANILLA JS CAROUSEL)
+    ================================================== -->
+    <section class="testimonials-section section-spacing" id="testimonials">
+      <div class="container">
+        <!-- Section Header with Carousel Nav Arrows -->
+        <div class="testimonial-header-row reveal-up">
+          <div>
+            <div class="badge badge-pill badge-accent">TRUSTED BY PARENTS</div>
+            <h2 class="section-title">What Parents Are Saying</h2>
+            <p class="section-subtitle">Real experiences. Real peace of mind.</p>
+          </div>
+
+          <!-- Carousel Arrow Buttons -->
+          <div class="carousel-nav-arrows">
+            <button id="prev-testimonial-h2" class="carousel-arrow-btn" aria-label="Previous testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-left-icon"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+            <button id="next-testimonial-h2" class="carousel-arrow-btn" aria-label="Next testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-right-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="testimonial-carousel-wrapper reveal-up" id="testimonial-carousel-h2">
+          <div class="testimonial-slider-track" id="testimonial-track-h2">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card active" data-slide="0" style="--delay: 100ms;">
+              <div class="quote-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#F8C52C" stroke="none" aria-hidden="true">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+                </svg>
+              </div>
+              <p class="testimonial-text">
+                "I love the live tracking feature. I always know where the bus is and when my child reaches school. It's a huge relief during busy workdays."
+              </p>
+              <div class="testimonial-author">
+                <img src="assets/images/parent-4.jpg" alt="Sneha R" class="author-avatar" width="56" height="56" loading="lazy">
+                <div class="author-info">
+                  <h3 class="author-name">Sneha R</h3>
+                  <span class="author-role">Parent, Grade 4</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card" data-slide="1" style="--delay: 200ms;">
+              <div class="quote-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#F8C52C" stroke="none" aria-hidden="true">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+                </svg>
+              </div>
+              <p class="testimonial-text">
+                "The notifications are very accurate and helpful. SchoolRoute has made school travel so much safer and predictable for our family."
+              </p>
+              <div class="testimonial-author">
+                <img src="assets/images/parent-5.jpg" alt="Karthik M" class="author-avatar" width="56" height="56" loading="lazy">
+                <div class="author-info">
+                  <h3 class="author-name">Karthik M</h3>
+                  <span class="author-role">Parent, Grade 6</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card" data-slide="2" style="--delay: 300ms;">
+              <div class="quote-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#F8C52C" stroke="none" aria-hidden="true">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+                </svg>
+              </div>
+              <p class="testimonial-text">
+                "Excellent service and well-maintained buses. Highly recommend SchoolRoute to every parent looking for complete transparency."
+              </p>
+              <div class="testimonial-author">
+                <img src="assets/images/parent-6.jpg" alt="Divya S" class="author-avatar" width="56" height="56" loading="lazy">
+                <div class="author-info">
+                  <h3 class="author-name">Divya S</h3>
+                  <span class="author-role">Parent, Grade 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dots Indicators -->
+          <div class="carousel-dots center-dots" id="carousel-dots-h2" aria-label="Carousel pagination">
+            <button class="dot-btn active" data-index="0" aria-label="Go to slide 1"></button>
+            <button class="dot-btn" data-index="1" aria-label="Go to slide 2"></button>
+            <button class="dot-btn" data-index="2" aria-label="Go to slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         7. SECTION 7 — FINAL CTA (ANIMATED VECTOR BUS & ROUTE)
+    ================================================== -->
+    <section class="cta-section section-spacing">
+      <div class="container">
+        <div class="cta-banner reveal-scale">
+          <!-- Background Curved Route & Moving Vector SVG Bus -->
+          <div class="cta-bg-shapes" aria-hidden="true">
+            <svg viewBox="0 0 1000 300" preserveAspectRatio="none" fill="none" class="cta-route-svg">
+              <path d="M0,160 Q300,60 600,220 T1000,120" stroke="rgba(255,255,255,0.12)" stroke-width="2.5" stroke-dasharray="6 6" class="cta-draw-path-1"/>
+              <path d="M0,230 Q400,130 800,250 T1000,190" stroke="rgba(248,197,44,0.25)" stroke-width="3" class="cta-draw-path-2"/>
+            </svg>
+
+            <!-- Vector SVG School Bus Driving on Route -->
+            <div class="cta-animated-bus-wrap">
+              <svg width="68" height="42" viewBox="0 0 68 42" fill="none">
+                <!-- Bus Body -->
+                <rect x="4" y="8" width="56" height="24" rx="4" fill="#F8C52C" stroke="#D19E0E" stroke-width="1.5"/>
+                <!-- Windows -->
+                <rect x="8" y="12" width="10" height="9" rx="1.5" fill="#17352D"/>
+                <rect x="22" y="12" width="10" height="9" rx="1.5" fill="#17352D"/>
+                <rect x="36" y="12" width="10" height="9" rx="1.5" fill="#17352D"/>
+                <path d="M50 12h7a2 2 0 0 1 2 2v7h-9v-9z" fill="#17352D"/>
+                <!-- Stripe -->
+                <line x1="4" y1="26" x2="60" y2="26" stroke="#17352D" stroke-width="2"/>
+                <!-- Wheels -->
+                <circle cx="16" cy="32" r="5" fill="#17352D"/>
+                <circle cx="16" cy="32" r="2" fill="#FFFFFF"/>
+                <circle cx="48" cy="32" r="5" fill="#17352D"/>
+                <circle cx="48" cy="32" r="2" fill="#FFFFFF"/>
+                <!-- Headlight -->
+                <circle cx="58" cy="22" r="2" fill="#FFFFFF"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- CTA Content -->
+          <div class="cta-content">
+            <h2 class="cta-heading">
+              Be a Part of a Safer<br>
+              School <span class="highlight-yellow">Journey</span>
+            </h2>
+            <p class="cta-desc">
+              Join thousands of parents and partner schools who trust SchoolRoute.
+            </p>
+          </div>
+
+          <!-- CTA Button Action -->
+          <div class="cta-action">
+            <a href="contact.html" class="btn btn-primary btn-cta-large">
+              Get Started Today <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       PRODUCT WORKFLOW VIDEO / INTERACTIVE MODAL
+  ================================================== -->
+  <div id="video-modal" class="workflow-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-heading">How SchoolRoute Works</h3>
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="video-preview-box">
+          <div class="video-play-banner">
+            <div class="big-play-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#17352D"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <span class="video-caption">Live 2-Minute Product Tour</span>
+          </div>
+        </div>
+        <div class="modal-steps-overview">
+          <div class="mini-step"><strong>1. Route Assigned</strong> Real-time stop alerts</div>
+          <div class="mini-step"><strong>2. GPS Tracking</strong> Live map updates</div>
+          <div class="mini-step"><strong>3. Safe Arrival</strong> Immediate notification</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================
+       FOOTER (UNIFIED REUSABLE MASTER COMPONENT)
+  ================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="SchoolRoute Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <p class="footer-tagline">Safe Kids &bull; Stronger Tomorrows</p>
+        <p class="footer-description">SchoolRoute delivers real-time bus tracking, automated notifications, route management and complete safety for schools and parents.</p>
+        <div class="footer-social-links" aria-label="Social media links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html" class="footer-link">Home 1</a></li>
+          <li><a href="home2.html" class="footer-link">Home 2</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="safety.html" class="footer-link">Safety</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Services -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="service-detail.html?id=tracking" class="footer-link">Live GPS Tracking</a></li>
+          <li><a href="service-detail.html?id=routes" class="footer-link">Route Management</a></li>
+          <li><a href="service-detail.html?id=student-monitoring" class="footer-link">Student Monitoring</a></li>
+          <li><a href="service-detail.html?id=notifications" class="footer-link">Arrival Notifications</a></li>
+          <li><a href="service-detail.html?id=safety" class="footer-link">Driver Verification</a></li>
+          <li><a href="service-detail.html?id=payments" class="footer-link">Online Payments</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Us -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="footer-contact-text">123 School Tech Park, Knowledge Corridor, Chennai, India</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+919876543210" class="footer-link-text">+91 98765 43210</a>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:support@schoolroute.in" class="footer-link-text">support@schoolroute.in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">&copy; 2026 SchoolRoute. All Rights Reserved. Safe Kids &bull; Stronger Tomorrows.</p>
+        <div class="footer-bottom-links">
+          <a href="contact.html" class="footer-legal-link">Privacy Policy</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="contact.html" class="footer-legal-link">Terms &amp; Conditions</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="pricing.html" class="footer-legal-link">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       FLOATING SCROLL TO TOP BUTTON
+  ================================================== -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top of page" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="scroll-top-arrow" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script src="js/main.js"></script>
+  <script src="js/home2.js"></script>
+</body>
+</html>

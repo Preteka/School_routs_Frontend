@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans — Simple, Transparent School Transport Pricing | SchoolRoute</title>
+  <meta name="description" content="Choose from SchoolRoute's Monthly, Quarterly, and Yearly transportation plans. Transparent school bus subscription pricing with live GPS tracking, notifications, and student safety features.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+
+  <!-- Google Fonts: Sora, DM Sans, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Page Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pricing.css">
+</head>
+<body class="pricing-page">
+
+  <!-- ==================================================
+       NAVBAR (UNIFIED MASTER DESIGN)
+  ================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SchoolRoute Home">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home 1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="safety.html" class="nav-link">Safety</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link active" aria-current="page">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="control-btn" aria-label="Switch to dark theme" title="Toggle Light / Dark Mode">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="direction-toggle" class="control-btn" aria-label="Switch to RTL / Right-side Layout" title="Switch to RTL / Right-side Layout">
+          <svg class="dir-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 8 16 13"></polyline><line x1="21" y1="8" x2="9" y2="8"></line>
+            <polyline points="8 21 3 16 8 11"></polyline><line x1="3" y1="16" x2="15" y2="16"></line>
+          </svg>
+        </button>
+
+        <a href="login.html" class="btn btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn btn-primary-nav">Sign Up</a>
+
+        <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="logo-img logo-light" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="logo-img logo-dark" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link">Home 1</a></li>
+        <li><a href="home2.html" class="drawer-nav-link">Home 2 (Product)</a></li>
+        <li><a href="about.html" class="drawer-nav-link">About Us</a></li>
+        <li><a href="services.html" class="drawer-nav-link">Services</a></li>
+        <li><a href="safety.html" class="drawer-nav-link">Safety</a></li>
+        <li><a href="pricing.html" class="drawer-nav-link active">Pricing</a></li>
+        <li><a href="blog.html" class="drawer-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="drawer-nav-link">Contact</a></li>
+      </ul>
+      <div class="drawer-actions">
+        <a href="login.html" class="btn btn-outline full-width">Login</a>
+        <a href="signup.html" class="btn btn-primary full-width">Sign Up</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ==================================================
+       MAIN CONTENT
+  ================================================== -->
+  <main id="main-content">
+
+    <!-- ==================================================
+         SECTION 1: PRICING HERO
+    ================================================== -->
+    <section class="pricing-hero-section section-spacing" id="hero">
+      <div class="container pricing-hero-container">
+        <!-- Left Content Column -->
+        <div class="pricing-hero-content fade-in-up">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            SCHOOLROUTE PLANS
+          </div>
+          <h1 class="pricing-hero-title">Simple, Transparent Pricing</h1>
+          <p class="pricing-hero-desc">
+            Flexible school transportation plans designed to make daily travel easier for parents, students, and schools. No hidden fees. No surprises.
+          </p>
+
+          <!-- Hero Visual Indicators Row -->
+          <div class="pricing-hero-indicators">
+            <div class="indicator-item">
+              <div class="indicator-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <span>No Hidden Fees</span>
+            </div>
+            <div class="indicator-item">
+              <div class="indicator-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </div>
+              <span>Secure UPI &amp; Cards</span>
+            </div>
+            <div class="indicator-item">
+              <div class="indicator-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </div>
+              <span>Instant GST Receipt</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero SVG Graphic Column -->
+        <div class="pricing-hero-graphic fade-in-up" aria-hidden="true" style="--delay: 150ms">
+          <div class="pricing-graphic-card">
+            <!-- Subtle decorative background rings -->
+            <div class="ph-ring ph-ring-1"></div>
+            <div class="ph-ring ph-ring-2"></div>
+
+            <svg class="pricing-hero-svg" viewBox="0 0 420 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background card shape -->
+              <rect x="20" y="25" width="380" height="260" rx="18" fill="var(--soft-background)" stroke="var(--border-color)" stroke-width="1.5"/>
+
+              <!-- Plan column headers -->
+              <rect x="45" y="50" width="95" height="34" rx="8" fill="var(--light-green)"/>
+              <text x="92" y="72" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="var(--primary-green)" text-anchor="middle">Monthly</text>
+
+              <rect x="160" y="50" width="100" height="34" rx="8" fill="var(--primary-green)"/>
+              <text x="210" y="72" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Quarterly</text>
+
+              <rect x="280" y="50" width="95" height="34" rx="8" fill="var(--light-green)"/>
+              <text x="327" y="72" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="var(--primary-green)" text-anchor="middle">Yearly</text>
+
+              <!-- Price row -->
+              <text x="92" y="122" font-family="Sora, sans-serif" font-size="22" font-weight="800" fill="var(--dark-text)" text-anchor="middle">₹999</text>
+              <text x="92" y="140" font-family="DM Sans, sans-serif" font-size="11" fill="var(--muted-text)" text-anchor="middle">/month</text>
+
+              <text x="210" y="122" font-family="Sora, sans-serif" font-size="22" font-weight="800" fill="var(--primary-green)" text-anchor="middle">₹2,499</text>
+              <text x="210" y="140" font-family="DM Sans, sans-serif" font-size="11" fill="var(--muted-text)" text-anchor="middle">/3 months</text>
+
+              <text x="327" y="122" font-family="Sora, sans-serif" font-size="22" font-weight="800" fill="var(--dark-text)" text-anchor="middle">₹8,999</text>
+              <text x="327" y="140" font-family="DM Sans, sans-serif" font-size="11" fill="var(--muted-text)" text-anchor="middle">/year</text>
+
+              <!-- Divider line -->
+              <line x1="45" y1="160" x2="375" y2="160" stroke="var(--border-color)" stroke-width="1"/>
+
+              <!-- Feature rows -->
+              <circle cx="65" cy="184" r="8" fill="rgba(50, 168, 82, 0.15)"/>
+              <path d="M61 184 L64 187 L69 181" stroke="#32A852" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="85" y="189" font-family="DM Sans, sans-serif" font-size="12" fill="var(--body-text)">Live GPS Bus Tracking</text>
+
+              <circle cx="65" cy="214" r="8" fill="rgba(50, 168, 82, 0.15)"/>
+              <path d="M61 214 L64 217 L69 211" stroke="#32A852" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="85" y="219" font-family="DM Sans, sans-serif" font-size="12" fill="var(--body-text)">Instant Arrival Notifications</text>
+
+              <circle cx="65" cy="244" r="8" fill="rgba(50, 168, 82, 0.15)"/>
+              <path d="M61 244 L64 247 L69 241" stroke="#32A852" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="85" y="249" font-family="DM Sans, sans-serif" font-size="12" fill="var(--body-text)">Official Tax Receipts &amp; Reports</text>
+
+              <!-- Most popular pill indicator -->
+              <rect x="180" y="174" width="60" height="20" rx="10" fill="var(--bright-yellow)"/>
+              <text x="210" y="188" font-family="Sora, sans-serif" font-size="9" font-weight="700" fill="#17352D" text-anchor="middle">★ Popular</text>
+            </svg>
+
+            <!-- Floating glass badge -->
+            <div class="ph-badge">
+              <div class="ph-badge-dot"></div>
+              <div class="ph-badge-text">
+                <span class="ph-badge-meta">SAVINGS</span>
+                <span class="ph-badge-val">Up to 25% on Yearly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 2: PRICING PLANS
+    ================================================== -->
+    <section class="pricing-plans-section section-spacing" id="plans">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            SIMPLE &amp; FLEXIBLE
+          </div>
+          <h2 class="section-title">Choose Your Plan</h2>
+          <p class="section-subtitle">
+            Select the plan that matches your school transportation needs. Transparent pricing with no hidden charges.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Plan 1: Monthly Plan -->
+          <div class="pricing-card fade-in-up" data-delay="100">
+            <div class="pricing-card-header">
+              <div class="pricing-icon-circle icon-teal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <h3 class="pricing-plan-name">Monthly Plan</h3>
+              <p class="pricing-plan-desc">Great for short-term needs</p>
+            </div>
+
+            <div class="pricing-price-box">
+              <span class="currency-symbol">₹</span>
+              <span class="price-val">999</span>
+              <span class="price-period">/month</span>
+            </div>
+
+            <ul class="pricing-feature-list" aria-label="Monthly Plan features">
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Live GPS Tracking</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instant Arrival Alerts</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>RFID Student Check-in Alerts</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Standard Support</span>
+              </li>
+            </ul>
+
+            <div class="pricing-btn-wrap">
+              <a href="signup.html?plan=monthly" class="btn btn-outline full-width">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Plan 2: Quarterly Plan (Most Popular) -->
+          <div class="pricing-card featured-pricing fade-in-up" data-delay="200">
+            <div class="popular-badge">Most Popular</div>
+
+            <div class="pricing-card-header">
+              <div class="pricing-icon-circle icon-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3 class="pricing-plan-name">Quarterly Plan</h3>
+              <p class="pricing-plan-desc">Best value for growing families</p>
+            </div>
+
+            <div class="pricing-price-box">
+              <span class="currency-symbol">₹</span>
+              <span class="price-val">2,499</span>
+              <span class="price-period">/3 months</span>
+            </div>
+
+            <ul class="pricing-feature-list" aria-label="Quarterly Plan features">
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All Monthly Features</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Extended Support</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Multi-Guardian Alert Channels</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Advanced Multi-Stop Alerts</span>
+              </li>
+            </ul>
+
+            <div class="pricing-btn-wrap">
+              <a href="signup.html?plan=quarterly" class="btn btn-primary full-width">Choose Plan</a>
+            </div>
+          </div>
+
+          <!-- Plan 3: Yearly Plan -->
+          <div class="pricing-card fade-in-up" data-delay="300">
+            <div class="pricing-card-header">
+              <div class="pricing-icon-circle icon-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="pricing-plan-name">Yearly Plan</h3>
+              <p class="pricing-plan-desc">Maximum savings &amp; full perks</p>
+            </div>
+
+            <div class="pricing-price-box">
+              <span class="currency-symbol">₹</span>
+              <span class="price-val">8,999</span>
+              <span class="price-period">/year</span>
+            </div>
+
+            <ul class="pricing-feature-list" aria-label="Yearly Plan features">
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All Features Included</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>24/7 Priority Hotline</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated Safety Concierge</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Travel Reports &amp; Insights</span>
+              </li>
+            </ul>
+
+            <div class="pricing-btn-wrap">
+              <a href="signup.html?plan=yearly" class="btn btn-outline full-width">Choose Plan</a>
+            </div>
+          </div>
+
+        </div><!-- .pricing-grid -->
+
+        <!-- Billing Note Box -->
+        <div class="billing-info-note fade-in-up" data-delay="400">
+          <div class="billing-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <p>Prices shown are per student subscription. All plans include secure online payment via UPI, Card, or Net Banking. Official GST-compliant digital receipts are issued instantly. No hidden charges.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 3: HOW BILLING WORKS
+    ================================================== -->
+    <section class="billing-section section-spacing" id="billing">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            SUBSCRIPTION BILLING
+          </div>
+          <h2 class="section-title">How Subscription Billing Works</h2>
+          <p class="section-subtitle">
+            SchoolRoute uses a simple transport subscription model. Choose a plan, complete payment securely, and your child's seat is confirmed for the entire term.
+          </p>
+        </div>
+
+        <div class="billing-steps-grid">
+          <div class="billing-step fade-in-up" data-delay="100">
+            <div class="billing-step-num">01</div>
+            <div class="billing-step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <h3 class="billing-step-title">Choose Plan</h3>
+            <p class="billing-step-desc">Select a Monthly, Quarterly, or Annual transport subscription based on your family's needs.</p>
+          </div>
+
+          <div class="billing-step fade-in-up" data-delay="200">
+            <div class="billing-step-num">02</div>
+            <div class="billing-step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            </div>
+            <h3 class="billing-step-title">Review Details</h3>
+            <p class="billing-step-desc">Verify student stop information, route assignment, and the complete fee breakdown.</p>
+          </div>
+
+          <div class="billing-step fade-in-up" data-delay="300">
+            <div class="billing-step-num">03</div>
+            <div class="billing-step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            </div>
+            <h3 class="billing-step-title">Make Payment</h3>
+            <p class="billing-step-desc">Pay securely via UPI (Google Pay, PhonePe, Paytm), Visa/Mastercard, or Net Banking (50+ banks).</p>
+          </div>
+
+          <div class="billing-step fade-in-up" data-delay="400">
+            <div class="billing-step-num">04</div>
+            <div class="billing-step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3 class="billing-step-title">Seat Confirmed</h3>
+            <p class="billing-step-desc">Receive instant confirmation and seat allocation lock for the full subscription term.</p>
+          </div>
+
+          <div class="billing-step fade-in-up" data-delay="500">
+            <div class="billing-step-num">05</div>
+            <div class="billing-step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 class="billing-step-title">Download Receipt</h3>
+            <p class="billing-step-desc">Access and download the official GST-compliant tax invoice directly from your Parent Dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 4: FEATURE COMPARISON TABLE
+    ================================================== -->
+    <section class="comparison-section section-spacing" id="compare">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            SIDE BY SIDE
+          </div>
+          <h2 class="section-title">Compare Plans</h2>
+          <p class="section-subtitle">See exactly what's included in each plan so you can choose with confidence.</p>
+        </div>
+
+        <div class="comparison-table-wrapper fade-in-up" data-delay="100">
+          <div class="comparison-table-scroll">
+            <table class="comparison-table" role="table" aria-label="Pricing plan comparison">
+              <thead>
+                <tr>
+                  <th class="comp-feature-col" scope="col">Features</th>
+                  <th class="comp-plan-col" scope="col">
+                    <div class="comp-plan-header">
+                      <span class="comp-plan-name">Monthly</span>
+                      <span class="comp-plan-price">₹999<small>/mo</small></span>
+                    </div>
+                  </th>
+                  <th class="comp-plan-col comp-featured-col" scope="col">
+                    <div class="comp-plan-header">
+                      <span class="comp-popular-pill">★ Most Popular</span>
+                      <span class="comp-plan-name">Quarterly</span>
+                      <span class="comp-plan-price">₹2,499<small>/3 mo</small></span>
+                    </div>
+                  </th>
+                  <th class="comp-plan-col" scope="col">
+                    <div class="comp-plan-header">
+                      <span class="comp-plan-name">Yearly</span>
+                      <span class="comp-plan-price">₹8,999<small>/yr</small></span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="comp-section-row">
+                  <td colspan="4" class="comp-section-label">Core Transport Features</td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Live GPS Bus Tracking</td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Instant Arrival Alerts</td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">RFID Student Check-in Alerts</td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr class="comp-section-row">
+                  <td colspan="4" class="comp-section-label">Support</td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Standard Email &amp; Chat Support</td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Priority Parent Support Line</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">24/7 Priority Hotline</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr class="comp-section-row">
+                  <td colspan="4" class="comp-section-label">Advanced Features</td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Multi-Guardian Alert Channels</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Advanced Multi-Stop Alerts</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Guaranteed Bus Seat Lock</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Dedicated Family Safety Concierge</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Travel Reports &amp; Insights</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+                <tr>
+                  <td class="comp-feature-name">Free Student RFID Replacement Badge</td>
+                  <td class="comp-val"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val comp-featured-col"><span class="comp-none" aria-label="Not included"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+                  <td class="comp-val"><span class="comp-check" aria-label="Included"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#32A852" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                </tr>
+
+                <!-- CTA Row -->
+                <tr class="comp-cta-row">
+                  <td class="comp-feature-name"></td>
+                  <td class="comp-val comp-cta-cell">
+                    <a href="contact.html" class="btn btn-outline comp-btn">Get Started</a>
+                  </td>
+                  <td class="comp-val comp-featured-col comp-cta-cell">
+                    <a href="contact.html" class="btn btn-primary comp-btn">Choose Plan</a>
+                  </td>
+                  <td class="comp-val comp-cta-cell">
+                    <a href="contact.html" class="btn btn-outline comp-btn">Choose Plan</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 5: WHAT'S INCLUDED
+    ================================================== -->
+    <section class="included-section section-spacing" id="included">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            ALL PLANS INCLUDE
+          </div>
+          <h2 class="section-title">Everything You Need for a Better School Journey</h2>
+          <p class="section-subtitle">Every SchoolRoute plan comes with a powerful set of core features to keep your child safe and keep you informed.</p>
+        </div>
+
+        <div class="included-grid">
+          <!-- Feature 1 -->
+          <div class="included-card fade-in-up" data-delay="100">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <h3 class="included-title">Real-Time Bus Tracking</h3>
+            <p class="included-desc">Know exactly where the school bus is at any moment with live GPS monitoring accessible from your dashboard.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="included-card fade-in-up" data-delay="150">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </div>
+            <h3 class="included-title">Arrival Notifications</h3>
+            <p class="included-desc">Receive automated alerts when the bus is approaching your child's stop, departed school, or completed the journey.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="included-card fade-in-up" data-delay="200">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="included-title">Student Monitoring</h3>
+            <p class="included-desc">RFID check-in alerts record student boarding and alighting for complete accountability on every journey.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="included-card fade-in-up" data-delay="250">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <h3 class="included-title">Route Information</h3>
+            <p class="included-desc">View designated bus routes, pickup zones, stop sequences, and schedules with complete transport clarity.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="included-card fade-in-up" data-delay="300">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="included-title">Safety Features</h3>
+            <p class="included-desc">Verified driver profiles, safe boarding records, and emergency support communication to ensure every journey is safe.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="included-card fade-in-up" data-delay="350">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            </div>
+            <h3 class="included-title">Online Payments</h3>
+            <p class="included-desc">Pay securely using UPI, Visa/Mastercard debit or credit cards, or Net Banking across 50+ supported banks.</p>
+          </div>
+
+          <!-- Feature 7 -->
+          <div class="included-card fade-in-up" data-delay="400">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            </div>
+            <h3 class="included-title">Digital Receipts</h3>
+            <p class="included-desc">Official GST-compliant tax invoices are generated instantly and stored in your Parent Dashboard for easy access.</p>
+          </div>
+
+          <!-- Feature 8 -->
+          <div class="included-card fade-in-up" data-delay="450">
+            <div class="included-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="included-title">Parent Dashboard</h3>
+            <p class="included-desc">Manage your subscription, monitor journeys, download receipts, and control notification settings — all in one place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 6: FAQ
+    ================================================== -->
+    <section class="pricing-faq-section section-spacing" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge badge-pill badge-accent">
+            <span class="badge-dot"></span>
+            COMMON QUESTIONS
+          </div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about SchoolRoute subscription plans and payments.</p>
+        </div>
+
+        <div class="pricing-faq-accordion" id="pricing-faq-accordion">
+
+          <!-- Q1 -->
+          <div class="pfaq-item active">
+            <button class="pfaq-trigger" aria-expanded="true" aria-controls="pfaq-ans-1" id="pfaq-btn-1">
+              <span class="pfaq-question">What is included in the SchoolRoute subscription?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-1" role="region" aria-labelledby="pfaq-btn-1">
+              <div class="pfaq-answer-inner">
+                <p>Every SchoolRoute plan includes live GPS bus tracking, instant arrival notifications, RFID student check-in alerts, and standard digital support. Higher plans include additional benefits such as priority support, multi-guardian alerts, dedicated concierge service, and guaranteed bus seat lock.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="pfaq-item">
+            <button class="pfaq-trigger" aria-expanded="false" aria-controls="pfaq-ans-2" id="pfaq-btn-2">
+              <span class="pfaq-question">How often is the subscription billed?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-2" role="region" aria-labelledby="pfaq-btn-2">
+              <div class="pfaq-answer-inner">
+                <p>Billing is based on your selected plan term. The Monthly Plan is billed at ₹999 per month, the Quarterly Plan at ₹2,499 every 3 months, and the Yearly Plan at ₹8,999 for a complete 10-month school year. Payments are processed once at the start of each term.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="pfaq-item">
+            <button class="pfaq-trigger" aria-expanded="false" aria-controls="pfaq-ans-3" id="pfaq-btn-3">
+              <span class="pfaq-question">Can I change my plan?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-3" role="region" aria-labelledby="pfaq-btn-3">
+              <div class="pfaq-answer-inner">
+                <p>Plan modifications and refund policies are governed by your school's transport guidelines and can be processed via the Parent Dashboard or by contacting our support team. Upgrade requests can be applied mid-term where applicable.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="pfaq-item">
+            <button class="pfaq-trigger" aria-expanded="false" aria-controls="pfaq-ans-4" id="pfaq-btn-4">
+              <span class="pfaq-question">How can I make the payment?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-4" role="region" aria-labelledby="pfaq-btn-4">
+              <div class="pfaq-answer-inner">
+                <p>We support all major payment modes including UPI (Google Pay, PhonePe, Paytm), Visa/Mastercard debit and credit cards, and Net Banking across 50+ major banks. All transactions are encrypted and processed securely.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="pfaq-item">
+            <button class="pfaq-trigger" aria-expanded="false" aria-controls="pfaq-ans-5" id="pfaq-btn-5">
+              <span class="pfaq-question">Will I receive a payment receipt?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-5" role="region" aria-labelledby="pfaq-btn-5">
+              <div class="pfaq-answer-inner">
+                <p>Yes. Official GST-compliant tax invoices with student and school details are generated instantly after every successful payment. They are permanently stored in your Parent Dashboard for download at any time, including for tax claims or reimbursement purposes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="pfaq-item">
+            <button class="pfaq-trigger" aria-expanded="false" aria-controls="pfaq-ans-6" id="pfaq-btn-6">
+              <span class="pfaq-question">Can I manage my subscription from the Parent Dashboard?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-6" role="region" aria-labelledby="pfaq-btn-6">
+              <div class="pfaq-answer-inner">
+                <p>Yes. The Parent Dashboard provides complete subscription management — view current plan details, check payment history, download invoices, update billing information, and initiate plan changes or support requests, all from one centralized interface.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="pfaq-item">
+            <button class="pfaq-trigger" aria-expanded="false" aria-controls="pfaq-ans-7" id="pfaq-btn-7">
+              <span class="pfaq-question">What happens if I need to change my transportation plan?</span>
+              <span class="pfaq-icon" aria-hidden="true">
+                <svg class="pfaq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg class="pfaq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </button>
+            <div class="pfaq-answer" id="pfaq-ans-7" role="region" aria-labelledby="pfaq-btn-7">
+              <div class="pfaq-answer-inner">
+                <p>If you need to adjust your transportation plan mid-term — such as changing bus routes, stop locations, or plan tier — contact our support team or raise a request through the Parent Dashboard. Changes are processed in coordination with your school's transport office as per their scheduling policies.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- .pricing-faq-accordion -->
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 7: FINAL CTA
+    ================================================== -->
+    <section class="pricing-cta-section section-spacing" id="cta">
+      <div class="container">
+        <div class="cta-banner text-center fade-in-up">
+          <div class="badge badge-pill badge-hero">
+            <span class="badge-dot"></span>
+            START YOUR JOURNEY TODAY
+          </div>
+          <h2 class="cta-title">Ready to Make School Travel Easier?</h2>
+          <p class="cta-subtitle">
+            Choose a SchoolRoute plan and give your family a simpler, more connected transportation experience.
+          </p>
+          <div class="cta-buttons-group">
+            <a href="contact.html" class="btn btn-primary btn-hero">
+              <span>Get Started</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="contact.html" class="btn btn-secondary-hero">
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       FOOTER (UNIFIED REUSABLE MASTER COMPONENT)
+  ================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="SchoolRoute Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <p class="footer-tagline">Safe Kids &bull; Stronger Tomorrows</p>
+        <p class="footer-description">SchoolRoute delivers real-time bus tracking, automated notifications, route management and complete safety for schools and parents.</p>
+        <div class="footer-social-links" aria-label="Social media links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html" class="footer-link">Home 1</a></li>
+          <li><a href="home2.html" class="footer-link">Home 2</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="safety.html" class="footer-link">Safety</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Services -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="service-detail.html?id=tracking" class="footer-link">Live GPS Tracking</a></li>
+          <li><a href="service-detail.html?id=routes" class="footer-link">Route Management</a></li>
+          <li><a href="service-detail.html?id=student-monitoring" class="footer-link">Student Monitoring</a></li>
+          <li><a href="service-detail.html?id=notifications" class="footer-link">Arrival Notifications</a></li>
+          <li><a href="service-detail.html?id=safety" class="footer-link">Driver Verification</a></li>
+          <li><a href="service-detail.html?id=payments" class="footer-link">Online Payments</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Us -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="footer-contact-text">123 School Tech Park, Knowledge Corridor, Chennai, India</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+919876543210" class="footer-link-text">+91 98765 43210</a>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:support@schoolroute.in" class="footer-link-text">support@schoolroute.in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">&copy; 2026 SchoolRoute. All Rights Reserved. Safe Kids &bull; Stronger Tomorrows.</p>
+        <div class="footer-bottom-links">
+          <a href="contact.html" class="footer-legal-link">Privacy Policy</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="contact.html" class="footer-legal-link">Terms &amp; Conditions</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="pricing.html" class="footer-legal-link">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/pricing.js"></script>
+</body>
+</html>

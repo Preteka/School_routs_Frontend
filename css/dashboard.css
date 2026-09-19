@@ -1,0 +1,752 @@
+/**
+ * SCHOOLROUTE — PARENT DASHBOARD STYLESHEET
+ * Tagline: SAFE KIDS • STRONGER TOMORROWS
+ * Extends: css/style.css (Master Design System)
+ * Vanilla CSS — No frameworks
+ */
+
+/* ==========================================================================
+   1. DASHBOARD PAGE WRAPPER
+   ========================================================================== */
+.dashboard-page-body {
+  min-height: 100vh;
+  background-color: var(--soft-background);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .dashboard-page-body {
+  background-color: #0D1915;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding-bottom: 60px;
+}
+
+/* User profile pill in header */
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--light-green);
+  border: 1px solid rgba(7, 91, 70, 0.15);
+  padding: 4px 12px 4px 6px;
+  border-radius: var(--radius-pill);
+}
+
+[data-theme="dark"] .user-avatar-pill {
+  background: rgba(7, 91, 70, 0.25);
+  border-color: rgba(78, 203, 145, 0.25);
+}
+
+.user-avatar-initial {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   2. DASHBOARD TOP BANNER
+   ========================================================================== */
+.dash-banner {
+  background: linear-gradient(135deg, #075B46 0%, #17352D 100%);
+  color: #fff;
+  padding: 44px 0 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .dash-banner {
+  background: linear-gradient(135deg, #09261E 0%, #061611 100%);
+}
+
+.dash-banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.dash-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 12px;
+}
+
+.dash-badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #32A852;
+  box-shadow: 0 0 8px #32A852;
+}
+
+.dash-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.dash-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.dash-subscription-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  padding: 14px 20px;
+  border-radius: var(--radius-card);
+}
+
+.dash-sub-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--bright-yellow);
+  color: #17352D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dash-sub-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #4ecb91;
+}
+
+.dash-sub-plan {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+/* ==========================================================================
+   3. DASHBOARD GRID & CARDS
+   ========================================================================== */
+.dash-grid-container {
+  margin-top: -24px;
+  position: relative;
+  z-index: 5;
+}
+
+.dash-grid-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.dash-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .dash-card {
+  background: #142A22;
+}
+
+.dash-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.dash-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dash-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dash-card-icon.icon-green {
+  background: var(--light-green);
+  color: var(--primary-green);
+}
+.dash-card-icon.icon-yellow {
+  background: rgba(248, 197, 44, 0.15);
+  color: #b58800;
+}
+.dash-card-icon.icon-purple {
+  background: rgba(123, 97, 255, 0.12);
+  color: #7b61ff;
+}
+
+[data-theme="dark"] .dash-card-icon.icon-green {
+  background: rgba(7, 91, 70, 0.3);
+  color: #4ecb91;
+}
+
+.dash-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.2;
+}
+
+.dash-card-meta {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(50, 168, 82, 0.12);
+  color: #0D7A34;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+[data-theme="dark"] .live-pill { color: #4ecb91; }
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #32A852;
+  box-shadow: 0 0 6px #32A852;
+}
+
+/* ==========================================================================
+   4. SIMULATION ROUTE BAR
+   ========================================================================== */
+.dash-map-sim {
+  background: var(--soft-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 30px 24px 20px;
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .dash-map-sim {
+  background: #0F2018;
+}
+
+.sim-route-line {
+  position: relative;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  margin-bottom: 24px;
+}
+
+.sim-route-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 62%;
+  background: var(--primary-green);
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.sim-bus-marker {
+  position: absolute;
+  left: 62%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background: var(--bright-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(248, 197, 44, 0.4);
+  z-index: 10;
+  transition: left 1s ease;
+}
+
+.bus-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(248, 197, 44, 0.6);
+  animation: busPulse 1.8s infinite;
+}
+
+@keyframes busPulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.sim-stop {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--border-color);
+  z-index: 5;
+}
+
+.sim-stop.stop-1 { left: 0%; }
+.sim-stop.stop-2 { left: 33%; }
+.sim-stop.stop-3 { left: 66%; }
+.sim-stop.stop-4 { left: 100%; }
+
+.sim-stop.active {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.sim-stop.current {
+  background: var(--bright-yellow);
+  border-color: var(--primary-green);
+}
+
+.sim-stop-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  font-weight: 500;
+}
+
+.sim-stop-labels span.highlight {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .sim-stop-labels span.highlight {
+  color: var(--bright-yellow);
+}
+
+/* Bus Vitals */
+.bus-vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.vital-box {
+  background: var(--soft-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  text-align: center;
+}
+
+[data-theme="dark"] .vital-box {
+  background: #0F2018;
+}
+
+.vital-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted-text);
+  margin-bottom: 4px;
+}
+
+.vital-value {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.vital-value.highlight-green {
+  color: var(--primary-green);
+}
+
+[data-theme="dark"] .vital-value.highlight-green {
+  color: #4ecb91;
+}
+
+/* Driver bar */
+.driver-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--soft-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-top: auto;
+}
+
+[data-theme="dark"] .driver-bar {
+  background: #0F2018;
+}
+
+.driver-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.driver-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.driver-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.driver-badge {
+  font-size: 0.7rem;
+  background: rgba(50,168,82,0.12);
+  color: #0D7A34;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .driver-badge { color: #4ecb91; }
+
+.driver-phone {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+}
+
+/* ==========================================================================
+   5. STUDENT RFID & TIMELINE
+   ========================================================================== */
+.badge-status-onboard {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(50, 168, 82, 0.12);
+  color: #0D7A34;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .badge-status-onboard { color: #4ecb91; }
+
+.student-profile-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--soft-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .student-profile-box {
+  background: #0F2018;
+}
+
+.student-avatar-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bright-yellow);
+  color: #17352D;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.student-meta {
+  font-size: 0.82rem;
+  color: var(--muted-text);
+}
+
+.rfid-tag {
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .rfid-tag { color: var(--bright-yellow); }
+
+/* Timeline */
+.timeline-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted-text);
+  margin-bottom: 14px;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  padding-inline-start: 16px;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  inset-inline-start: 5px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.timeline-marker {
+  position: absolute;
+  inset-inline-start: -16px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2.5px solid var(--border-color);
+  z-index: 2;
+}
+
+.timeline-item.done .timeline-marker {
+  background: #32A852;
+  border-color: #32A852;
+}
+
+.timeline-item.ongoing .timeline-marker {
+  background: var(--bright-yellow);
+  border-color: var(--primary-green);
+}
+
+.timeline-event {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.timeline-time {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+}
+
+/* ==========================================================================
+   6. BILLING & SAFETY TOOLS
+   ========================================================================== */
+.billing-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.billing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.88rem;
+}
+
+.billing-row:last-child {
+  border-bottom: none;
+}
+
+.billing-label {
+  color: var(--muted-text);
+}
+
+.billing-val {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.billing-val.ref-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+}
+
+.billing-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.safety-tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--soft-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+[data-theme="dark"] .tool-card {
+  background: #0F2018;
+}
+
+.tool-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-green);
+}
+
+.tool-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--light-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .tool-icon {
+  background: rgba(7, 91, 70, 0.3);
+  color: #4ecb91;
+}
+
+.tool-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.tool-desc {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DASHBOARD
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .dash-grid-row.two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dash-banner-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dash-subscription-pill {
+    width: 100%;
+  }
+
+  .bus-vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .driver-bar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .billing-actions {
+    flex-direction: column;
+  }
+}

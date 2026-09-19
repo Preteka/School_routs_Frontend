@@ -1,0 +1,866 @@
+/* ==========================================================================
+   SCHOOLROUTE — PARENT DASHBOARD MY CHILDREN STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, dark-mode ready, RTL-ready CSS for My Children page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER & BADGE
+   -------------------------------------------------------------------------- */
+.page-title-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.page-title-block {
+  flex: 1;
+  min-width: 280px;
+}
+
+.page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.page-main-heading {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.badge-child-profiles {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(7, 91, 70, 0.15);
+}
+
+[data-theme="dark"] .badge-child-profiles {
+  background-color: rgba(27, 131, 103, 0.18);
+  color: #38A367;
+  border-color: rgba(56, 163, 103, 0.25);
+}
+
+.badge-child-profiles .badge-icon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--primary-green);
+}
+
+[data-theme="dark"] .badge-child-profiles .badge-icon {
+  background-color: #38A367;
+}
+
+.page-subtext {
+  font-size: 0.925rem;
+  color: var(--body-text);
+  margin: 0;
+  max-width: 680px;
+}
+
+/* --------------------------------------------------------------------------
+   2. CHILD COUNT SUMMARY CARD
+   -------------------------------------------------------------------------- */
+.child-count-summary-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.count-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.count-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .count-icon-wrap {
+  background-color: rgba(27, 131, 103, 0.2);
+  color: #38A367;
+}
+
+.count-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.count-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-text);
+}
+
+.count-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.count-value {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  line-height: 1.2;
+}
+
+.count-remaining {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted-text);
+}
+
+.count-progress-bar {
+  width: 100%;
+  max-width: 180px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background-color: var(--soft-background);
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+
+[data-theme="dark"] .count-progress-bar {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.count-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+  transition: width 0.5s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.count-summary-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. PRIMARY CTA BUTTON
+   -------------------------------------------------------------------------- */
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--accent-yellow);
+  color: #17352D;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-badge);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary-cta:hover {
+  background-color: var(--dark-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(248, 197, 44, 0.4);
+}
+
+.btn-primary-cta:active {
+  transform: translateY(0);
+}
+
+.btn-primary-cta:disabled,
+.btn-primary-cta.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.plan-full-message {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plan-full-message svg {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. CHILDREN CARDS GRID
+   -------------------------------------------------------------------------- */
+.children-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.35rem;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. INDIVIDUAL CHILD PROFILE CARD
+   -------------------------------------------------------------------------- */
+.child-profile-card-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+}
+
+.child-profile-card-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--card-hover-border);
+}
+
+.child-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 1.25rem 1.35rem 0.75rem;
+}
+
+.child-avatar-block {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.child-status-dot {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2.5px solid var(--card-bg);
+  background-color: var(--success);
+}
+
+.child-status-dot.incomplete {
+  background-color: var(--warning);
+}
+
+.child-card-name-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.child-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.child-card-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-top: 0.2rem;
+}
+
+.badge-profile-complete {
+  background-color: var(--success-bg);
+  color: var(--success);
+}
+
+.badge-profile-incomplete {
+  background-color: var(--warning-bg);
+  color: var(--warning);
+}
+
+[data-theme="dark"] .badge-profile-complete {
+  background-color: rgba(40, 167, 69, 0.18);
+}
+
+[data-theme="dark"] .badge-profile-incomplete {
+  background-color: rgba(245, 158, 11, 0.18);
+}
+
+.child-card-body {
+  padding: 0.25rem 1.35rem 1rem;
+}
+
+.child-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.child-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+}
+
+.detail-row-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--muted-text);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.detail-row-label {
+  font-weight: 600;
+  color: var(--muted-text);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.detail-row-value {
+  font-weight: 600;
+  color: var(--dark-text);
+  word-break: break-word;
+}
+
+.child-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding: 0.75rem 1.35rem;
+  border-top: 1px solid var(--divider-color);
+}
+
+.btn-child-edit,
+.btn-child-remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-child-edit {
+  background-color: var(--light-green);
+  color: var(--primary-green);
+}
+
+.btn-child-edit:hover {
+  background-color: var(--primary-green);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .btn-child-edit {
+  background-color: rgba(27, 131, 103, 0.2);
+  color: #38A367;
+}
+
+[data-theme="dark"] .btn-child-edit:hover {
+  background-color: rgba(27, 131, 103, 0.4);
+  color: #fff;
+}
+
+.btn-child-remove {
+  background-color: transparent;
+  color: var(--muted-text);
+}
+
+.btn-child-remove:hover {
+  background-color: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* --------------------------------------------------------------------------
+   6. EMPTY STATE
+   -------------------------------------------------------------------------- */
+.empty-state-card-full {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.empty-state-illustration {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: inset 0 0 0 1px rgba(7, 91, 70, 0.12);
+}
+
+[data-theme="dark"] .empty-state-illustration {
+  background-color: rgba(27, 131, 103, 0.2);
+  color: #38A367;
+}
+
+.empty-state-heading {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-description {
+  font-size: 0.925rem;
+  color: var(--body-text);
+  max-width: 480px;
+  margin-bottom: 1.75rem;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   7. ADD / EDIT CHILD MODAL
+   -------------------------------------------------------------------------- */
+.child-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 28, 23, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.child-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.child-modal-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: var(--shadow-popover);
+  transform: scale(0.95) translateY(10px);
+  transition: transform var(--transition-normal);
+  position: relative;
+}
+
+.child-modal-backdrop.active .child-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--soft-background);
+  color: var(--muted-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--card-border);
+  color: var(--dark-text);
+}
+
+.modal-header-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 0.3rem;
+}
+
+.modal-header-sub {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  margin-bottom: 1.5rem;
+}
+
+.modal-form-group {
+  margin-bottom: 1.1rem;
+}
+
+.modal-form-label {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 0.35rem;
+}
+
+.modal-form-label .required-star {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.modal-form-input {
+  width: 100%;
+  padding: 0.7rem 0.95rem;
+  background-color: var(--soft-background);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--dark-text);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.modal-form-input::placeholder {
+  color: var(--muted-text);
+}
+
+.modal-form-input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(7, 91, 70, 0.1);
+}
+
+.modal-form-input.has-error {
+  border-color: var(--danger);
+}
+
+.modal-form-input.has-error:focus {
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+}
+
+.field-error-message {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--danger);
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity var(--transition-fast), max-height var(--transition-fast);
+}
+
+.field-error-message.visible {
+  opacity: 1;
+  max-height: 40px;
+}
+
+.modal-form-divider {
+  height: 1px;
+  background-color: var(--divider-color);
+  margin: 1.25rem 0;
+}
+
+.modal-form-section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-text);
+  margin-bottom: 0.85rem;
+}
+
+.modal-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.btn-secondary-cancel {
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--body-text);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-secondary-cancel:hover {
+  background-color: var(--soft-background);
+  color: var(--dark-text);
+}
+
+/* --------------------------------------------------------------------------
+   8. REMOVE CHILD CONFIRMATION MODAL
+   -------------------------------------------------------------------------- */
+.confirm-modal-card {
+  max-width: 440px;
+  text-align: center;
+  padding: 2.25rem;
+}
+
+.confirm-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--danger-bg);
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.15rem;
+}
+
+.confirm-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 0.35rem;
+}
+
+.confirm-sub {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.btn-confirm-remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--danger);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-confirm-remove:hover {
+  background-color: #C82333;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   9. RTL SUPPORT
+   -------------------------------------------------------------------------- */
+[dir="rtl"] .page-title-section {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .child-count-summary-card {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .child-card-footer {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .modal-close-btn {
+  right: auto;
+  left: 1.25rem;
+}
+
+[dir="rtl"] .modal-form-label .required-star {
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+[dir="rtl"] .modal-form-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .confirm-actions {
+  flex-direction: row-reverse;
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .children-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .page-main-heading {
+    font-size: 1.35rem;
+  }
+
+  .child-count-summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .count-summary-right {
+    width: 100%;
+  }
+
+  .count-summary-right .btn-primary-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .children-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .child-modal-card {
+    padding: 1.5rem;
+    max-height: 85vh;
+  }
+
+  .confirm-modal-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .child-card-header {
+    padding: 1rem 1.1rem 0.6rem;
+  }
+
+  .child-card-body {
+    padding: 0.25rem 1.1rem 0.85rem;
+  }
+
+  .child-card-footer {
+    padding: 0.65rem 1.1rem;
+  }
+
+  .child-avatar-block {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .modal-form-actions {
+    flex-direction: column;
+  }
+
+  .modal-form-actions .btn-primary-cta,
+  .modal-form-actions .btn-secondary-cancel {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. REDUCED MOTION PREFERENCE
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .child-profile-card-item,
+  .btn-primary-cta,
+  .btn-child-edit,
+  .btn-child-remove,
+  .btn-confirm-remove,
+  .child-modal-card {
+    transition: none !important;
+  }
+  
+  .count-progress-fill {
+    transition: none !important;
+  }
+}

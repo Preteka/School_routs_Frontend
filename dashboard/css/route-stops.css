@@ -1,0 +1,660 @@
+/* ==========================================================================
+   SCHOOLROUTE — ROUTE & STOPS PAGE STYLESHEET
+   Tagline: SAFE KIDS • STRONGER TOMORROWS
+   Isolated, responsive, theme-ready, RTL-ready CSS for Route & Stops
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE HEADER & CHILD SELECTOR BAR
+   -------------------------------------------------------------------------- */
+.route-stops-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.route-page-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.route-page-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.route-page-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+.child-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-xs);
+}
+
+.child-selector-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted-text);
+  white-space: nowrap;
+}
+
+.child-selector-select {
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 1rem 0.4rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.child-selector-select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(7, 91, 70, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. TOP ROUTE HIGHLIGHT METRIC CARDS (4 COLUMNS)
+   -------------------------------------------------------------------------- */
+.route-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.route-metric-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.route-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary-green);
+}
+
+.route-metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-route-badge {
+  background: rgba(7, 91, 70, 0.1);
+  color: var(--primary-green);
+}
+
+.icon-pickup-badge {
+  background: rgba(248, 197, 44, 0.18);
+  color: #B48206;
+}
+
+[data-theme="dark"] .icon-pickup-badge {
+  color: #F8C52C;
+}
+
+.icon-drop-badge {
+  background: rgba(46, 139, 87, 0.12);
+  color: var(--secondary-green);
+}
+
+.icon-school-badge {
+  background: rgba(2, 132, 199, 0.12);
+  color: var(--info);
+}
+
+.route-metric-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-text);
+}
+
+.metric-value {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metric-sub {
+  font-size: 0.8rem;
+  color: var(--body-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --------------------------------------------------------------------------
+   3. MAIN CONTENT DUAL-PANEL GRID
+   -------------------------------------------------------------------------- */
+.route-details-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.route-panel-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panel-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.panel-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.panel-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.route-type-toggle-group {
+  display: flex;
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem;
+  gap: 0.2rem;
+}
+
+.route-toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--body-text);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.route-toggle-btn.active {
+  background: var(--primary-green);
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(7, 91, 70, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   4. STOPS TIMELINE COMPONENT
+   -------------------------------------------------------------------------- */
+.stops-timeline-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 1.75rem;
+  margin: 0;
+  list-style: none;
+}
+
+[dir="rtl"] .stops-timeline-list {
+  padding-left: 0;
+  padding-right: 1.75rem;
+}
+
+.stops-timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 9px;
+  width: 2px;
+  background: var(--card-border);
+  border-radius: var(--radius-pill);
+}
+
+[dir="rtl"] .stops-timeline-list::before {
+  left: auto;
+  right: 9px;
+}
+
+.timeline-stop-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed var(--divider-color);
+  gap: 1rem;
+}
+
+.timeline-stop-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.timeline-stop-node {
+  position: absolute;
+  left: -1.75rem;
+  top: 1.1rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 3px solid var(--muted-text);
+  box-shadow: 0 0 0 2px var(--card-bg);
+  z-index: 2;
+  transition: var(--transition-fast);
+}
+
+[dir="rtl"] .timeline-stop-node {
+  left: auto;
+  right: -1.75rem;
+}
+
+.timeline-stop-item.stop-school .timeline-stop-node {
+  border-color: var(--info);
+  background: var(--info);
+}
+
+.timeline-stop-item.stop-user-pickup .timeline-stop-node {
+  border-color: var(--accent-yellow);
+  background: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgba(248, 197, 44, 0.35);
+}
+
+.timeline-stop-item.stop-completed .timeline-stop-node {
+  border-color: var(--secondary-green);
+  background: var(--secondary-green);
+}
+
+.timeline-stop-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.stop-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.stop-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.stop-tag-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tag-user-stop {
+  background: var(--accent-yellow);
+  color: #3D2B00;
+}
+
+.tag-school {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+.stop-landmark {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.timeline-stop-time-wrap {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+[dir="rtl"] .timeline-stop-time-wrap {
+  text-align: left;
+}
+
+.stop-time-val {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.stop-time-sub {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+}
+
+/* --------------------------------------------------------------------------
+   5. DRIVER & BUS SPECIFICATION CARDS
+   -------------------------------------------------------------------------- */
+.driver-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+}
+
+.driver-avatar-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.driver-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.driver-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.driver-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.driver-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.driver-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #FFF7E6;
+  color: #B48206;
+  border: 1px solid #FFE099;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-pill);
+}
+
+[data-theme="dark"] .driver-rating-badge {
+  background: #2E2412;
+  color: #F8C52C;
+  border-color: #5C4516;
+}
+
+.driver-sub-text {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.driver-call-btn {
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.driver-call-btn:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+.bus-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.bus-spec-item {
+  background: var(--soft-background);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.spec-title {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+.spec-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+/* --------------------------------------------------------------------------
+   6. SCHEMATIC ROUTE MAP VISUALIZATION CARD
+   -------------------------------------------------------------------------- */
+.route-schematic-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 1.5rem;
+}
+
+.schematic-svg-wrap {
+  width: 100%;
+  background: var(--map-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.schematic-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   7. CLEAN EMPTY STATE (ZERO FAKE DATA)
+   -------------------------------------------------------------------------- */
+.route-empty-state-card {
+  background: var(--card-bg);
+  border: 1px dashed var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.empty-state-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--soft-background);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--card-border);
+}
+
+.empty-state-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-state-desc {
+  font-size: 0.92rem;
+  color: var(--muted-text);
+  max-width: 480px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.btn-add-child-link {
+  background: var(--primary-green);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(7, 91, 70, 0.25);
+  transition: var(--transition-fast);
+}
+
+.btn-add-child-link:hover {
+  background: var(--dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(7, 91, 70, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .route-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .route-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .route-stops-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .child-selector-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .child-selector-select {
+    flex: 1;
+  }
+  .route-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .bus-specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .driver-profile-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .driver-call-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

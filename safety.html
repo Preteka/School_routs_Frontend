@@ -1,0 +1,1296 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Transportation Safety &amp; Journey Monitoring | SchoolRoute</title>
+  <meta name="description" content="Explore SchoolRoute's comprehensive safety system. From verified drivers to real-time journey monitoring, safe boarding records, and rapid support communication for schools and parents.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/schoolroute-logo.svg">
+
+  <!-- Google Fonts: Sora (Headings), DM Sans (Body), Caveat (Decorative Accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Page Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/safety.css">
+</head>
+<body class="safety-page">
+
+  <!-- ==================================================
+       1. NAVBAR (UNIFIED MASTER DESIGN)
+  ================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <!-- Brand Logo (Dual Logo Support for Light & Dark Themes) -->
+      <a href="index.html" class="brand-logo" aria-label="SchoolRoute Home">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home 1</a></li>
+          <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="safety.html" class="nav-link active" aria-current="page">Safety</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions & Accessibility Controls -->
+      <div class="header-actions">
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="theme-toggle" class="control-btn" aria-label="Switch to dark theme" title="Toggle Light / Dark Mode">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- LTR / RTL Handedness Layout Switcher -->
+        <button id="direction-toggle" class="control-btn" aria-label="Switch to RTL / Right-side Layout" title="Switch to RTL / Right-side Layout">
+          <svg class="dir-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 8 16 13"></polyline>
+            <line x1="21" y1="8" x2="9" y2="8"></line>
+            <polyline points="8 21 3 16 8 11"></polyline>
+            <line x1="3" y1="16" x2="15" y2="16"></line>
+          </svg>
+        </button>
+
+        <!-- Login & Signup Buttons -->
+        <a href="login.html" class="btn btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn btn-primary-nav">Sign Up</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo">
+        <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute" class="logo-img logo-light" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+        <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute" class="logo-img logo-dark" width="150" height="42" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+      </a>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link">Home 1</a></li>
+        <li><a href="home2.html" class="drawer-nav-link">Home 2 (Product)</a></li>
+        <li><a href="about.html" class="drawer-nav-link">About Us</a></li>
+        <li><a href="services.html" class="drawer-nav-link">Services</a></li>
+        <li><a href="safety.html" class="drawer-nav-link active">Safety</a></li>
+        <li><a href="pricing.html" class="drawer-nav-link">Pricing</a></li>
+        <li><a href="blog.html" class="drawer-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="drawer-nav-link">Contact</a></li>
+      </ul>
+      <div class="drawer-actions">
+        <a href="login.html" class="btn btn-outline full-width">Login</a>
+        <a href="signup.html" class="btn btn-primary full-width">Sign Up</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ==================================================
+       MAIN CONTENT
+  ================================================== -->
+  <main id="main-content">
+
+    <!-- ==================================================
+         2. SAFETY HERO SECTION
+    ================================================== -->
+    <section class="safety-hero-section" id="hero">
+      <div class="container safety-hero-container">
+        <!-- Hero Text Content -->
+        <div class="safety-hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
+            <span>Safety Architecture</span>
+          </div>
+
+          <h1 class="safety-hero-title">
+            Your Child’s Safety Comes First
+          </h1>
+
+          <p class="safety-hero-desc">
+            From verified drivers to real-time journey monitoring, SchoolRoute helps schools and parents keep every student journey safe, visible, and accountable.
+          </p>
+
+          <div class="safety-hero-actions">
+            <a href="#safety-promise" class="btn btn-primary btn-hero">
+              <span>Explore Our Safety Measures</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-hero">
+              <span>Get Started</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Mini Safety Highlights Bar -->
+          <div class="safety-hero-pills">
+            <div class="safety-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Driver Identity Verification</span>
+            </div>
+            <div class="safety-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Live Journey Telemetry</span>
+            </div>
+            <div class="safety-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span>Parent Notification Hub</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Modern SVG/CSS Visual -->
+        <div class="safety-hero-visual" aria-hidden="true">
+          <div class="hero-graphic-card">
+            <!-- Background Grid & Signals -->
+            <div class="radar-pulse-ring ring-1"></div>
+            <div class="radar-pulse-ring ring-2"></div>
+            <div class="radar-pulse-ring ring-3"></div>
+
+            <!-- Central Hero SVG Graphic -->
+            <svg class="safety-hero-svg" viewBox="0 0 520 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Route Path Arc with Glow -->
+              <path class="hero-route-glow" d="M 60 320 C 140 320, 160 210, 260 210 C 360 210, 380 120, 460 120" stroke="rgba(248, 197, 44, 0.4)" stroke-width="8" stroke-linecap="round" stroke-dasharray="8 8"/>
+              <path class="hero-route-line" d="M 60 320 C 140 320, 160 210, 260 210 C 360 210, 380 120, 460 120" stroke="#075B46" stroke-width="4" stroke-linecap="round"/>
+
+              <!-- Waypoints / Route Stops -->
+              <circle cx="60" cy="320" r="10" fill="#075B46" stroke="#FFFFFF" stroke-width="3"/>
+              <circle cx="260" cy="210" r="10" fill="#F8C52C" stroke="#FFFFFF" stroke-width="3"/>
+              <circle cx="460" cy="120" r="12" fill="#075B46" stroke="#FFFFFF" stroke-width="4"/>
+
+              <!-- Central School Bus Graphic Group -->
+              <g class="hero-bus-group" transform="translate(190, 130)">
+                <!-- Bus Body Shadow -->
+                <rect x="10" y="70" width="140" height="12" rx="6" fill="rgba(23, 53, 45, 0.2)"/>
+                <!-- Bus Main Body (Yellow) -->
+                <rect x="15" y="15" width="130" height="55" rx="12" fill="#F8C52C" stroke="#17352D" stroke-width="3"/>
+                <!-- Bus Front Hood -->
+                <path d="M 145 35 L 160 48 L 160 70 L 145 70 Z" fill="#F8C52C" stroke="#17352D" stroke-width="3"/>
+                <!-- Roof Accent Strip -->
+                <rect x="30" y="10" width="100" height="6" rx="3" fill="#E5B422"/>
+                <!-- Bus Windows -->
+                <rect x="25" y="25" width="22" height="22" rx="4" fill="#17352D"/>
+                <rect x="52" y="25" width="22" height="22" rx="4" fill="#17352D"/>
+                <rect x="79" y="25" width="22" height="22" rx="4" fill="#17352D"/>
+                <rect x="106" y="25" width="22" height="22" rx="4" fill="#17352D"/>
+                <path d="M 133 25 L 152 42 L 133 42 Z" fill="#17352D"/>
+                <!-- Side Decal Line -->
+                <line x1="20" y1="54" x2="155" y2="54" stroke="#17352D" stroke-width="3" stroke-linecap="round"/>
+                <!-- Bus Wheels -->
+                <circle cx="48" cy="70" r="14" fill="#17352D"/>
+                <circle cx="48" cy="70" r="6" fill="#F5F9F6"/>
+                <circle cx="128" cy="70" r="14" fill="#17352D"/>
+                <circle cx="128" cy="70" r="6" fill="#F5F9F6"/>
+                <!-- Headlight & Tail Light -->
+                <circle cx="160" cy="56" r="4" fill="#FFF275"/>
+                <rect x="12" y="52" width="4" height="8" rx="2" fill="#E63946"/>
+              </g>
+
+              <!-- Protective Shield Overlay -->
+              <g class="hero-shield-group" transform="translate(370, 190)">
+                <circle cx="45" cy="45" r="42" fill="#FFFFFF" filter="drop-shadow(0px 8px 16px rgba(7, 91, 70, 0.18))"/>
+                <path d="M 45 20 C 60 20, 70 26, 70 42 C 70 58, 45 70, 45 70 C 45 70, 20 58, 20 42 C 20 26, 30 20, 45 20 Z" fill="#075B46"/>
+                <path d="M 36 44 L 42 50 L 55 36" stroke="#F8C52C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+
+              <!-- GPS Beacon Pulsing Marker -->
+              <g class="hero-gps-group" transform="translate(60, 240)">
+                <circle cx="30" cy="30" r="28" fill="rgba(7, 91, 70, 0.12)" class="gps-pulse"/>
+                <circle cx="30" cy="30" r="16" fill="#075B46"/>
+                <circle cx="30" cy="30" r="6" fill="#F8C52C"/>
+              </g>
+            </svg>
+
+            <!-- Floating Telemetry Glass Badge (Top Left) -->
+            <div class="hero-glass-pill pill-top-left">
+              <div class="pill-indicator-dot live-pulse"></div>
+              <div class="pill-text-block">
+                <span class="pill-meta">GPS TELEMETRY</span>
+                <span class="pill-val">Live &bull; Active Transit</span>
+              </div>
+            </div>
+
+            <!-- Floating Driver Verified Glass Badge (Bottom Left) -->
+            <div class="hero-glass-pill pill-bottom-left">
+              <div class="pill-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+              </div>
+              <div class="pill-text-block">
+                <span class="pill-meta">DRIVER STATUS</span>
+                <span class="pill-val">Identity Verified</span>
+              </div>
+            </div>
+
+            <!-- Floating Student Status Glass Badge (Top Right) -->
+            <div class="hero-glass-pill pill-top-right">
+              <div class="pill-icon-box check-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="pill-text-block">
+                <span class="pill-meta">STUDENT SAFETY</span>
+                <span class="pill-val">Safe Boarding Logged</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         3. SAFETY PROMISE / INTRODUCTION
+    ================================================== -->
+    <section class="safety-section bg-surface" id="safety-promise">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
+            <span>Core Safety Pillars</span>
+          </div>
+          <h2 class="section-title">Safety at Every Step</h2>
+          <p class="section-subtitle">
+            Student safety is prioritized throughout the entire transportation lifecycle — from morning pickup to school arrival and evening drop-off.
+          </p>
+        </div>
+
+        <div class="promise-cards-grid">
+          <!-- Card 1: Verified Drivers -->
+          <div class="promise-card fade-in-up" data-delay="100">
+            <div class="promise-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+            </div>
+            <h3 class="promise-card-title">Verified Drivers</h3>
+            <p class="promise-card-desc">
+              Drivers are verified and selected with student safety and responsible transportation in mind.
+            </p>
+          </div>
+
+          <!-- Card 2: Safe Boarding -->
+          <div class="promise-card fade-in-up" data-delay="200">
+            <div class="promise-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="promise-card-title">Safe Boarding</h3>
+            <p class="promise-card-desc">
+              Student boarding and alighting activities can be monitored to help maintain accountability.
+            </p>
+          </div>
+
+          <!-- Card 3: Live Monitoring -->
+          <div class="promise-card fade-in-up" data-delay="300">
+            <div class="promise-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <h3 class="promise-card-title">Live Monitoring</h3>
+            <p class="promise-card-desc">
+              Bus journeys can be monitored using real-time location technology.
+            </p>
+          </div>
+
+          <!-- Card 4: Emergency Support -->
+          <div class="promise-card fade-in-up" data-delay="400">
+            <div class="promise-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <h3 class="promise-card-title">Emergency Support</h3>
+            <p class="promise-card-desc">
+              Parents and school administrators have access to support procedures when unexpected situations occur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         4. DRIVER VERIFICATION
+    ================================================== -->
+    <section class="safety-section bg-light" id="driver-verification">
+      <div class="container">
+        <div class="driver-verification-grid">
+          <!-- Left: Driver Security SVG Illustration Card -->
+          <div class="driver-visual-col">
+            <div class="driver-id-card">
+              <!-- Card Header -->
+              <div class="driver-id-top">
+                <div class="id-brand-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>SchoolRoute Verified</span>
+                </div>
+                <span class="id-status-tag">ACTIVE CREDENTIAL</span>
+              </div>
+
+              <!-- Driver SVG Graphic Representation -->
+              <div class="driver-avatar-box">
+                <svg class="driver-avatar-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="60" cy="60" r="58" fill="var(--soft-background)" stroke="var(--border-color)" stroke-width="2"/>
+                  <!-- Driver Silhouette with Cap -->
+                  <circle cx="60" cy="46" r="20" fill="var(--primary-green)"/>
+                  <path d="M 40 40 Q 60 26 80 40 L 84 37 Q 60 20 36 37 Z" fill="var(--bright-yellow)"/>
+                  <path d="M 32 94 C 32 74 44 68 60 68 C 76 68 88 74 88 94 Z" fill="var(--primary-green)"/>
+                  <!-- Verification Shield Badge -->
+                  <circle cx="88" cy="88" r="18" fill="#32A852" stroke="#FFFFFF" stroke-width="3"/>
+                  <path d="M 82 88 L 86 92 L 94 84" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <!-- Driver Details Text -->
+              <div class="driver-id-info">
+                <h4 class="driver-name-text">Professional School Transit Driver</h4>
+                <p class="driver-meta-text">Assigned Route &bull; Verified ID &bull; Safety Certified</p>
+              </div>
+
+              <!-- Verification Item Badges Grid -->
+              <div class="id-chips-grid">
+                <div class="id-chip">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>ID Confirmed</span>
+                </div>
+                <div class="id-chip">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Document Checked</span>
+                </div>
+                <div class="id-chip">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Route Assigned</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Verification Details & Trust Badge -->
+          <div class="driver-content-col">
+            <div class="section-badge">
+              <span class="badge-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+              </span>
+              <span>Driver Accountability</span>
+            </div>
+
+            <h2 class="section-title">Trusted Drivers. Safer Journeys.</h2>
+            <p class="section-subtitle-left">
+              Drivers play a central role in student safety. Our system incorporates rigorous verification protocols and ongoing operational monitoring to foster trust on every mile.
+            </p>
+
+            <ul class="driver-checklist">
+              <li class="check-item">
+                <div class="check-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="check-text-wrap">
+                  <strong class="check-title">Driver identity verification</strong>
+                  <p class="check-desc">Comprehensive identification checks ensure each assigned driver is fully validated before taking the wheel.</p>
+                </div>
+              </li>
+
+              <li class="check-item">
+                <div class="check-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="check-text-wrap">
+                  <strong class="check-title">Documentation checks</strong>
+                  <p class="check-desc">Licensing, commercial driving records, and vehicle authorization credentials are systematically reviewed.</p>
+                </div>
+              </li>
+
+              <li class="check-item">
+                <div class="check-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="check-text-wrap">
+                  <strong class="check-title">Safety awareness</strong>
+                  <p class="check-desc">Drivers adhere to school transportation safety guidelines and child welfare best practices.</p>
+                </div>
+              </li>
+
+              <li class="check-item">
+                <div class="check-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="check-text-wrap">
+                  <strong class="check-title">Responsible driving practices</strong>
+                  <p class="check-desc">Encouragement of safe speeds, careful stop approaches, and defensive driving techniques.</p>
+                </div>
+              </li>
+
+              <li class="check-item">
+                <div class="check-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="check-text-wrap">
+                  <strong class="check-title">Ongoing monitoring</strong>
+                  <p class="check-desc">Continuous transit oversight ensures scheduled routes and standard operating procedures are maintained.</p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Trust Badge Card -->
+            <div class="trust-badge-card">
+              <div class="trust-badge-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="trust-badge-text">
+                <span class="trust-badge-tag">OUR CORE PRINCIPLE</span>
+                <p class="trust-badge-highlight">“Safety Starts with the Right People”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         5. STUDENT SAFETY
+    ================================================== -->
+    <section class="safety-section bg-surface" id="student-safety">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
+            <span>Student-Centric Protection</span>
+          </div>
+          <h2 class="section-title">Designed Around Student Safety</h2>
+          <p class="section-subtitle">
+            Every feature is engineered to provide complete transparency during student boarding, transit, and safe drop-offs.
+          </p>
+        </div>
+
+        <div class="student-safety-grid">
+          <!-- Card 1: Safe Boarding -->
+          <div class="student-card">
+            <div class="student-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+            </div>
+            <h3 class="student-card-title">Safe Boarding</h3>
+            <p class="student-card-desc">
+              Student boarding information can be recorded to improve journey visibility.
+            </p>
+          </div>
+
+          <!-- Card 2: Safe Drop-Off -->
+          <div class="student-card">
+            <div class="student-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            </div>
+            <h3 class="student-card-title">Safe Drop-Off</h3>
+            <p class="student-card-desc">
+              Drop-off information helps parents and schools stay informed about the student's journey.
+            </p>
+          </div>
+
+          <!-- Card 3: Student Status -->
+          <div class="student-card">
+            <div class="student-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 class="student-card-title">Student Status</h3>
+            <p class="student-card-desc">
+              Boarding and alighting records provide an additional layer of accountability.
+            </p>
+          </div>
+
+          <!-- Card 4: Parent Visibility -->
+          <div class="student-card">
+            <div class="student-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <h3 class="student-card-title">Parent Visibility</h3>
+            <p class="student-card-desc">
+              Parents can access relevant journey information through their dashboard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         6. BUS SAFETY & MONITORING
+    ================================================== -->
+    <section class="safety-section bg-light" id="bus-monitoring">
+      <div class="container">
+        <div class="bus-monitoring-wrapper">
+          <!-- Left Column: Content & Feature Points -->
+          <div class="bus-monitoring-content">
+            <div class="section-badge">
+              <span class="badge-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </span>
+              <span>Smart Fleet Oversight</span>
+            </div>
+
+            <h2 class="section-title">Safer Buses. Smarter Monitoring.</h2>
+            <p class="bus-monitoring-lead">
+              SchoolRoute combines transportation technology with safety-focused processes to provide better visibility throughout the journey.
+            </p>
+
+            <div class="bus-features-list">
+              <div class="bus-feature-row">
+                <div class="bus-feature-dot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="bus-feature-info">
+                  <strong>GPS-enabled journey monitoring</strong>
+                  <span>Accurate location updates across active bus transit corridors.</span>
+                </div>
+              </div>
+
+              <div class="bus-feature-row">
+                <div class="bus-feature-dot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="bus-feature-info">
+                  <strong>Route visibility</strong>
+                  <span>Designated stop sequences and predictable transit paths.</span>
+                </div>
+              </div>
+
+              <div class="bus-feature-row">
+                <div class="bus-feature-dot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="bus-feature-info">
+                  <strong>Journey status updates</strong>
+                  <span>Clear milestones indicating departure, underway transit, and arrivals.</span>
+                </div>
+              </div>
+
+              <div class="bus-feature-row">
+                <div class="bus-feature-dot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="bus-feature-info">
+                  <strong>Pickup and drop monitoring</strong>
+                  <span>Verified stop execution to ensure every student arrives safely.</span>
+                </div>
+              </div>
+
+              <div class="bus-feature-row">
+                <div class="bus-feature-dot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="bus-feature-info">
+                  <strong>Transportation records</strong>
+                  <span>Auditable operational history for school administrators and parents.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Stylized Bus Monitoring UI Console -->
+          <div class="bus-monitoring-ui">
+            <div class="monitoring-console-card">
+              <!-- Console Header -->
+              <div class="console-header">
+                <div class="console-title-group">
+                  <div class="status-pulse-dot"></div>
+                  <span class="console-title">Live Bus Telemetry &bull; Route 4B</span>
+                </div>
+                <span class="console-badge">TRANSIT ACTIVE</span>
+              </div>
+
+              <!-- Stylized Vector Map Viewport -->
+              <div class="console-map-viewport">
+                <svg class="console-map-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Grid Pattern -->
+                  <defs>
+                    <pattern id="map-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(23, 53, 45, 0.08)" stroke-width="1"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#map-grid)"/>
+
+                  <!-- City Street Contours -->
+                  <path d="M 0 60 Q 120 70 200 40 T 400 80" stroke="rgba(7, 91, 70, 0.12)" stroke-width="8" fill="none"/>
+                  <path d="M 50 240 L 150 140 L 260 140 L 350 0" stroke="rgba(7, 91, 70, 0.12)" stroke-width="8" fill="none"/>
+
+                  <!-- Active Transit Route Line -->
+                  <path class="console-route-path" d="M 40 190 L 140 140 L 260 140 L 340 70" stroke="#075B46" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <!-- Stops -->
+                  <g transform="translate(40, 190)">
+                    <circle r="7" fill="#075B46" stroke="#FFFFFF" stroke-width="2"/>
+                    <text x="-15" y="20" font-family="DM Sans" font-size="10" font-weight="600" fill="var(--body-text)">Stop 1</text>
+                  </g>
+                  <g transform="translate(140, 140)">
+                    <circle r="7" fill="#075B46" stroke="#FFFFFF" stroke-width="2"/>
+                    <text x="-15" y="20" font-family="DM Sans" font-size="10" font-weight="600" fill="var(--body-text)">Stop 2</text>
+                  </g>
+                  <g transform="translate(340, 70)">
+                    <circle r="9" fill="#075B46" stroke="#FFFFFF" stroke-width="3"/>
+                    <text x="-15" y="24" font-family="DM Sans" font-size="10" font-weight="700" fill="#075B46">School</text>
+                  </g>
+
+                  <!-- Active Bus Marker -->
+                  <g class="console-active-bus" transform="translate(230, 140)">
+                    <circle r="22" fill="rgba(248, 197, 44, 0.25)" class="bus-beacon-ring"/>
+                    <circle r="14" fill="#F8C52C" stroke="#17352D" stroke-width="2"/>
+                    <!-- Small Bus Icon Inside Marker -->
+                    <rect x="-6" y="-4" width="12" height="8" rx="2" fill="#17352D"/>
+                    <circle cx="-3" cy="4" r="1.5" fill="#17352D"/>
+                    <circle cx="3" cy="4" r="1.5" fill="#17352D"/>
+                  </g>
+                </svg>
+
+                <!-- Floating Speed Tag -->
+                <div class="map-floating-tag">
+                  <span class="tag-label">Speed</span>
+                  <span class="tag-val">32 km/h &bull; Smooth</span>
+                </div>
+              </div>
+
+              <!-- Console Telemetry Cards Grid -->
+              <div class="console-metrics-grid">
+                <div class="metric-box">
+                  <span class="metric-label">NEXT STOP</span>
+                  <strong class="metric-value">Greenwood Ave (2 min)</strong>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-label">STUDENT ONBOARD</span>
+                  <strong class="metric-value">28 / 30 Checked In</strong>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-label">STATUS</span>
+                  <strong class="metric-value text-success">On Schedule</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         7. REAL-TIME JOURNEY MONITORING
+    ================================================== -->
+    <section class="safety-section bg-surface" id="journey-monitoring">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </span>
+            <span>Live Flow Architecture</span>
+          </div>
+          <h2 class="section-title">Know Where the Journey Stands</h2>
+          <p class="section-subtitle">
+            Parents and school administrators receive relevant transportation updates at every phase of the route.
+          </p>
+        </div>
+
+        <div class="journey-flow-wrapper">
+          <!-- Animated Connecting Route Line (Desktop Only SVG) -->
+          <div class="journey-connecting-svg-wrap" aria-hidden="true">
+            <svg class="journey-route-svg" viewBox="0 0 900 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="route-bg-track" d="M 50 30 L 850 30" stroke="var(--border-color)" stroke-width="4" stroke-dasharray="6 6"/>
+              <path class="route-active-line" d="M 50 30 L 850 30" stroke="#075B46" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="journey-steps-grid">
+            <!-- Step 1 -->
+            <div class="journey-step-card fade-in-up" data-delay="100">
+              <div class="step-num-badge">01</div>
+              <div class="step-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </div>
+              <h3 class="journey-step-title">Bus Starts Journey</h3>
+              <p class="journey-step-desc">
+                Vehicle departure and route initiation are registered in the monitoring system as the bus begins its scheduled route.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="journey-step-card fade-in-up" data-delay="250">
+              <div class="step-num-badge">02</div>
+              <div class="step-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </div>
+              <h3 class="journey-step-title">Journey is Monitored</h3>
+              <p class="journey-step-desc">
+                Real-time location, waypoints, and transit status are tracked continuously along designated school zones and corridors.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="journey-step-card fade-in-up" data-delay="400">
+              <div class="step-num-badge">03</div>
+              <div class="step-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </div>
+              <h3 class="journey-step-title">Parent Receives Updates</h3>
+              <p class="journey-step-desc">
+                Timely boarding notifications and arrival alerts keep parents informed every step of the way without guessing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         8. EMERGENCY SUPPORT
+    ================================================== -->
+    <section class="safety-section emergency-section" id="emergency-support">
+      <div class="container">
+        <div class="emergency-card-wrapper">
+          <div class="emergency-content-col">
+            <div class="emergency-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Dedicated Incident Coordination</span>
+            </div>
+
+            <h2 class="emergency-title">Support When It Matters</h2>
+            <p class="emergency-desc">
+              SchoolRoute provides structured communication channels and responsive support procedures for unexpected transportation situations, keeping schools and families informed and connected.
+            </p>
+
+            <div class="emergency-points-grid">
+              <div class="emergency-point">
+                <div class="emergency-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                </div>
+                <span>Journey alerts</span>
+              </div>
+
+              <div class="emergency-point">
+                <div class="emergency-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                </div>
+                <span>Transportation notifications</span>
+              </div>
+
+              <div class="emergency-point">
+                <div class="emergency-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <span>Parent communication</span>
+              </div>
+
+              <div class="emergency-point">
+                <div class="emergency-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                </div>
+                <span>School administrator visibility</span>
+              </div>
+
+              <div class="emergency-point">
+                <div class="emergency-icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <span>Support contact</span>
+              </div>
+            </div>
+
+            <div class="emergency-actions">
+              <a href="contact.html" class="btn btn-emergency">
+                <span>Contact Support</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         9. SAFETY PROCESS / HOW IT WORKS
+    ================================================== -->
+    <section class="safety-section bg-surface" id="safety-process">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </span>
+            <span>Step-by-Step Workflow</span>
+          </div>
+          <h2 class="section-title">How SchoolRoute Supports Safer Journeys</h2>
+          <p class="section-subtitle">
+            A comprehensive 5-stage procedure ensuring seamless oversight from preparation to final drop-off.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <div class="timeline-steps-grid">
+            <!-- Step 01 -->
+            <div class="timeline-step-item">
+              <div class="timeline-step-marker">
+                <div class="step-dot"></div>
+                <div class="timeline-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </div>
+              </div>
+              <div class="timeline-step-card">
+                <span class="timeline-step-num">01</span>
+                <h3 class="timeline-step-title">Driver &amp; Vehicle Preparation</h3>
+                <p class="timeline-step-desc">
+                  Driver credentials and vehicle status are confirmed prior to morning route commencement.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="timeline-step-item">
+              <div class="timeline-step-marker">
+                <div class="step-dot"></div>
+                <div class="timeline-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                </div>
+              </div>
+              <div class="timeline-step-card">
+                <span class="timeline-step-num">02</span>
+                <h3 class="timeline-step-title">Student Pickup</h3>
+                <p class="timeline-step-desc">
+                  Students board at scheduled designated stops with recorded boarding status confirmation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="timeline-step-item">
+              <div class="timeline-step-marker">
+                <div class="step-dot"></div>
+                <div class="timeline-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                </div>
+              </div>
+              <div class="timeline-step-card">
+                <span class="timeline-step-num">03</span>
+                <h3 class="timeline-step-title">Journey Monitoring</h3>
+                <p class="timeline-step-desc">
+                  Active GPS journey tracking provides real-time location visibility throughout the route.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="timeline-step-item">
+              <div class="timeline-step-marker">
+                <div class="step-dot"></div>
+                <div class="timeline-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+              </div>
+              <div class="timeline-step-card">
+                <span class="timeline-step-num">04</span>
+                <h3 class="timeline-step-title">Safe Drop-Off</h3>
+                <p class="timeline-step-desc">
+                  Arrival at school premises or designated home stops with verified alighting records.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="timeline-step-item">
+              <div class="timeline-step-marker">
+                <div class="step-dot"></div>
+                <div class="timeline-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+              </div>
+              <div class="timeline-step-card">
+                <span class="timeline-step-num">05</span>
+                <h3 class="timeline-step-title">Journey Record</h3>
+                <p class="timeline-step-desc">
+                  Complete operational journey logs are archived for institutional accountability and review.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         10. SAFETY CHECKLIST / STANDARDS
+    ================================================== -->
+    <section class="safety-section bg-light" id="safety-checklist">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span>Safety Checklist</span>
+          </div>
+          <h2 class="section-title">Built With Safety in Mind</h2>
+          <p class="section-subtitle">
+            Our multi-layered safety framework ensures compliance, visibility, and peace of mind across all school transport operations.
+          </p>
+        </div>
+
+        <div class="standards-checklist-grid">
+          <!-- Item 1 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Verified transportation personnel</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Student boarding visibility</span>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Student drop-off visibility</span>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Journey monitoring</span>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Route visibility</span>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Transportation notifications</span>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Parent communication</span>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="checklist-card">
+            <div class="checklist-svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="checklist-label">Safety-focused processes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         11. FAQ ACCORDION
+    ================================================== -->
+    <section class="safety-section bg-surface" id="safety-faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </span>
+            <span>Common Inquiries</span>
+          </div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Find answers to commonly asked questions about our safety architecture, driver selection, and monitoring features.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion">
+          <!-- Question 1 -->
+          <div class="faq-item active">
+            <button class="faq-trigger" aria-expanded="true" aria-controls="faq-ans-1" id="faq-btn-1">
+              <span class="faq-question-text">How does SchoolRoute help improve student safety?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="faq-answer-inner">
+                <p>SchoolRoute combines verified driver assignments, real-time GPS tracking, student boarding records, and instant notification channels. This gives schools and parents end-to-end visibility throughout every journey, minimizing uncertainty and establishing reliable accountability.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
+              <span class="faq-question-text">How are drivers verified?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="faq-answer-inner">
+                <p>Drivers undergo comprehensive identity verification and documentation checks, including commercial driving licenses and vehicle authorization records. Only personnel who meet institutional safety guidelines are approved to manage student routes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
+              <span class="faq-question-text">Can parents monitor their child's bus journey?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="faq-answer-inner">
+                <p>Yes. When logged into their SchoolRoute Parent Dashboard, parents can view live location updates, estimated arrival times at designated stops, and transit progression for their enrolled child’s bus.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-btn-4">
+              <span class="faq-question-text">Can parents receive transportation notifications?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="faq-answer-inner">
+                <p>Yes. The platform generates automated alerts for bus departure, proximity to pickup and drop-off stops, boarding confirmation, and safe arrival at school.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-5" id="faq-btn-5">
+              <span class="faq-question-text">How is student boarding information recorded?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+              <div class="faq-answer-inner">
+                <p>Student boarding and drop-off records are registered through driver attendance check-ins or digital validation at designated stops, instantly updating the central dashboard.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-6" id="faq-btn-6">
+              <span class="faq-question-text">What happens if there is a transportation issue?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+              <div class="faq-answer-inner">
+                <p>In case of traffic delays, schedule adjustments, or unforeseen transit events, the system provides real-time status notices to parents and alert mechanisms for school administrators to coordinate promptly.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-7" id="faq-btn-7">
+              <span class="faq-question-text">Can schools monitor transportation activities?</span>
+              <span class="faq-icon-wrap" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+              <div class="faq-answer-inner">
+                <p>Yes. School transportation administrators have access to a centralized dashboard where they can oversee the entire fleet, track active routes, inspect student manifests, and review historical journey logs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         12. FINAL CTA SECTION
+    ================================================== -->
+    <section class="safety-cta-section" id="cta">
+      <div class="container">
+        <div class="safety-cta-card">
+          <!-- Background SVG Vector Decorations -->
+          <div class="cta-bus-vector" aria-hidden="true">
+            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="160" height="70" rx="14" fill="rgba(248, 197, 44, 0.15)"/>
+              <circle cx="60" cy="90" r="14" fill="rgba(255, 255, 255, 0.2)"/>
+              <circle cx="140" cy="90" r="14" fill="rgba(255, 255, 255, 0.2)"/>
+            </svg>
+          </div>
+
+          <div class="safety-cta-content text-center">
+            <div class="cta-pill-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Commitment to Student Safety</span>
+            </div>
+
+            <h2 class="safety-cta-heading">Make Every School Journey Safer</h2>
+            <p class="safety-cta-text">
+              Give parents and schools better visibility, communication, and confidence throughout every student journey.
+            </p>
+
+            <div class="safety-cta-buttons">
+              <a href="contact.html" class="btn btn-cta-primary">
+                <span>Get Started</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="contact.html" class="btn btn-cta-secondary">
+                <span>Contact Us</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       FOOTER (UNIFIED REUSABLE MASTER COMPONENT)
+  ================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="SchoolRoute Home">
+          <img src="assets/images/schoolroute-logo.svg" alt="SchoolRoute Logo" class="logo-img logo-light" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo.png';">
+          <img src="assets/images/schoolroute-logo-dark.svg" alt="SchoolRoute Logo" class="logo-img logo-dark" width="168" height="48" onerror="this.onerror=null; this.src='assets/images/schoolroute-logo-dark.png';">
+        </a>
+        <p class="footer-tagline">Safe Kids &bull; Stronger Tomorrows</p>
+        <p class="footer-description">SchoolRoute delivers real-time bus tracking, automated notifications, route management and complete safety for schools and parents.</p>
+        <div class="footer-social-links" aria-label="Social media links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="SchoolRoute on LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html" class="footer-link">Home 1</a></li>
+          <li><a href="home2.html" class="footer-link">Home 2</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="safety.html" class="footer-link">Safety</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Services -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="service-detail.html?id=tracking" class="footer-link">Live GPS Tracking</a></li>
+          <li><a href="service-detail.html?id=routes" class="footer-link">Route Management</a></li>
+          <li><a href="service-detail.html?id=student-monitoring" class="footer-link">Student Monitoring</a></li>
+          <li><a href="service-detail.html?id=notifications" class="footer-link">Arrival Notifications</a></li>
+          <li><a href="service-detail.html?id=safety" class="footer-link">Driver Verification</a></li>
+          <li><a href="service-detail.html?id=payments" class="footer-link">Online Payments</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Us -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="footer-contact-text">123 School Tech Park, Knowledge Corridor, Chennai, India</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+919876543210" class="footer-link-text">+91 98765 43210</a>
+          </li>
+          <li class="footer-contact-item">
+            <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:support@schoolroute.in" class="footer-link-text">support@schoolroute.in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">&copy; 2026 SchoolRoute. All Rights Reserved. Safe Kids &bull; Stronger Tomorrows.</p>
+        <div class="footer-bottom-links">
+          <a href="contact.html" class="footer-legal-link">Privacy Policy</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="contact.html" class="footer-legal-link">Terms &amp; Conditions</a>
+          <span class="divider-dot">&bull;</span>
+          <a href="pricing.html" class="footer-legal-link">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core and Safety Page Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/safety.js"></script>
+</body>
+</html>
